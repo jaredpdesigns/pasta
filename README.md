@@ -5,4 +5,4 @@ Pasta is a tiny SASS file that provides a great starting place for web projects.
 
 =====
 
-http://jarepdesigns.github.io/Pasta/
+http://jarepdesigns.github.io/pasta/
