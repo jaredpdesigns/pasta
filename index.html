@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<title>Pasta - Simply Delicious</title>
+	<link href="assets/img/favicon.ico" rel="shortcut icon">
+	<link rel='stylesheet' href='assets/css/style.css'>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pasta">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!-- Icons -->
+<link href="assets/img/apple-touch-icon-152x152.png" sizes="152x152" rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-120x120.png" sizes="120x120" rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-76x76.png"   sizes="76x76"   rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-72x72.png"   sizes="72x72"   rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-60x60.png"   sizes="60x60"   rel="apple-touch-icon">
+<link href="assets/img/apple-touch-icon-57x57.png"   sizes="57x57"   rel="apple-touch-icon">
+
+<!-- Startup Images -->
+<link href="assets/img/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"  rel="apple-touch-startup-image">
+<link href="assets/img/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="assets/img/apple-touch-startup-image-768x1004.png"  media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"  rel="apple-touch-startup-image">
+<link href="assets/img/apple-touch-startup-image-748x1024.png"  media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+<link href="assets/img/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="assets/img/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="assets/img/apple-touch-startup-image-320x460.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+</head>
+<body>
+<section class="topper">
+  <article class="wrapper">
+    <figure>
+      <img src="assets/img/topper-pasta.svg">
+    </figure>
+    <header>
+      <h1>Pasta</h1>
+      <h2>Simply Delicious</h2>
+    </header>
+  </article>
+</section>
+<section class="description">
+  <article class="wrapper">
+    <p>Pasta is a tiny <abbr>SASS</abbr> file that provides a great starting place for web projects.</p>
+    <p>It combines a great reset and light styling for common web elements, yummy.</p>
+    <button onclick="location.href='https://github.com/jarepdesigns/Pasta'">Download from Github</button>
+  </article>
+</section>
+<section class="type wrapper">
+  <header>
+    <h1>Typography</h1>
+  </header>
+  <article>
+    <blockquote>Easily control site-wide typography using simple variables, it's as easy as setting a numeric value for font-size. Want to control font-size and line-height for any element—there's a mixin for that.</blockquote>
+    <figcaption>Headings</figcaption>
+    <h1 class="big">h1.big - Heading 1 - <span>36px</span><span>24px</span></h1>
+    <h1>h1 - Heading 1 - 24px</h1>
+    <h2>h2 - Heading 2 - 20px</h2>
+    <h3>h3 - Heading 3 - 18px</h3>
+    <h4>h4 - Heading 4 - 16px</h4>
+    <h5>h5 - Heading 5 - 14px</h5>
+    <blockquote>h1s with a <code>.big</code> class applied to it defaults a larger size than typical h1 tags, but shrinks down to a typical h1 tag on viewports smaller than 480px.</blockquote>
+  </article>
+  <article>
+    <figcaption>Paragraph <em>(with additional typographic elements)</em></figcaption>
+    <p>p - Paragraph - <span>18px</span><span>16px</span> - <em>emphasized text</em>, <a>inline link</a>, <strong>Strong copy</strong>, <sup>superscript</sup> <sub>subscript</sub> <abbr title="abbreviation">abbr</abbr>. Cum sociis natoque est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <blockquote>Similarly, at small sizes the type size for paragraphs is reduced for a more conservative use of space.</blockquote>
+    <figcaption>List Styles</figcaption>
+    <section class="lists">
+      <ul>
+        <h5>Default ul/ol</h5>
+        <li>li - list item</li>
+        <li>li - list item</li>
+        <li>li - list item</li>
+        <li>li - list item</li>
+      </ul>
+      <ul class="bullets">
+        <h5>ul w/bullets</h5>
+        <li>li - list item</li>
+        <li>li - list item</li>
+        <li>li - list item</li>
+        <li>li - list item</li>
+      </ul>
+      <ol class="numbers">
+        <h5>ol w/numbers</h5>
+        <li>li - list item</li>
+        <li>li - list item</li>
+        <li>li - list item</li>
+        <li>li - list item</li>
+      </ol>
+      <dl>
+        <h5>Definition List</h5>
+        <dt>dt - definition title</dt>
+        <dd>dd - definition division</dd>
+      </dl>
+    </section>
+    <blockquote>When the main <code>.wrapper</code> element reaches a width greater than 1024px, styled ul and ol elements adapt a hanging punctuation format to better align to corresponding text.</blockquote>
+  </article>
+</section>
+<section class="forms wrapper">
+  <header>
+    <h1>Form Elements</h1>
+  </header>
+  <form>
+    <label>Input Field</label>
+    <input type="text" placeholder="Placeholder Text">
+    <label>Text Area</label>
+    <textarea placeholder="Placeholder Text"></textarea>
+    <label>Select</label>
+    <section class="select">
+      <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </section>
+    <label>Radio Buttons</label>
+    <section class="radio inline">
+      <label><input type="radio" name="radio">Radio 1</label>
+      <label><input type="radio" name="radio">Radio 2</label>
+      <label><input type="radio" name="radio">Radio 3</label>
+    </section>
+    <label>Checkboxes</label>
+    <section class="checkbox inline">
+      <label><input type="checkbox" name="checkbox">Checkbox 1</label>
+      <label><input type="checkbox" name="checkbox">Checkbox 2</label>
+      <label><input type="checkbox" name="checkbox">Checkbox 3</label>
+    </section>
+    <input type="button" type="submit" value="Submit">
+  </form>
+  <blockquote>Form elements are lightly styled for cross-browser consistencies. Radio buttons and checkboxes should be wrapped in <code>.radio</code> and <code>.checkbox</code> classes respectively. Additionally, if you apply the class <code>.inline</code> to either input group, elements will adapt an inline style for improved legibility (as seen above).</blockquote> 
+</section>
+<section class="wrapper">
+  <header>
+    <h1>Tables</h1>
+  </header>
+  <table cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="grid wrapper">
+  <header>
+    <h1>Grid System</h1>
+  </header>
+  <article>
+    <section>
+      <figcaption>1/2</figcaption>
+      <div class="grid-1-2">1•2</div>
+      <div class="grid-1-2">1•2</div>
+    </section>
+    <section>
+      <figcaption>1/3</figcaption>
+      <div class="grid-1-3">1•3</div>
+      <div class="grid-1-3">1•3</div>
+      <div class="grid-1-3">1•3</div>
+    </section>
+    <section>
+      <figcaption>1/4</figcaption>
+      <div class="grid-1-4">1•4</div>
+      <div class="grid-1-4">1•4</div>
+      <div class="grid-1-4">1•4</div>
+      <div class="grid-1-4">1•4</div>
+    </section>
+    <section>
+      <figcaption>1/6</figcaption>
+      <div class="grid-1-6">1•6</div>
+      <div class="grid-1-6">1•6</div>
+      <div class="grid-1-6">1•6</div>
+      <div class="grid-1-6">1•6</div>
+      <div class="grid-1-6">1•6</div>
+      <div class="grid-1-6">1•6</div>
+    </section>
+    <section>
+      <figcaption>Mixed</figcaption>
+      <div class="grid-3-4">3•4</div>
+      <div class="grid-1-4">1•4</div>
+      <div class="grid-1-4">1•4</div>
+      <div class="grid-1-4">1•4</div>
+      <div class="grid-1-2">1•2</div>
+      <div class="grid-2-3">2•3</div>
+      <div class="grid-1-6">1•6</div>
+      <div class="grid-1-6">1•6</div>
+    </section>
+    <section>
+      <figcaption>Nested Grids</figcaption>
+      <div class="grid-2-3 grid-nest">
+        <div class="grid-1-4">1•4 of Parent</div>
+        <div class="grid-1-4">1•4 of Parent</div>
+        <div class="grid-1-4">1•4 of Parent</div>
+        <div class="grid-1-4">1•4 of Parent</div>
+      </div>
+      <div class="grid-1-3">1•3</div>
+    </section>
+    <blockquote>The grid system is responsive by default applying rational widths when space permits. For viewports 480px and below <code>.grid-1-4</code> and <code>.grid-1-6</code> fill partial widths of the parent element and all other <code>.grid</code> elements are full-width. Additionally, by applying <code>.grid-nest</code> to a <code>.grid</code> element, you can nest grids of varying widths inside, coming up with new widths not already accounted for, yay math!</blockquote> 
+  </article>
+</section>
+<footer class="wrapper text-center">
+  <p>A thing by <a href="http://jaredpendergraft.com" target="_blank">Jared Pendergraft</a></p>
+</footer>
+</body>
+</html>
