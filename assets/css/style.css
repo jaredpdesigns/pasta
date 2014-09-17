@@ -371,8 +371,9 @@ form input[type="button"] {
   background: #f4d03f;
   color: #5f4400;
   border: 0.0625rem solid #f1c40f;
-  padding: 0.375rem 0.75rem;
-  margin-top: 0.75rem; }
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  border-radius: inherit; }
   form input[type="button"]:last-of-type {
     margin-bottom: 0; }
   @media (min-width: 1rem) and (max-width: 46rem) {
@@ -470,7 +471,7 @@ button {
   background: #f4d03f;
   color: #5f4400;
   border: 0.0625rem solid #f1c40f;
-  padding: 0.375rem 0.75rem; }
+  padding: 0.75rem; }
   button:last-of-type {
     margin-bottom: 0; }
   @media (min-width: 1rem) and (max-width: 46rem) {
@@ -545,6 +546,9 @@ button {
     margin-left: 0.75rem; }
   button:hover:after {
     border-color: transparent transparent transparent rgba(95, 68, 0, 0.75); }
+  @media (min-width: 1rem) and (max-width: 46rem) {
+    button:after {
+      top: 0.375rem; } }
 
 .topper {
   background: #f1c40f;
@@ -612,14 +616,21 @@ figcaption {
 
 blockquote {
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 2.25;
+  font-size: 1.125rem;
+  line-height: 2;
   margin-bottom: 0.75rem;
   background: rgba(95, 68, 0, 0.025);
   border: 0.0625rem solid rgba(95, 68, 0, 0.1);
   margin: 1.5rem 0; }
   blockquote:last-of-type {
     margin-bottom: 0; }
+  @media (min-width: 1rem) and (max-width: 46rem) {
+    blockquote {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.75rem; }
+      blockquote:last-of-type {
+        margin-bottom: 0; } }
   blockquote code {
     background: #f1c40f;
     font-size: 100%; }
