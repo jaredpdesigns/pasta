@@ -162,7 +162,8 @@ form {
       margin-right: 0.9375rem;
     }
   }  
-  & input[type="button"] { @include btn; margin-top: $space-s; }
+  & input[type="button"] { @include btn; margin-top: $space-s; border-radius: inherit; }
+  
   @include bp(ml) {
     & input[type="email"], input[type="number"], input[type="password"],
     input[type="search"], input[type="tel"], input[type="text"], input[type="url"],

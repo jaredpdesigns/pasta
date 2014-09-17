@@ -125,6 +125,6 @@ $border-big: 0.1875rem solid !default;
   background: lighten($color-highlight,10%);
   color: $color-base;
   border: $border $color-highlight;
-  padding: $space-xs $space-s;
+  padding: $space-s;
   &:hover { background: $color-highlight; }
 }
