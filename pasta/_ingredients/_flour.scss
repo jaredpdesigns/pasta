@@ -80,6 +80,7 @@ $border-big: 0.1875rem solid !default;
 }
 @mixin type-s {
 	@include type($type-s);
+	@include bp(xs) { @include type($type-s,1); }
 }
 @mixin type-m	 {
   @include type($type-m);
