@@ -114,7 +114,7 @@ $border-big: 0.1875rem solid !default;
 
 @mixin text-left { text-align: left; }
 
-@mixin text-right { text-align: left; }
+@mixin text-right { text-align: right; }
 
 @mixin legible {
   @include bp(ml)  { max-width: 75%; margin: 0 auto; }
@@ -128,4 +128,5 @@ $border-big: 0.1875rem solid !default;
   border: $border $color-highlight;
   padding: $space-s;
   &:hover { background: $color-highlight; }
+  @include bp(s) { padding: 0 $space-s; }
 }
