@@ -219,7 +219,7 @@ abbr {
   text-align: left; }
 
 .text-right {
-  text-align: left; }
+  text-align: right; }
 
 pre, code {
   font-family: "Source Code Pro", monospace; }
@@ -419,6 +419,9 @@ form input[type="button"] {
         margin-bottom: 0; } }
   form input[type="button"]:hover {
     background: #f1c40f; }
+  @media (min-width: 47rem) {
+    form input[type="button"] {
+      padding: 0 0.75rem; } }
 @media (min-width: 89rem) {
   form input[type="email"], form input[type="number"], form input[type="password"],
   form input[type="search"], form input[type="tel"], form input[type="text"], form input[type="url"],
@@ -517,6 +520,9 @@ button {
         margin-bottom: 0; } }
   button:hover {
     background: #f1c40f; }
+  @media (min-width: 47rem) {
+    button {
+      padding: 0 0.75rem; } }
 
 [class^="grid-"] {
   padding: 0.75rem;
@@ -685,7 +691,7 @@ blockquote {
 .type article:first-of-type figcaption {
   margin-top: 0; }
 .type ul h5, .type ol h5, .type dl h5 {
-  color: rgba(95, 68, 0, 0.025);
+  color: rgba(95, 68, 0, 0.5);
   text-align: center; }
 .type h1.big span:first-of-type, .type p span:first-of-type {
   display: none; }
