@@ -1,7 +1,7 @@
-Pasta
+# Pasta
 =====
 
-Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a great reset and light styling for common web elements, yummy.
+Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy.
 
 =====
 
