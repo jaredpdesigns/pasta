@@ -45,7 +45,8 @@ pre code { @include type-code-block; }
 
 a {
   @include link;
-  p, li & { @include link-text; }
+  p & { @include link-text; }
+  li & { @include link-text; }
 }
 
 // List Items
