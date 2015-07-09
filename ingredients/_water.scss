@@ -27,7 +27,7 @@ $color-base-mid:   tint($color-base,50%) !default;
 $color-base-light: tint($color-base,75%) !default;
 $color-base-ghost: tint($color-base,95%) !default;
 
-$color-highlight-dark: shade($color-highlight,37.5%) !default;
+$color-highlight-dark: shade($color-highlight,10%) !default;
 $color-highlight-ish:   tint($color-highlight,25%) !default;
 $color-highlight-mid:   tint($color-highlight,50%) !default;
 $color-highlight-light: tint($color-highlight,75%) !default;
@@ -270,7 +270,7 @@ $border-big: 0.1875rem solid !default;
     top: 0.0625rem;
     @include bp(xs) { top: 0.1875rem; }
   }
-  &:checked ~ *:before { background-color: $color-highlight-dark; }
+  &:checked ~ *:before { background-color: $color-highlight; }
 }
 
 // BUTTON STYLES
