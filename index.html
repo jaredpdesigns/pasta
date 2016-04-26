@@ -1,13 +1,304 @@
-<html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=utf-8"><title>Pasta - Simply Delicious</title><meta name=description content="Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a great reset and light styling for common web elements, yummy."><meta name=keywords content="pasta, css, html, responsive, jared pendergraft"><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href=./assets/img/favicon.ico type=image/x-icon><link rel=stylesheet type=text/css href=./assets/css/style.css media=all><meta property=og:site_name content=Pasta><meta property=og:title content="Pasta - Simply Delicious"><meta property=og:description content="Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy."><meta property=og:url content="http://jaredpdesigns.github.io/pasta/"><meta property=og:image content=https://raw.githubusercontent.com/jaredpdesigns/pasta/gh-pages/assets/img/social/social-fb.png><meta name=twitter:card content=photo><meta name=twitter:creator content=@jaredpdesigns><meta name=twitter:title content="Pasta - Simply Delicious"><meta name=twitter:description content="Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy."><meta name=twitter:domain content="http://jaredpdesigns.github.io/pasta/"><meta name=twitter:image:src content=https://raw.githubusercontent.com/jaredpdesigns/pasta/gh-pages/assets/img/social/social-twitter.png><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><meta name=apple-mobile-web-app-title content=Pasta><link href=../assets/img/webapp/apple-touch-icon-152x152.png sizes=152x152 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-144x144.png sizes=144x144 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-120x120.png sizes=120x120 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-114x114.png sizes=114x114 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-76x76.png sizes=76x76 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-72x72.png sizes=72x72 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-60x60.png sizes=60x60 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-icon-57x57.png sizes=57x57 rel=apple-touch-icon><link href=../assets/img/webapp/apple-touch-startup-image-1536x2008.png media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel=apple-touch-startup-image><link href=../assets/img/webapp/apple-touch-startup-image-1496x2048.png media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel=apple-touch-startup-image><link href=../assets/img/webapp/apple-touch-startup-image-768x1004.png media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel=apple-touch-startup-image><link href=../assets/img/webapp/apple-touch-startup-image-748x1024.png media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel=apple-touch-startup-image><link href=../assets/img/webapp/apple-touch-startup-image-640x1096.png media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel=apple-touch-startup-image><link href=../assets/img/webapp/apple-touch-startup-image-640x920.png media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel=apple-touch-startup-image><link href=../assets/img/webapp/apple-touch-startup-image-320x460.png media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel=apple-touch-startup-image></head><body class=home><header><section class=wrapper><figure class=logo><img src=./assets/img/logo.svg></figure><figcaption><h1>Pasta</h1><h3>Simply Delicious</h3></figcaption></section></header><section class=preamble><article class=wrapper><p>Pasta is a tiny <abbr title="Syntactically Awesome Stylesheets">SASS</abbr> file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy.</p><button onclick="location.href='https://github.com/jaredpdesigns/Pasta'">Get Cooking On Github</button></article></section><section class=wrapper><article role=intro><h3>Getting Started</h3><p>Pasta is a collection of partial <abbr title="Syntactically Awesome Stylesheets">SASS</abbr> files, broken out into their core functions. Individual files can be found in the <code>_ingredients</code> folder within the main Pasta directory.</p><ul><li><code>_water.scss</code> contains all the variables and mixins used throughout Pasta. This is most likely the file you’ll edit the most as you fine-tune styles specific to your project.</li><li><code>_flour.scss</code> establishes a solid reset for core <abbr title="Hyper Text Markup Language">HTML</abbr> elements and is technically optional. If you prefer a more common reset like <a href="https://necolas.github.io/normalize.css/">Normalize</a>, feel free to comment out flour from the main <code>_pasta.scss</code> file.</li><li><code>_eggs.scss</code> starts to build on the core foundation for the light cross-browser styling associated with Pasta.</li></ul><h6>OPTIONAL CONFIGURATION</h6><p>If all you want to do is adjust basic variables but not core stylings, you can include the declarations before you import Pasta into your main stylesheet:</p><pre><code class=language-css>$<span class=hljs-rule><span class=hljs-attribute>type-sans</span>:<span class=hljs-value> <span class=hljs-string>'Open Sans'</span>, sans-serif</span></span>;
-$<span class=hljs-rule><span class=hljs-attribute>type-serif</span>:<span class=hljs-value> <span class=hljs-string>'Lora'</span>, serif</span></span>;
-$<span class=hljs-rule><span class=hljs-attribute>type-mono</span>:<span class=hljs-value> <span class=hljs-string>'Source Code Pro'</span>, monospace</span></span>;
-$<span class=hljs-rule><span class=hljs-attribute>color-base</span>:<span class=hljs-value> <span class=hljs-hexcolor>#523A00</span></span></span>;
-$<span class=hljs-rule><span class=hljs-attribute>color-highlight</span>:<span class=hljs-value> <span class=hljs-hexcolor>#F2AE00</span></span></span>;
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Pasta - Simply Delicious</title>
+  <meta name="description" content="Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a great reset and light styling for common web elements, yummy.">
+  <meta name="keywords" content="pasta, css, html, responsive, jared pendergraft">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" media="all">
+  <!-- Facebook Meta Tags -->
+<meta property="og:site_name" content="Pasta"/>
+<meta property="og:title" content="Pasta - Simply Delicious"/>
+<meta property="og:description" content="Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy."/>
+<meta property="og:url" content="http://jaredpdesigns.github.io/pasta/"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/jaredpdesigns/pasta/gh-pages/assets/img/social/social-fb.png"/>
 
-<span class=hljs-at_rule>@<span class=hljs-keyword>import</span> <span class=hljs-string>"pasta/pasta"</span></span>;
-</code></pre><blockquote><p>After importing Pasta into your main stylesheet, you can use any variables or mixins throughout your main stylesheet, easily building on top of <code>_eggs.scss</code> as you establish the look and feel of your project.</p></blockquote></article><article role=type><h3>Typography</h3><blockquote><p>Easily control site-wide typography using simple variables—it’s as easy as setting a numeric value for <code>font-size</code>.</p></blockquote><h6>Headings</h6><h1>h1 tag</h1><h2>h2 tag</h2><h3>h3 tag</h3><h4>h4 tag</h4><h5>h5 tag</h5><h6>Paragraphs</h6><p>p tag - Aenean lacinia <em>bibendum nulla sed consectetur</em>. <strong>Nullam I’d dolor I’d nibh ultricies</strong> vehicula ut I’d elit. <a href=#>An inline link</a>, Ligatures anyone? Official flourishing figurines. <abbr title="Hyper Text Markup Language">HTML</abbr> &amp; <abbr title="Cascading Style Sheets">CSS</abbr>, let’s not forget abbreviations on browsers which support them. Dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.</p></article><article role=lists><h3>Lists</h3><blockquote><p>When screens reach a width greater than 1024px, styled <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> elements adapt a hanging punctuation format to better align to corresponding text.</p></blockquote><section><h4>Unordered List</h4><ul><li>list item</li><li>list item</li><li>list item</li></ul></section><section><h4>Ordered List</h4><ol><li>list item</li><li>list item</li><li>list item</li></ol></section><section><h4>Definition List</h4><dl><dt>definition title</dt><dd>definition division</dd></dl></section><section class=unstyled><h4>Unstyled List</h4><ul><li>list item</li><li>list item</li><li>list item</li></ul></section></article><article role=code><h3>Code Samples</h3><blockquote><p>For code friendly pages, both inline and block level <code>&lt;code&gt;</code> tags are supported.</p></blockquote><p>Let’s add <code>.this</code> and <code>.that</code> to our <code>&lt;h1&gt;</code> tag.</p><pre><code class=language-css><span class=hljs-class>.this</span> <span class=hljs-rules>{ <span class=hljs-rule><span class=hljs-attribute>font-size</span>:<span class=hljs-value> <span class=hljs-number>4.5rem</span></span></span>; }</span>
-<span class=hljs-class>.that</span> <span class=hljs-rules>{ <span class=hljs-rule><span class=hljs-attribute>color</span>:<span class=hljs-value> $super-sweet</span></span>; }</span>
-</code></pre></article><article role=form><h3>Form Elements</h3><blockquote><p>Form elements are lightly styled for cross-browser consistency.</p></blockquote><fieldset><label><h4>Input Field</h4></label> <input type=text placeholder="I'm an Input"></fieldset><fieldset><label><h4>Textarea</h4></label> <textarea placeholder="I'm a Textarea"></textarea></fieldset><fieldset><label><h4>Radio Buttons</h4></label> <label><input type=radio name=radio><span>Radio 1</span></label> <label><input type=radio name=radio><span>Radio 2</span></label> <label><input type=radio name=radio><span>Radio 3</span></label></fieldset><fieldset><label><h4>Checkboxes</h4></label> <label><input type=checkbox name=checkbox><span>Checkbox 1</span></label> <label><input type=checkbox name=checkbox><span>Checkbox 2</span></label> <label><input type=checkbox name=checkbox><span>Checkbox 3</span></label></fieldset><fieldset><label><h4>Select</h4></label><select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></fieldset><fieldset><label><h4>Button Types</h4></label> <button>Primary Button</button> <button class=btn-secondary>Secondary Button</button></fieldset></article><article role=tables><h3>Tables</h3><blockquote><p>Light <code>&lt;table&gt;</code> styling is supported, because sometimes tables just work.</p></blockquote><table><thead><tr><th>Header 1</th><th>Header 2</th><th>Header 3</th></tr></thead><tbody><tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td></tr><tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td></tr><tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td></tr></tbody></table></article><article role=media><h3>Responsive Media Elements</h3><blockquote><p>Easily control images and video embeds by wrapping either in semantic <code>&lt;figure&gt;</code> elements.</p></blockquote><h6>Responsive Image</h6><figure><p><img src=./assets/img/placeholder.jpg alt="Some Lovely Pasta"></p></figure><figcaption><p><em>Image via <a href=https://en.wikipedia.org/wiki/Farfalle>Wikipedia</a></em></p></figcaption><h6>Responsive Video Embed</h6><blockquote><p>Video embeds are made awesome by simply adding a class of <code>.video-holder</code> to your figure.</p></blockquote><figure class=video-holder><iframe src="https://player.vimeo.com/video/8864263?color=f2ae00&title=0&byline=0&portrait=0" width=500 height=375 frameborder=0 webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></figure><figcaption><p><em>Video via <a href=http://www.geometryofpasta.co.uk>The Geometry of Pasta</a></em></p></figcaption></article><article role=colors><h3>Colors</h3><blockquote><p>A global color scale makes it easy to use variations of core colors, keeping <abbr title="User Interface">UI</abbr> elements consistent and easy to manage.</p></blockquote><section class=unstyled><ul><li>$color-base</li><li>$color-base-dark</li><li>$color-base-ish</li><li>$color-base-mid</li><li>$color-base-light</li><li>$color-base-ghost</li><li>$color-highlight</li><li>$color-highlight-dark</li><li>$color-highlight-ish</li><li>$color-highlight-mid</li><li>$color-highlight-light</li><li>$color-highlight-ghost</li></ul></section></article><article role=grid><h3>Grid System</h3><blockquote><p>The grid system is responsive by default applying rational widths when space permits. For viewports 480px and below <code>.grid-1-4</code> and <code>.grid-1-6</code> fill partial widths of the parent element and all other grid elements are full-width.</p></blockquote><ul class="grid-holder unstyled"><li class=grid-1-2>.grid-1-2</li><li class=grid-1-2>.grid-1-2</li><li class=grid-1-3>.grid-1-3</li><li class=grid-1-3>.grid-1-3</li><li class=grid-1-3>.grid-1-3</li><li class=grid-2-3>.grid-2-3</li><li class=grid-1-3>.grid-1-3</li><li class=grid-1-4>.grid-1-4</li><li class=grid-1-4>.grid-1-4</li><li class=grid-1-4>.grid-1-4</li><li class=grid-1-4>.grid-1-4</li><li class=grid-3-4>.grid-3-4</li><li class=grid-1-4>.grid-1-4</li><li class=grid-1-6>.grid-1-6</li><li class=grid-1-6>.grid-1-6</li><li class=grid-1-6>.grid-1-6</li><li class=grid-1-6>.grid-1-6</li><li class=grid-1-6>.grid-1-6</li><li class=grid-1-6>.grid-1-6</li></ul></article></section><footer><section class="wrapper short"><p>A thing by <a href=http://jaredpendergraft.com target=_blank>Jared Pendergraft</a></p></section></footer></body><script>
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="photo">
+<meta name="twitter:creator" content="@jaredpdesigns">
+<meta name="twitter:title" content="Pasta - Simply Delicious">
+<meta name="twitter:description" content="Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy.">
+<meta name="twitter:domain" content="http://jaredpdesigns.github.io/pasta/">
+<meta name="twitter:image:src" content="https://raw.githubusercontent.com/jaredpdesigns/pasta/gh-pages/assets/img/social/social-twitter.png">
+  <!-- Apple Webapp Meta Tags -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Pasta">
+
+<!-- Webapp Icons -->
+<link href="../assets/img/webapp/apple-touch-icon-152x152.png" sizes="152x152" rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-120x120.png" sizes="120x120" rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-76x76.png"   sizes="76x76"   rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-72x72.png"   sizes="72x72"   rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-60x60.png"   sizes="60x60"   rel="apple-touch-icon">
+<link href="../assets/img/webapp/apple-touch-icon-57x57.png"   sizes="57x57"   rel="apple-touch-icon">
+
+<!-- Webapp Startup Images -->
+<link href="../assets/img/webapp/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"  rel="apple-touch-startup-image">
+<link href="../assets/img/webapp/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="../assets/img/webapp/apple-touch-startup-image-768x1004.png"  media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"  rel="apple-touch-startup-image">
+<link href="../assets/img/webapp/apple-touch-startup-image-748x1024.png"  media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+<link href="../assets/img/webapp/apple-touch-startup-image-640x1096.png"  media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="../assets/img/webapp/apple-touch-startup-image-640x920.png"   media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="../assets/img/webapp/apple-touch-startup-image-320x460.png"   media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+</head>
+<body class="home">
+<header>
+  <section class="wrapper">
+    <figure class="logo">
+      <img src="./assets/img/logo.svg">
+    </figure>
+    <figcaption>
+      <h1>Pasta</h1>
+      <h3>Simply Delicious</h3>
+    </figcaption>
+  </section>
+</header>
+<section class="preamble">
+  <article class="wrapper">
+    <p>Pasta is a tiny <abbr title="Syntactically Awesome Stylesheets">SASS</abbr> file that provides a great starting place for web projects. It combines a solid reset and light styling for common web elements, yummy.</p>
+    <button onclick="location.href='https://github.com/jaredpdesigns/Pasta'">Get Cooking On Github</button>
+  </article>
+</section>
+<section class="wrapper">
+  <article role="intro">
+    <h3>Getting Started</h3>
+<p>Pasta is a collection of partial <abbr title="Syntactically Awesome Stylesheets">SASS</abbr> files, broken out into their core functions. Individual files can be found in the <code>_ingredients</code> folder within the main Pasta directory.</p>
+<ul>
+<li><code>_water.scss</code> contains all the variables and mixins used throughout Pasta. This is most likely the file you’ll edit the most as you fine-tune styles specific to your project.</li>
+<li><code>_flour.scss</code> establishes a solid reset for core <abbr title="Hyper Text Markup Language">HTML</abbr> elements and is technically optional. If you prefer a more common reset like <a href="https://necolas.github.io/normalize.css/">Normalize</a>, feel free to comment out flour from the main <code>_pasta.scss</code> file.</li>
+<li><code>_eggs.scss</code> starts to build on the core foundation for the light cross-browser styling associated with Pasta.</li>
+</ul>
+<h6>OPTIONAL CONFIGURATION</h6>
+<p>If all you want to do is adjust basic variables but not core stylings, you can include the declarations before you import Pasta into your main stylesheet:</p>
+<pre><code class="language-css">$<span class="hljs-rule"><span class="hljs-attribute">type-sans</span>:<span class="hljs-value"> <span class="hljs-string">'Open Sans'</span>, sans-serif</span></span>;
+$<span class="hljs-rule"><span class="hljs-attribute">type-serif</span>:<span class="hljs-value"> <span class="hljs-string">'Lora'</span>, serif</span></span>;
+$<span class="hljs-rule"><span class="hljs-attribute">type-mono</span>:<span class="hljs-value"> <span class="hljs-string">'Source Code Pro'</span>, monospace</span></span>;
+$<span class="hljs-rule"><span class="hljs-attribute">color-base</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#523A00</span></span></span>;
+$<span class="hljs-rule"><span class="hljs-attribute">color-highlight</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F2AE00</span></span></span>;
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"pasta/pasta"</span></span>;
+</code></pre>
+<blockquote>
+<p>After importing Pasta into your main stylesheet, you can use any variables or mixins throughout your main stylesheet, easily building on top of <code>_eggs.scss</code> as you establish the look and feel of your project.</p>
+</blockquote>
+
+  </article>
+  <article role="type">
+    <h3>Typography</h3>
+<blockquote>
+<p>Easily control site-wide typography using simple variables—it’s as easy as setting a numeric value for <code>font-size</code>.</p>
+</blockquote>
+<h6>Headings</h6>
+<h1>h1 tag</h1>
+<h2>h2 tag</h2>
+<h3>h3 tag</h3>
+<h4>h4 tag</h4>
+<h5>h5 tag</h5>
+<h6>Paragraphs</h6>
+<p>p tag - Aenean lacinia <em>bibendum nulla sed consectetur</em>. <strong>Nullam I’d dolor I’d nibh ultricies</strong> vehicula ut I’d elit. <a href="#">An inline link</a>, Ligatures anyone? Official flourishing figurines. <abbr title="Hyper Text Markup Language">HTML</abbr> &amp; <abbr title="Cascading Style Sheets">CSS</abbr>, let’s not forget abbreviations on browsers which support them. Dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.</p>
+
+  </article>
+  <article role="lists">
+    <h3>Lists</h3>
+<blockquote>
+<p>When screens reach a width greater than 1024px, styled <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> elements adapt a hanging punctuation format to better align to corresponding text.</p>
+</blockquote>
+<section>
+<h4>Unordered List</h4>
+<ul>
+<li>list item</li>
+<li>list item</li>
+<li>list item</li>
+</ul>
+</section>
+<section>
+<h4>Ordered List</h4>
+<ol>
+<li>list item</li>
+<li>list item</li>
+<li>list item</li>
+</ol>
+</section>
+<section>
+<h4>Definition List</h4>
+<dl>
+<dt>definition title</dt>
+<dd>definition division</dd>
+</dl>
+</section>
+<section class="unstyled">
+<h4>Unstyled List</h4>
+<ul>
+<li>list item</li>
+<li>list item</li>
+<li>list item</li>
+</ul>
+</section>
+  </article>
+  <article role="code">
+    <h3>Code Samples</h3>
+<blockquote>
+<p>For code friendly pages, both inline and block level <code>&lt;code&gt;</code> tags are supported.</p>
+</blockquote>
+<p>Let’s add <code>.this</code> and <code>.that</code> to our <code>&lt;h1&gt;</code> tag.</p>
+<pre><code class="language-css"><span class="hljs-class">.this</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">4.5rem</span></span></span>; }</span>
+<span class="hljs-class">.that</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> $super-sweet</span></span>; }</span>
+</code></pre>
+
+  </article>
+  <article role="form">
+    <h3>Form Elements</h3>
+<blockquote>
+<p>Form elements are lightly styled for cross-browser consistency.</p>
+</blockquote>
+  <fieldset>
+    <label><h4>Input Field</h4></label>
+    <input type="text" placeholder="I'm an Input">
+  </fieldset>
+  <fieldset>
+    <label><h4>Textarea</h4></label>
+    <textarea placeholder="I'm a Textarea"></textarea>
+  </fieldset>
+  <fieldset>
+        <label><h4>Radio Buttons</h4></label>
+    <label><input type="radio" name="radio"><span>Radio 1</span></label>
+    <label><input type="radio" name="radio"><span>Radio 2</span></label>
+    <label><input type="radio" name="radio"><span>Radio 3</span></label>
+  </fieldset>
+  <fieldset>
+        <label><h4>Checkboxes</h4></label>
+    <label><input type="checkbox" name="checkbox"><span>Checkbox 1</span></label>
+    <label><input type="checkbox" name="checkbox"><span>Checkbox 2</span></label>
+    <label><input type="checkbox" name="checkbox"><span>Checkbox 3</span></label>
+  </fieldset>
+  <fieldset>
+    <label><h4>Select</h4></label>
+    <select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <label><h4>Button Types</h4></label>
+    <button>Primary Button</button>
+    <button class="btn-secondary">Secondary Button</button>
+  </fieldset>
+  </article>
+  <article role="tables">
+    <h3>Tables</h3>
+<blockquote>
+<p>Light <code>&lt;table&gt;</code> styling is supported, because sometimes tables just work.</p>
+</blockquote>
+<table>
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+  </article>
+  <article role="media">
+    <h3>Responsive Media Elements</h3>
+<blockquote>
+<p>Easily control images and video embeds by wrapping either in semantic <code>&lt;figure&gt;</code> elements.</p>
+</blockquote>
+<h6>Responsive Image</h6>
+<figure>
+<p><img src="./assets/img/placeholder.jpg" alt="Some Lovely Pasta"></p>
+</figure>  
+<figcaption>
+<p><em>Image via <a href="https://en.wikipedia.org/wiki/Farfalle">Wikipedia</a></em></p>
+</figcaption>
+<h6>Responsive Video Embed</h6>
+<blockquote>
+<p>Video embeds are made awesome by simply adding a class of <code>.video-holder</code> to your figure.</p>
+</blockquote>
+<figure class="video-holder"><iframe src="https://player.vimeo.com/video/8864263?color=f2ae00&title=0&byline=0&portrait=0" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></figure>
+<figcaption>
+<p><em>Video via <a href="http://www.geometryofpasta.co.uk">The Geometry of Pasta</a></em></p>
+</figcaption>
+  </article>
+  <article role="colors">
+    <h3>Colors</h3>
+<blockquote>
+<p>A global color scale makes it easy to use variations of core colors, keeping <abbr title="User Interface">UI</abbr> elements consistent and easy to manage.</p>
+</blockquote>
+<section class="unstyled">
+<ul>
+<li>$color-base</li>
+<li>$color-base-dark</li>
+<li>$color-base-ish</li>
+<li>$color-base-mid</li>
+<li>$color-base-light</li>
+<li>$color-base-ghost</li>
+<li>$color-highlight</li>
+<li>$color-highlight-dark</li>
+<li>$color-highlight-ish</li>
+<li>$color-highlight-mid</li>
+<li>$color-highlight-light</li>
+<li>$color-highlight-ghost</li>
+</ul>
+</section>
+  </article>
+  <article role="grid">
+    <h3>Grid System</h3>
+<blockquote>
+<p>The grid system is responsive by default applying rational widths when space permits. For viewports 480px and below <code>.grid-1-4</code> and <code>.grid-1-6</code> fill partial widths of the parent element and all other grid elements are full-width.</p>
+</blockquote>
+<ul class="grid-holder unstyled">
+  <li class="grid-1-2">.grid-1-2</li>
+  <li class="grid-1-2">.grid-1-2</li>
+  <li class="grid-1-3">.grid-1-3</li>
+  <li class="grid-1-3">.grid-1-3</li>
+  <li class="grid-1-3">.grid-1-3</li>
+  <li class="grid-2-3">.grid-2-3</li>
+  <li class="grid-1-3">.grid-1-3</li>
+  <li class="grid-1-4">.grid-1-4</li>
+  <li class="grid-1-4">.grid-1-4</li>
+  <li class="grid-1-4">.grid-1-4</li>
+  <li class="grid-1-4">.grid-1-4</li>
+  <li class="grid-3-4">.grid-3-4</li>
+  <li class="grid-1-4">.grid-1-4</li>
+  <li class="grid-1-6">.grid-1-6</li>
+  <li class="grid-1-6">.grid-1-6</li>
+  <li class="grid-1-6">.grid-1-6</li>
+  <li class="grid-1-6">.grid-1-6</li>
+  <li class="grid-1-6">.grid-1-6</li>
+  <li class="grid-1-6">.grid-1-6</li>
+</ul>
+  </article>
+</section>
+<footer>
+  <section class="wrapper short">
+    <p>A thing by <a href="http://jaredpendergraft.com" target="_blank">Jared Pendergraft</a></p>
+  </section>
+</footer>
+</body>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -16,4 +307,5 @@ $<span class=hljs-rule><span class=hljs-attribute>color-highlight</span>:<span c
   ga('create', 'UA-5081288-10', 'auto');
   ga('send', 'pageview');
 
-</script></html>
+</script>
+</html>
