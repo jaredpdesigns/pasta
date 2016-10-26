@@ -1,0 +1,193 @@
+// Typography
+
+html {
+  @include type-sans;
+  font-size: 100%;
+  color: $color-base;
+  font-variant-ligatures: common-ligatures;
+  -moz-font-feature-settings: "liga", "clig";
+  -webkit-font-feature-settings: "liga", "clig";
+  font-feature-settings: "liga", "clig";
+}
+
+body {
+  @include type-sans;
+  color: $color-base;
+}
+
+h1 { @include type-xl; }
+
+h2 { @include type-l; }
+
+h3 { @include type-ml; }
+
+p, li { @include type-m; }
+
+p { @include type-serif; }
+
+h4 { @include type-s; }
+
+h5 { @include type-xs; }
+
+b, strong { @include type-bold; }
+
+i, em { @include type-italic; }
+
+hr {
+  display: block;
+  border-top: $border-s $color-highlight-25;
+}
+
+abbr {
+  font-variant-caps: all-small-caps;
+  -moz-font-feature-settings: "c2sc", "smcp";
+  -webkit-font-feature-settings: "c2sc", "smcp";
+  font-feature-settings: "c2sc", "smcp";
+}
+
+code {
+  @include type-mono;
+  @include fluffy-xs;
+  background-color: $color-tint;
+  border: $border-s $color-base-12;
+  border-radius: $space-xxs;
+  color: $color-base-75;
+  white-space: pre-wrap;
+}
+
+pre {
+  @include type-m;
+  @include fluffy-m;
+  background-color: $color-tint;
+  border: $border-s $color-base-12;
+  border-radius: $space-xs;
+  word-wrap: normal;
+  code {
+    border: none;
+    padding: 0;
+  }
+}
+
+.type__style--sans { @include type-sans; }
+
+.type__style--serif { @include type-serif; }
+
+.type__style--mono { @include type-mono; }
+
+.type__style--caps { @include type-caps; }
+
+.type__align--left { @include type-left; }
+
+.type__align--center { @include type-center; }
+
+.type__align--right { @include type-right; }
+
+.type__align--legible { @include type-legible; }
+
+// List Items
+
+ol, ul {
+  list-style-position: outside;
+  padding-left: $space-m;
+  @include bp(m) { padding-left: 0; }
+}
+
+ol li { list-style-type: decimal; }
+
+ul li { list-style-type: disc; }
+
+// Links 
+
+a { @include smooth; }
+
+p a:not(.btn) {
+  color: $color-highlight;
+  border-bottom: $border-s $color-highlight-50;
+  &:hover { color: $color-highlight-75; }
+}
+
+// Colors
+
+.color__bg--base      { background-color: $color-base; }
+.color__bg--base-75   { background-color: $color-base-75; }
+.color__bg--base-62   { background-color: $color-base-62; }
+.color__bg--base-50   { background-color: $color-base-50; }
+.color__bg--base-38   { background-color: $color-base-38; }
+.color__bg--base-25   { background-color: $color-base-25; }
+.color__bg--base-12   { background-color: $color-base-12; }
+.color__bg--base-5    { background-color: $color-base-5; }
+.color__bg--base-dark { background-color: $color-base-dark; }
+
+.color__bg--highlight      { background-color: $color-highlight; }
+.color__bg--highlight-75   { background-color: $color-highlight-75; }
+.color__bg--highlight-62   { background-color: $color-highlight-62; }
+.color__bg--highlight-50   { background-color: $color-highlight-50; }
+.color__bg--highlight-38   { background-color: $color-highlight-38; }
+.color__bg--highlight-25   { background-color: $color-highlight-25; }
+.color__bg--highlight-12   { background-color: $color-highlight-12; }
+.color__bg--highlight-5    { background-color: $color-highlight-5; }
+.color__bg--highlight-dark { background-color: $color-highlight-dark; }
+
+.color__bg--white { background-color: $color-tint; }
+
+.color__type--base      { color: $color-base; }
+.color__type--base-75   { color: $color-base-75; }
+.color__type--base-62   { color: $color-base-62; }
+.color__type--base-50   { color: $color-base-50; }
+.color__type--base-38   { color: $color-base-38; }
+.color__type--base-25   { color: $color-base-25; }
+.color__type--base-12   { color: $color-base-12; }
+.color__type--base-5    { color: $color-base-5; }
+.color__type--base-dark { color: $color-base-dark; }
+
+.color__type--highlight      { color: $color-highlight; }
+.color__type--highlight-75   { color: $color-highlight-75; }
+.color__type--highlight-62   { color: $color-highlight-62; }
+.color__type--highlight-50   { color: $color-highlight-50; }
+.color__type--highlight-38   { color: $color-highlight-38; }
+.color__type--highlight-25   { color: $color-highlight-25; }
+.color__type--highlight-12   { color: $color-highlight-12; }
+.color__type--highlight-5    { color: $color-highlight-5; }
+.color__type--highlight-dark { color: $color-highlight-dark; }
+
+.color__type--white { color: $color-tint; }
+
+// Page Structure
+
+.video__holder {
+	position:relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  iframe, object { @include fill; }
+}
+
+.btn {
+  @include fluffy-s;
+  @include inline;
+  @include type-bold;
+  @include type-s;
+  @include type-sans;
+  background-color: $color-highlight;
+  border: $border-s $color-highlight;
+  border-radius: $space-xs;
+  color: $color-tint;
+  &:hover { background-color: $color-highlight-dark; }
+}
+
+blockquote {
+  @include fluffy-m;
+  background-color: $color-highlight-5;
+  border: $border-s $color-highlight-12;
+  border-radius: $space-xs;
+  color: $color-base-75;
+}
+
+// Define the vertical rhythm of the page
+
+p, h3, h4, ul, ol, blockquote, pre, hr, img, figure {
+  + * { @include oomph-m; }
+}
+
+li {
+  + * { @include oomph-s; }
+}
