@@ -33,6 +33,81 @@ $color-highlight: #E73C4E;
 
 ***
 
+### Complex Mixins
+
+***
+
+> Some of the more powerful mixins Pasta uses include variable conditions that allow the most flexibility without multiple instances of very similar mixins.
+
+#### Breakpoints
+
+`@include bp($point)`
+
+The breakpoints mixin allows you to define what happens at different screen widths, each value maps to a common screen size.
+
+**Options:**
+
+`xs, xsl, s, m, ml, l, xl, xxl`
+
+**In use:**
+
+``` scss
+.class {
+  height: rem(48);
+  @include bp(ml) { height: rem(64); }
+}
+```
+
+#### Padding 
+
+`@include padding($size, $side)`
+
+Everyone loves some padding, so why not make it easy to have responsive padding through a mixin? The mixin takes an argument for `$size` and `$side` and scales values when users reach a large screen width to adjust things *just so*. The default `$side` that padding is applied is `all`.
+
+**Options for $size:**
+
+`xs, s, m, l`
+
+**Options for $sides:**
+
+`all, t, b, l, r`
+
+**In use:**
+
+``` scss
+.class {
+  @include padding(s);
+}
+```
+
+*(Adds padding to all sides using the small parameter)*
+
+#### Margins 
+
+`@include margin($size, $side)`
+
+Margin is the same idea as padding and is super useful for setting the vertical rhythm of a page. The default value for `$side` is `t` for top.
+
+**Options for $size:**
+
+`xs, s, m, l`
+
+**Options for $sides:**
+
+`t, b, l, r`
+
+**In use:**
+
+``` scss
+.class + .class {
+  @include margin(s,l);
+}
+```
+
+*(Adds a left margin to an item when it proceeds the same type of item)*
+
+***
+
 ### Typography
 
 ***
@@ -41,27 +116,68 @@ $color-highlight: #E73C4E;
 
 #### Headings
 
-# Headline 1
-
 `<h1>`
 
-## Headline 2
+# Headline 1
 
 `<h2>`
 
-### Headline 3
+## Headline 2
 
 `<h3>`
 
-#### Headline 4
+### Headline 3
 
 `<h4>`
 
-##### Headline 5
+#### Headline 4
 
 `<h5>`
 
-`<p>` - Aenean lacinia *bibendum nulla sed consectetur*. **Nullam I’d dolor I’d nibh ultricies** vehicula ut I’d elit. [An inline link](#). Dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.
+##### Headline 5
+
+`<p>`
+
+Aenean lacinia *bibendum nulla sed consectetur*. **Nullam I’d dolor I’d nibh ultricies** vehicula ut I’d elit. [An inline link](#). Dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.
+
+#### Typographic Helper Classes
+
+`.type__style--sans`
+
+<span class="type__style--sans">Sans-serif Type.</span>
+
+`.type__style--serif`
+
+<span class="type__style--serif">Serif Type.</span>
+
+`.type__style--mono`
+
+<span class="type__style--mono">Mono Type.</span>
+
+`.type__style--caps`
+
+<span class="type__style--caps">All-caps Type.</span>
+
+`.type__align--left`
+
+<span class="type__align--left">Left-aligned text.</span>
+
+`.type__align--center`
+
+<span class="type__align--center">Centered-aligned text.</span>
+
+`.type__align--right`
+
+<span class="type__align--right">Right-aligned text.</span>
+
+`.type__align--legible`
+
+<span class="type__align--legible">Legible text block. Often times we desire a more reasonable line length for blocks of text. This class helps set a max-width for text blocks and centers them horizontally within a parent.</span>
+
+`.type__align--inline`
+
+<span class="type__align--inline">Inline text.</span>
+<span class="type__align--inline">Can be quite nice.</span>
 
 ***
 
@@ -89,11 +205,27 @@ $color-highlight: #E73C4E;
 
 ***
 
+### Buttons
+
+***
+
+> Buttons styles are great, they work well as calls to action as well as in forms, but you should be able to use them whereever you like. Our buttons come in two flavors and can be used anywhere via a class.
+
+`.btn`
+
+<a class="btn">Hi There!</a>
+
+`.btn.btn--secondary`
+
+<a class="btn btn--secondary">Hello Again!</a>
+
+***
+
 ### Code Samples
 
 ***
 
-> For code friendly pages, both inline and block level `<code>` tags are supported.
+> For code friendly pages, both inline and `<pre>` level `<code>` tags are supported.
 
 Let’s add `.this` and `.that` to our `<h1>` tag.
 
@@ -112,21 +244,21 @@ Let’s add `.this` and `.that` to our `<h1>` tag.
 
 #### Responsive Images
 
+`<img>`
+
 ![Some Lovely Pasta]({{ 'img/placeholder.jpg' | prepend: base.url }})
 
 *Image via [Wikipedia](https://en.wikipedia.org/wiki/Farfalle)*
-
-`<img>`
 
 #### Responsive Video Embeds
 
 > Video embeds are made awesome by simply adding a class of `.video` to a parent containing the embed.
 
+`<figure class="video__holder"><Embed_Code></figure>`
+
 <figure class="video__holder"><iframe src="https://player.vimeo.com/video/8864263?color=E73C4E&title=0&byline=0&portrait=0" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></figure>
 
 *Video via [The Geometry of Pasta](http://www.geometryofpasta.co.uk)*
-
-`<figure class="video__holder"><Embed_Code></figure>`
 
 ***
 

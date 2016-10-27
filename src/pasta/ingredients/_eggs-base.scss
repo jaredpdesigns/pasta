@@ -47,7 +47,9 @@ abbr {
 
 code {
   @include type-mono;
-  @include fluffy-xs;
+  @include padding(xs);
+  padding-top: 0;
+  padding-bottom: 0;
   background-color: $color-tint;
   border: $border-s $color-base-12;
   border-radius: $space-xxs;
@@ -57,14 +59,17 @@ code {
 
 pre {
   @include type-m;
-  @include fluffy-m;
+  @include padding(s);
   background-color: $color-tint;
   border: $border-s $color-base-12;
   border-radius: $space-xs;
+  overflow: hidden;
+  overflow-x: auto;
   word-wrap: normal;
   code {
     border: none;
     padding: 0;
+    white-space: pre;
   }
 }
 
@@ -83,6 +88,11 @@ pre {
 .type__align--right { @include type-right; }
 
 .type__align--legible { @include type-legible; }
+
+.type__align--inline {
+  @include inline;
+  + .type__align--inline { @include margin(s,l); }
+}
 
 // List Items
 
@@ -162,7 +172,7 @@ p a:not(.btn) {
 }
 
 .btn {
-  @include fluffy-s;
+  @include padding(xs);
   @include inline;
   @include type-bold;
   @include type-s;
@@ -171,11 +181,22 @@ p a:not(.btn) {
   border: $border-s $color-highlight;
   border-radius: $space-xs;
   color: $color-tint;
+  cursor: pointer;
   &:hover { background-color: $color-highlight-dark; }
+  + .btn { @include margin(s,l); }
+  &.btn--secondary {
+    background-color: $color-tint;
+    border-color: $color-highlight-25;
+    color: $color-highlight;
+    &:hover {
+      background-color: $color-tint;
+      border-color: $color-highlight;
+    }
+  }
 }
 
 blockquote {
-  @include fluffy-m;
+  @include padding(s);
   background-color: $color-highlight-5;
   border: $border-s $color-highlight-12;
   border-radius: $space-xs;
@@ -185,9 +206,9 @@ blockquote {
 // Define the vertical rhythm of the page
 
 p, h3, h4, ul, ol, blockquote, pre, hr, img, figure {
-  + * { @include oomph-m; }
+  + * { @include margin(s); }
 }
 
 li {
-  + * { @include oomph-s; }
+  + * { @include margin(xs); }
 }

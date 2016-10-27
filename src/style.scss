@@ -27,14 +27,12 @@ $type-mono: 'Source Code Pro', monospace;
 
 .preamble {
   border-bottom: $border-s $color-highlight-12;
-  p + p { @include oomph-l; }
+  p:last-child { @include margin(l); }
 }
 
 main {
-  h1, h2, h3, h4, h5 {
-    + p { @include oomph-m; }
-  }
-  blockquote p { @include type-sans;  }
+  blockquote p { @include type-sans; }
+  span { display: block; }
   hr {
     margin-left: auto;
     margin-right: auto;
@@ -45,12 +43,10 @@ main {
       color: $color-highlight;
     }
   }
-  * + hr { @include oomph-xl; }
-  h3 + hr { @include oomph-m; }
   h4:not(h3 + p + h4) {
-    @include oomph-l;
     @include type-caps;
-    color: $color-base-75;
+    @include type-center;
+    color: $color-base-62;
   }
   #colors + hr + blockquote + h4 + ul, ul + h4 + ul {
     padding: 0;
@@ -59,7 +55,7 @@ main {
     max-width: 100%;
     li {
       @include type-center;
-      @include fluffy-s;
+      @include padding(xs);
       margin-top: 0;
       list-style: none;
       flex-basis: 100%;
@@ -68,15 +64,17 @@ main {
       @include bp(xl) { flex-basis: $grid-1-4; }
     }
     span {
-      display: block;
       margin: 0 auto;
       height: $space-xl;
       width: $space-xl;
       border-radius: 50%;
     }
     code {
-      @include oomph-s;
+      @include margin(xs);
       display: inline-block;
+      line-height: 1.5;
     }
   }
+  * + h4, * + hr, hr + blockquote { @include margin(l); }
+  * + p, h3 + p + h4, h3 + hr { @include margin(s); }
 }
