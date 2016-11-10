@@ -5,14 +5,7 @@ html {
   font-size: 100%;
   color: $color-base;
   font-variant-ligatures: common-ligatures;
-  -moz-font-feature-settings: "liga", "clig";
-  -webkit-font-feature-settings: "liga", "clig";
   font-feature-settings: "liga", "clig";
-}
-
-body {
-  @include type-sans;
-  color: $color-base;
 }
 
 h1 { @include type-xl; }
@@ -40,16 +33,13 @@ hr {
 
 abbr {
   font-variant-caps: all-small-caps;
-  -moz-font-feature-settings: "c2sc", "smcp";
-  -webkit-font-feature-settings: "c2sc", "smcp";
   font-feature-settings: "c2sc", "smcp";
 }
 
 code {
   @include type-mono;
-  @include padding(xs);
-  padding-top: 0;
-  padding-bottom: 0;
+  @include padding(xs, l);
+  @include padding(xs, r);
   background-color: $color-tint;
   border: $border-s $color-base-12;
   border-radius: $space-xxs;
@@ -97,8 +87,8 @@ pre {
 // List Items
 
 ol, ul {
+  @include padding(m,l);
   list-style-position: outside;
-  padding-left: $space-m;
   @include bp(m) { padding-left: 0; }
 }
 
@@ -181,7 +171,6 @@ p a:not(.btn) {
   border: $border-s $color-highlight;
   border-radius: $space-xs;
   color: $color-tint;
-  cursor: pointer;
   &:hover { background-color: $color-highlight-dark; }
   + .btn { @include margin(s,l); }
   &.btn--secondary {
@@ -201,14 +190,4 @@ blockquote {
   border: $border-s $color-highlight-12;
   border-radius: $space-xs;
   color: $color-base-75;
-}
-
-// Define the vertical rhythm of the page
-
-p, h3, h4, ul, ol, blockquote, pre, hr, img, figure {
-  + * { @include margin(s); }
-}
-
-li {
-  + * { @include margin(xs); }
 }

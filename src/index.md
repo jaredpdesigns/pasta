@@ -66,7 +66,7 @@ Everyone loves some padding, so why not make it easy to have responsive padding 
 
 **Options for $size:**
 
-`xs, s, m, l`
+`xs, s, m, l, xl`
 
 **Options for $sides:**
 
@@ -90,7 +90,7 @@ Margin is the same idea as padding and is super useful for setting the vertical 
 
 **Options for $size:**
 
-`xs, s, m, l`
+`xs, s, m, l, xl`
 
 **Options for $sides:**
 
@@ -266,11 +266,12 @@ Let’s add `.this` and `.that` to our `<h1>` tag.
 
 ***
 
-> A global color scale makes it easy to use variations of core colors, keeping UI elements consistent and easy to manage.
+> A global color scale makes it easy to use variations of core colors, keeping UI elements consistent and easy to manage. The color for `$color-base` defaults to a calculation of a gray tone based on `$color-highlight` so if your project only has one prominent color, you’re all set!
 
 #### Base
 
 - <span class="color__bg--base"></span> `.color__bg--base`
+- <span class="color__bg--base-dark"></span> `.color__bg--base-dark`
 - <span class="color__bg--base-75"></span> `.color__bg--base-75`
 - <span class="color__bg--base-62"></span> `.color__bg--base-62`
 - <span class="color__bg--base-50"></span> `.color__bg--base-50`
@@ -278,11 +279,11 @@ Let’s add `.this` and `.that` to our `<h1>` tag.
 - <span class="color__bg--base-25"></span> `.color__bg--base-25`
 - <span class="color__bg--base-12"></span> `.color__bg--base-12`
 - <span class="color__bg--base-5"></span> `.color__bg--base-5`
-- <span class="color__bg--base-dark"></span> `.color__bg--base-dark`
 
 #### Highlight
 
 - <span class="color__bg--highlight"></span> `.color__bg--highlight`
+- <span class="color__bg--highlight-dark"></span> `.color__bg--highlight-dark`
 - <span class="color__bg--highlight-75"></span> `.color__bg--highlight-75`
 - <span class="color__bg--highlight-62"></span> `.color__bg--highlight-62`
 - <span class="color__bg--highlight-50"></span> `.color__bg--highlight-50`
@@ -290,4 +291,3 @@ Let’s add `.this` and `.that` to our `<h1>` tag.
 - <span class="color__bg--highlight-25"></span> `.color__bg--highlight-25`
 - <span class="color__bg--highlight-12"></span> `.color__bg--highlight-12`
 - <span class="color__bg--highlight-5"></span> `.color__bg--highlight-5`
-- <span class="color__bg--highlight-dark"></span> `.color__bg--highlight-dark`

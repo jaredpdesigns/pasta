@@ -1,6 +1,5 @@
 ---
 ---
-
 $type-sans: 'Noto Sans', sans-serif;
 $type-serif: 'Noto Serif', serif;
 $type-mono: 'Source Code Pro', monospace;
@@ -10,49 +9,58 @@ $type-mono: 'Source Code Pro', monospace;
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,400i,700,700i|Source+Code+Pro');
 
 .wrapper {
+  @include padding(m);
   max-width: rem(800);
 	margin: 0 auto;
-	padding: $space-m;
-	@include bp(l) {
+	@include bp(ml) {
+  	  @include padding(l);
   	  max-width: rem(960);
-  	  padding-top: $space-l;
-  	  padding-bottom: $space-l;
   }
 	@include bp(xl) {
   	  max-width: rem(1280);
-  	  padding-top: $space-xl;
-  	  padding-bottom: $space-xl;
   }
 }
 
 .preamble {
   border-bottom: $border-s $color-highlight-12;
-  p:last-child { @include margin(l); }
+  p:last-child { @include margin(m); }
 }
 
 main {
   blockquote p { @include type-sans; }
-  span { display: block; }
+  span { display: block; } 
   hr {
+    @include margin(xl);
     margin-left: auto;
     margin-right: auto;
     max-width: $space-xl;
     + h3 {
       @include type-legible;
       @include type-center;
+      @include margin(xs);
       color: $color-highlight;
+      + hr { @include margin(xs); }
     }
-  }
+  }  
+  > *:first-child { margin-top: 0; }
   h4:not(h3 + p + h4) {
     @include type-caps;
     @include type-center;
+    @include margin(l);
     color: $color-base-62;
+  }  
+  * + {
+    p, ul, pre, blockquote { @include margin(m); }
   }
+  
+  ul li { @include margin(s); }  
   #colors + hr + blockquote + h4 + ul, ul + h4 + ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
+    margin-left: -$space-s;
+    margin-right: -$space-s;
     li {
       @include type-center;
       @include padding(xs);
@@ -75,6 +83,4 @@ main {
       line-height: 1.5;
     }
   }
-  * + h4, * + hr, hr + blockquote { @include margin(l); }
-  * + p, h3 + p + h4, h3 + hr { @include margin(s); }
 }

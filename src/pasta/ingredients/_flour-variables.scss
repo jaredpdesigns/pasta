@@ -16,12 +16,10 @@ $type-bl-m: 24 !default;
 $type-bl-l: 36 !default;
 $type-bl-xl: 48 !default;
 
-$type-sans: sans-serif !default;
-$type-serif: serif !default;
-$type-mono: monospace !default;
+$type-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
+$type-serif: "Georgia", "Times", "Times New Roman", serif !default;
+$type-mono: "Consolas", "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Monaco", "Courier New", "Courier", monospace !default;
 
-$color-base: #545454 !default;
-$color-highlight: #E73C4E !default;
 $color-tint: white !default;
 $color-shade: black !default;
 
@@ -32,14 +30,8 @@ $color-shade: black !default;
   @return mix($color-shade, $color, $percent);
 }
 
-$color-base-75: tint($color-base,25%);
-$color-base-62: tint($color-base,38%);
-$color-base-50: tint($color-base,50%);
-$color-base-38: tint($color-base,62%);
-$color-base-25: tint($color-base,75%);
-$color-base-12: tint($color-base,88%);
-$color-base-5:  tint($color-base,95%);
-$color-base-dark: shade($color-base,25%);
+$color-highlight: #E73C4E !default;
+$color-base: shade($color-highlight,75%) !default;
 
 $color-highlight-75: tint($color-highlight,25%);
 $color-highlight-62: tint($color-highlight,38%);
@@ -49,6 +41,15 @@ $color-highlight-25: tint($color-highlight,75%);
 $color-highlight-12: tint($color-highlight,88%);
 $color-highlight-5:  tint($color-highlight,95%);
 $color-highlight-dark: shade($color-highlight,25%);
+
+$color-base-75: tint($color-base,25%);
+$color-base-62: tint($color-base,38%);
+$color-base-50: tint($color-base,50%);
+$color-base-38: tint($color-base,62%);
+$color-base-25: tint($color-base,75%);
+$color-base-12: tint($color-base,88%);
+$color-base-5:  tint($color-base,95%);
+$color-base-dark: shade($color-base,25%);
 
 @function rem($size) {
   $size-rem: $size/16;
@@ -61,6 +62,7 @@ $space-s: rem(16) !default;
 $space-m: rem(24) !default;
 $space-l: rem(32) !default;
 $space-xl: rem(64) !default;
+$space-xxl: rem(96) !default;
 
 $grid-1-6: percentage(1/6);
 $grid-1-4: percentage(1/4);
@@ -188,6 +190,10 @@ $border-l: $space-xs solid !default;
   	  padding: $space-l;
   	  @include bp(xl) { padding: $space-xl; }
   }
+  @else if $size == xl and $side == all {
+  	  padding: $space-xl;
+  	  @include bp(xl) { padding: $space-xxl; }
+  }
 	@else if $size == xs and $side == t {
   	  padding-top: $space-xs;
   	  @include bp(xl) { padding-top: $space-s; }
@@ -203,6 +209,10 @@ $border-l: $space-xs solid !default;
   @else if $size == l and $side == t {
   	  padding-top: $space-l;
   	  @include bp(xl) { padding-top: $space-xl; }
+  }
+  @else if $size == xl and $side == t {
+  	  padding-top: $space-xl;
+  	  @include bp(xl) { padding-top: $space-xxl; }
   }
   @else if $size == xs and $side == b {
   	  padding-bottom: $space-xs;
@@ -220,6 +230,10 @@ $border-l: $space-xs solid !default;
   	  padding-bottom: $space-l;
   	  @include bp(xl) { padding-bottom: $space-xl; }
   }
+  @else if $size == xl and $side == b {
+  	  padding-bottom: $space-xl;
+  	  @include bp(xl) { padding-bottom: $space-xxl; }
+  }
   @else if $size == xs and $side == l {
   	  padding-left: $space-xs;
   	  @include bp(xl) { padding-left: $space-s; }
@@ -236,6 +250,10 @@ $border-l: $space-xs solid !default;
   	  padding-left: $space-l;
   	  @include bp(xl) { padding-left: $space-xl; }
   }
+  @else if $size == xl and $side == l {
+  	  padding-left: $space-xl;
+  	  @include bp(xl) { padding-left: $space-xxl; }
+  }
   @else if $size == xs and $side == r {
   	  padding-right: $space-xs;
   	  @include bp(xl) { padding-right: $space-s; }
@@ -251,6 +269,10 @@ $border-l: $space-xs solid !default;
   @else if $size == l and $side == r {
   	  padding-right: $space-l;
   	  @include bp(xl) { padding-right: $space-xl; }
+  }
+  @else if $size == xl and $side == r {
+  	  padding-right: $space-xl;
+  	  @include bp(xl) { padding-right: $space-xxl; }
   }
 }
 
@@ -273,6 +295,10 @@ $border-l: $space-xs solid !default;
   	  margin-top: $space-l;
   	  @include bp(xl) { margin-top: $space-xl; }
   }
+  @else if $size == xl and $side == t {
+  	  margin-top: $space-xl;
+  	  @include bp(xl) { margin-top: $space-xxl; }
+  }
   @else if $size == xs and $side == b {
   	  margin-bottom: $space-xs;
   	  @include bp(xl) { margin-bottom: $space-s; }
@@ -288,6 +314,10 @@ $border-l: $space-xs solid !default;
   @else if $size == l and $side == b {
   	  margin-bottom: $space-l;
   	  @include bp(xl) { margin-bottom: $space-xl; }
+  }
+  @else if $size == xl and $side == b {
+  	  margin-bottom: $space-xl;
+  	  @include bp(xl) { margin-bottom: $space-xxl; }
   }
   @else if $size == xs and $side == l {
   	  margin-left: $space-xs;
@@ -305,6 +335,10 @@ $border-l: $space-xs solid !default;
   	  margin-left: $space-l;
   	  @include bp(xl) { margin-left: $space-xl; }
   }
+  @else if $size == xl and $side == l {
+  	  margin-left: $space-xl;
+  	  @include bp(xl) { margin-left: $space-xxl; }
+  }
   @else if $size == xs and $side == r {
   	  margin-right: $space-xs;
   	  @include bp(xl) { margin-right: $space-s; }
@@ -320,6 +354,10 @@ $border-l: $space-xs solid !default;
   @else if $size == l and $side == r {
   	  margin-right: $space-l;
   	  @include bp(xl) { margin-right: $space-xl; }
+  }
+  @else if $size == xl and $side == r {
+  	  margin-right: $space-xl;
+  	  @include bp(xl) { margin-right: $space-xxl; }
   }
 }
 
