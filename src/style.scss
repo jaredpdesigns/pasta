@@ -50,7 +50,7 @@ main {
     color: $color-base-62;
   }  
   * + {
-    p, ul, pre, blockquote { @include margin(m); }
+    p, ul, pre, blockquote, figure { @include margin(m); }
   }
   
   ul li { @include margin(s); }  
