@@ -22,5 +22,10 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   
+# Autoprefixer
+autoprefixer:
+  browsers:
+  - last 2 versions
+  
 gems:
 - jekyll-autoprefixer

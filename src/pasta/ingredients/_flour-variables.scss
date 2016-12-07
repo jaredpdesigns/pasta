@@ -30,7 +30,7 @@ $color-shade: black !default;
   @return mix($color-shade, $color, $percent);
 }
 
-$color-highlight: #E73C4E !default;
+$color-highlight: #BF9F00 !default;
 $color-base: shade($color-highlight,75%) !default;
 
 $color-highlight-75: tint($color-highlight,25%);
