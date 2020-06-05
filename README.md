@@ -2,8 +2,8 @@
 
 ***
 
-Pasta is a tiny SASS file that provides a great starting place for web projects. It combines a handy reset and light styling for common web elements, yummy.
+Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy.
 
 ***
 
-Check it out in action: [http://jaredpdesigns.github.io/pasta/](http://jaredpdesigns.github.io/pasta/)
+Check out the docs: [https://pasta.jaredpendergraft.com](https://pasta.jaredpendergraft.com)
