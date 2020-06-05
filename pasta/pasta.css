@@ -1390,8 +1390,8 @@ img {
   text-decoration: none;
 }
 [data-component="button"][data-variant="primary"] {
-  background-color: var(--color__brand);
-  border-color: var(--color__brand);
+  background-color: var(--color__base);
+  border-color: var(--color__base);
   color: white;
   -webkit-transition: 0.375s ease-in;
   -o-transition: 0.375s ease-in;
@@ -1402,7 +1402,7 @@ img {
 }
 [data-component="button"][data-variant="primary"]:focus,
 [data-component="button"][data-variant="primary"]:hover {
-  background-color: var(--color__brand--ish);
+  background-color: var(--color__base--ish);
 }
 [data-component="button"][data-variant="secondary"] {
   background-color: var(--color__contrast);
@@ -1620,7 +1620,7 @@ input[type="checkbox"][data-component="toggle"] {
   width: var(--size__m);
 }
 input[type="checkbox"][data-component="toggle"] + label {
-  --color: var(--color__brand);
+  --color: var(--color__valid);
   --size: calc(var(--size__m) + var(--size__s));
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1645,6 +1645,7 @@ input[type="checkbox"][data-component="toggle"] + label:after {
   height: var(--size);
   left: var(--size__xxs);
   position: absolute;
+  top: 0.25rem;
   -webkit-transition: -webkit-transform 0.375s ease-in;
   transition: -webkit-transform 0.375s ease-in;
   -o-transition: transform 0.375s ease-in;
