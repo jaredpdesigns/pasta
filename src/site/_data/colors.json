@@ -1,0 +1,20 @@
+[
+  {
+    "name": "base",
+    "tints": ["base", "base--ish", "base--mid", "base--semi", "base--ghost"]
+  },
+  {
+    "name": "highlight",
+    "tints": [
+      "highlight",
+      "highlight--ish",
+      "highlight--mid",
+      "highlight--semi",
+      "highlight--ghost"
+    ]
+  },
+  {
+    "name": "contrast",
+    "tints": ["contrast", "contrast--extra"]
+  }
+]

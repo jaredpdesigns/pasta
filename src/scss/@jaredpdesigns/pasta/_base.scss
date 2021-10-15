@@ -1,0 +1,304 @@
+@import "variables";
+
+:root {
+  --color__hue--base: 218, 24%, 24%;
+  --color__hue--highlight: 158, 32%, 38%;
+  --color__hue--contrast: 218, 100%, 100%;
+  --color__hue--contrast--extra: 218, 48%, 12%;
+  --color__base: hsl(var(--color__hue--base));
+  --color__base--ish: hsla(var(--color__hue--base), 0.75);
+  --color__base--mid: hsla(var(--color__hue--base), 0.625);
+  --color__base--semi: hsla(var(--color__hue--base), 0.25);
+  --color__base--light: hsla(var(--color__hue--base), 0.125);
+  --color__base--ghost: hsla(var(--color__hue--base), 0.0625);
+  --color__highlight: hsl(var(--color__hue--highlight));
+  --color__highlight--ish: hsla(var(--color__hue--highlight), 0.75);
+  --color__highlight--mid: hsla(var(--color__hue--highlight), 0.625);
+  --color__highlight--semi: hsla(var(--color__hue--highlight), 0.25);
+  --color__highlight--light: hsla(var(--color__hue--highlight), 0.125);
+  --color__highlight--ghost: hsla(var(--color__hue--highlight), 0.0625);
+  --color__contrast: hsl(var(--color__hue--contrast));
+  --color__contrast--extra: hsl(var(--color__hue--contrast--extra));
+  @each $key, $value in $sizes {
+    --size__#{$key}: #{$value};
+  }
+  --shadow: 0 var(--size__m) var(--size__l) calc(var(--size__m) * -1)
+    rgba(0, 0, 0, 0.25);
+  --shadow__all: 0 0 var(--size__l) calc(var(--size__m) * -1)
+    rgba(0, 0, 0, 0.25);
+  @each $key, $value in $type__families {
+    --type__family--#{$key}: #{$value};
+  }
+  @each $key, $value in $type__lineheights {
+    --type__lineheight--#{$key}: #{$value};
+  }
+  @each $key, $value in $type__sizes {
+    --type__size--#{$key}: #{$value};
+  }
+  --type__size--target: 2vw;
+  @each $key, $value in $widths {
+    --width__#{$key}: #{$value};
+  }
+}
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color__contrast);
+  color: var(--color__base);
+  font-family: var(--type__family--primary);
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--type__size--xxl);
+  line-height: var(--type__lineheight--xxxl);
+}
+
+h2 {
+  font-size: var(--type__size--xl);
+  line-height: var(--type__lineheight--xxl);
+}
+
+h3 {
+  font-size: var(--type__size--l);
+  line-height: var(--type__lineheight--xl);
+}
+
+h4 {
+  font-size: var(--type__size--m);
+  line-height: var(--type__lineheight--xl);
+}
+
+h5,
+th {
+  font-size: var(--type__size--xs);
+  line-height: var(--type__lineheight--l);
+  letter-spacing: var(--size__xxs);
+  text-transform: uppercase;
+}
+
+p,
+li,
+dl,
+td {
+  font-size: var(--type__size--m);
+  line-height: var(--type__lineheight--xl);
+}
+
+ol,
+ul {
+  padding-left: var(--type__size--m);
+  @media (min-width: 29rem) {
+    padding-left: 0;
+  }
+  ol,
+  ul {
+    margin-top: var(--size__m);
+    padding-left: var(--type__size--m);
+  }
+}
+
+ol {
+  ol {
+    li {
+      list-style-type: lower-alpha;
+      li {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+}
+
+li {
+  list-style-position: outside;
+  &::marker {
+    color: var(--color__highlight);
+  }
+  + * {
+    margin-top: var(--size__m);
+  }
+}
+
+hr {
+  background-color: var(--color__highlight--semi);
+  border-radius: calc(var(--size__xs) / 2);
+  height: var(--size__xs);
+  width: var(--size__xxxl);
+}
+
+a {
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.375s ease-in;
+  &:focus,
+  &:hover {
+    color: var(--color__highlight);
+  }
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+p a {
+  &:focus-visible {
+    background-color: var(--color__highlight--ghost);
+  }
+}
+
+p a {
+  border-bottom: calc(var(--size__xs) / 2) solid var(--color__highlight--semi);
+}
+
+blockquote {
+  --color__bg: var(--color__highlight--light);
+  --color__border: var(--color__highlight--semi);
+  background-color: var(--color__bg);
+  border: var(--size__xxs) solid var(--color__border);
+  box-shadow: inset var(--size__xs) 0 0 0 var(--color__border);
+  padding: var(--size__m);
+  > * + * {
+    margin-top: var(--size__m);
+  }
+}
+
+code,
+pre {
+  --bg: var(--color__contrast--extra);
+  --color: white;
+}
+
+code {
+  font-family: var(--type__family--tertiary);
+  font-size: var(--type__size--s);
+  * & {
+    background-color: var(--bg);
+    border-radius: var(--size__xs);
+    box-decoration-break: clone;
+    color: var(--color);
+    padding: var(--size__xs) var(--size__s);
+    word-wrap: break-word;
+  }
+  pre > & {
+    -webkit-overflow-scrolling: touch;
+    background: none;
+    display: block;
+    max-width: 100%;
+    overflow-x: scroll;
+    padding: var(--size__m);
+    white-space: pre;
+  }
+}
+
+pre {
+  background-color: var(--bg);
+  border-radius: var(--size__s);
+  color: var(--color);
+  .comment,
+  .prolog,
+  .doctype,
+  .cdata,
+  .namespace,
+  .operator,
+  .function {
+    opacity: 0.75;
+  }
+  .parameter,
+  .property,
+  .boolean,
+  .number {
+    color: var(--color__primary);
+  }
+
+  .selector,
+  .attr-name,
+  .string,
+  .char,
+  .builtin,
+  .inserted,
+  .atrule,
+  .attr-value,
+  .class-name,
+  .regex,
+  .important {
+    color: var(--color__secondary);
+  }
+  .tag,
+  .constant,
+  .symbol,
+  .deleted,
+  .keyword {
+    color: var(--color__tertiary);
+  }
+  .important,
+  .bold {
+    font-weight: bold;
+  }
+  .italic {
+    font-style: italic;
+  }
+}
+
+dl {
+  dt {
+    font-weight: bold;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  th {
+    text-align: left;
+  }
+  th,
+  td {
+    padding: var(--size__s);
+  }
+  tbody {
+    tr td {
+      border-right: var(--size__xxs) solid var(--color__base--light);
+      &:last-child {
+        border-right: none;
+      }
+    }
+    tr:nth-of-type(odd) {
+      td {
+        background-color: var(--color__base--ghost);
+      }
+    }
+    tr:nth-of-type(even) {
+      td {
+        background-color: var(--color__contrast);
+      }
+    }
+  }
+}

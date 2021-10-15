@@ -1,0 +1,18 @@
+{% for color in colors %}
+<h3>{{ color.name }}</h3>
+{% if color.notes %}
+<p>{{ color.notes }}</p>
+{% endif%}
+<section class="colors flow__grid flow__grid--columns-auto flow__gap--m">
+  {% for tint in color.tints %}
+<figure class="border__all color__border--base--light overflow__hidden radius__s shadow">
+  <section class="color__bg--{{ tint}} flow__size--h-xxxl"></section>
+  <figcaption class="border__top color__border--base--light padding__all--s type__align--center">
+    <p>
+      <code>{{ tint}}</code>
+    </p>
+  </figcaption>
+</figure>
+  {% endfor %}
+</section>
+  {% endfor %}
