@@ -1,6 +1,6 @@
 <section class="preamble border__bottom color__bg--highlight--light color__border--highlight--semi flow__grid oomph__v--l padding__bottom--l padding__top--l"><p>Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!</p></section>
 
-***
+---
 
 ## Get Started
 
@@ -32,7 +32,7 @@ npm install @jaredpdesigns/pasta
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/browse/@jaredpdesigns/pasta@latest/pasta.css"
+  href="https://unpkg.com/@jaredpdesigns/pasta@latest/pasta.css"
 />
 ```
 
