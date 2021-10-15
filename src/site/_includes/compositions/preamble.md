@@ -5,7 +5,7 @@
 ## Get Started
 
 ```bash
-npm install @jaredpdesigns/pasta
+npm add @jaredpdesigns/pasta
 ```
 
 **Import the `scss` files into your main SCSS file**
@@ -30,10 +30,7 @@ npm install @jaredpdesigns/pasta
 **Optionally, include the pre-composited standalone `css` file in your projects for a subset of features**
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@jaredpdesigns/pasta@latest/pasta.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta@latest/pasta.css"/>
 ```
 
 **Add your own flavors**

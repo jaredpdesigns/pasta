@@ -2,12 +2,14 @@
 
 Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!
 
+Check out the docs: [https://pasta.jaredpendergraft.com](https://pasta.jaredpendergraft.com)
+
 ***
 
 ## Get Started
 
 ```bash
-npm install @jaredpdesigns/pasta
+npm add @jaredpdesigns/pasta
 ```
 
 **Import the `scss` files into your main SCSS file**
@@ -32,10 +34,7 @@ npm install @jaredpdesigns/pasta
 **Optionally, include the pre-composited standalone `css` file in your projects for a subset of features**
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/browse/@jaredpdesigns/pasta@latest/pasta.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta@latest/pasta.css"/>
 ```
 
 **Add your own flavors**
@@ -48,7 +47,3 @@ npm install @jaredpdesigns/pasta
   --type__family--secondary: "Cabinet Grotesk", sans-serif;
 }
 ```
-
-***
-
-Check out the docs: [https://pasta.jaredpendergraft.com](https://pasta.jaredpendergraft.com)

@@ -1,6 +1,6 @@
 {
   "name": "@jaredpdesigns/pasta",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!",
   "scripts": {
     "build": "npx gulp styles"
