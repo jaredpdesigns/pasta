@@ -146,18 +146,7 @@ hr {
   width: var(--size__xxxl);
 }
 
-a {
-  background-color: transparent;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.375s ease-in;
-  &:focus,
-  &:hover {
-    color: var(--color__highlight);
-  }
-}
-
+a,
 button {
   background-color: transparent;
   color: inherit;
@@ -168,14 +157,19 @@ button {
   }
 }
 
-p a {
-  &:focus-visible {
-    background-color: var(--color__highlight--ghost);
+a {
+  transition: color 0.375s ease-in;
+  &:focus,
+  &:hover {
+    color: var(--color__highlight);
   }
 }
 
 p a {
   border-bottom: calc(var(--size__xs) / 2) solid var(--color__highlight--semi);
+  &:focus-visible {
+    background-color: var(--color__highlight--ghost);
+  }
 }
 
 blockquote {
