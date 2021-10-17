@@ -51,6 +51,15 @@
   padding: 0;
 }
 
+canvas,
+img,
+picture,
+svg {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
 html {
   background-color: var(--color__contrast);
   color: var(--color__base);
