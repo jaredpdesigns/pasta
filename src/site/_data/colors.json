@@ -1,7 +1,14 @@
 [
   {
     "name": "base",
-    "tints": ["base", "base--ish", "base--mid", "base--semi", "base--ghost"]
+    "tints": [
+      "base",
+      "base--ish",
+      "base--mid",
+      "base--semi",
+      "base--light",
+      "base--ghost"
+    ]
   },
   {
     "name": "highlight",
@@ -10,6 +17,7 @@
       "highlight--ish",
       "highlight--mid",
       "highlight--semi",
+      "highlight--light",
       "highlight--ghost"
     ]
   },
