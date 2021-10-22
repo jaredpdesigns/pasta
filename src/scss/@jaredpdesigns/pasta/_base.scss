@@ -41,14 +41,16 @@
   }
 }
 
+// Pulled this from https://eladsc.com
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
 *,
 *:before,
 *:after {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  border: 0;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 canvas,
@@ -68,6 +70,7 @@ html {
   min-height: -webkit-fill-available;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 h1,
@@ -157,10 +160,10 @@ hr {
 
 a,
 button {
-  background-color: transparent;
-  color: inherit;
+  // background-color: transparent;
+  // color: inherit;
   cursor: pointer;
-  text-decoration: none;
+  // text-decoration: none;
   &:focus {
     outline: none;
   }

@@ -21,8 +21,7 @@
     justify-content: center;
     line-height: var(--controlLineheight);
     min-height: var(--controlSize);
-    transition: 0.375s ease-in;
-    transition-property: background-color border-color color opacity;
+    transition: all 0.375s ease-in;
     &:focus-visible {
       box-shadow: 0 0 0 var(--size__xs) var(--color__focus);
     }
@@ -81,9 +80,6 @@
   &__select {
     input,
     select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
       background-color: var(--color__contrast);
       border: var(--size__xxs) solid var(--color__base--semi);
       border-radius: var(--size__s);
@@ -92,8 +88,7 @@
       line-height: var(--controlLineheight);
       min-height: var(--controlSize);
       padding: var(--controlPadding);
-      transition: 0.375s ease-in;
-      transition-property: background-color color;
+      transition: all 0.375s ease-in;
       width: 100%;
       &::placeholder {
         color: var(--color__base--mid);
@@ -141,7 +136,6 @@
       align-items: center;
       cursor: pointer;
       display: inline-flex;
-      grid-gap: var(--size__s);
       grid-auto-flow: column;
       > span {
         align-items: center;
@@ -172,10 +166,8 @@
         display: inline-flex;
         height: var(--size);
         justify-content: center;
-        margin-left: calc(var(--size) * -1);
         margin-right: var(--size__s);
-        transition: 0.375s ease-in;
-        transition-property: background-color box-shadow color;
+        transition: all 0.375s ease-in;
         width: var(--size);
       }
       &:hover + span:before {
