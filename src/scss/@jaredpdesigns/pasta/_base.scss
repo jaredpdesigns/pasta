@@ -42,7 +42,7 @@
 }
 
 // Pulled this from https://eladsc.com
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+*:where(:not(strong, b, em, i, iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
   display: revert;
 }
@@ -160,10 +160,7 @@ hr {
 
 a,
 button {
-  // background-color: transparent;
-  // color: inherit;
   cursor: pointer;
-  // text-decoration: none;
   &:focus {
     outline: none;
   }
