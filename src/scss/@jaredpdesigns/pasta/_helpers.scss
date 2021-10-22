@@ -155,7 +155,7 @@
       &-auto {
         grid-template-columns: repeat(
           auto-fit,
-          minmax(var(--columnWidth, var(--width__s)), 1fr)
+          minmax(var(--columnWidth, var(--width__xs)), 1fr)
         );
         .width__full {
           grid-column: 1/-1;
