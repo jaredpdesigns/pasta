@@ -38,6 +38,7 @@
     &:focus,
     &:hover {
       background-color: var(--color__highlight--ish);
+      color: var(--color__contrast);
     }
   }
   &__secondary {
@@ -53,6 +54,7 @@
   &__tertiary {
     &:focus,
     &:hover {
+      color: var(--color__base);
       opacity: 0.75;
     }
   }
