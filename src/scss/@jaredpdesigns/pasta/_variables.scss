@@ -30,14 +30,15 @@ $sizes: (
 );
 
 $type__sizes: (
-  xxs: clamp(0.75rem, var(--type__size--target), 0.875rem),
-  xs: clamp(0.875rem, var(--type__size--target), 1rem),
-  s: clamp(1rem, var(--type__size--target), 1.125rem),
-  m: clamp(1.125rem, var(--type__size--target), 1.375rem),
-  l: clamp(1.375rem, var(--type__size--target), 1.5rem),
+  xxs: clamp(0.625rem, var(--type__size--target), 0.75rem),
+  xs: clamp(0.75rem, var(--type__size--target), 0.875rem),
+  s: clamp(0.875rem, var(--type__size--target), 1rem),
+  m: clamp(1rem, var(--type__size--target), 1.125rem),
+  l: clamp(1.125rem, var(--type__size--target), 1.375rem),
   xl: clamp(1.5rem, var(--type__size--target), 2rem),
   xxl: clamp(2rem, var(--type__size--target), 2.5rem),
   xxxl: clamp(2.5rem, var(--type__size--target), 3rem),
+  xxxxl: clamp(3rem, var(--type__size--target), 3.5rem),
 );
 
 $type__lineheights: (
@@ -46,20 +47,9 @@ $type__lineheights: (
   m: clamp(1.25rem, var(--type__size--target), 1.5rem),
   l: clamp(1.5rem, var(--type__size--target), 2rem),
   xl: clamp(2rem, var(--type__size--target), 2.5rem),
-  xxl: clamp(2.5rem, var(--type__size--target), 3rem),
-  xxxl: clamp(3rem, var(--type__size--target), 3.5rem),
-);
-
-$type__families: (
-  primary: (
-    sans-serif,
-  ),
-  secondary: (
-    serif,
-  ),
-  tertiary: (
-    monospace,
-  ),
+  xxl: clamp(2.5rem, var(--type__size--target), 2.75rem),
+  xxxl: clamp(2.75rem, var(--type__size--target), 3rem),
+  xxxxl: clamp(3.25rem, var(--type__size--target), 3.5rem),
 );
 
 $type__weights: (

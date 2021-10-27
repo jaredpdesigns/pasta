@@ -26,9 +26,9 @@
     rgba(0, 0, 0, 0.25);
   --shadow__all: 0 0 var(--size__l) calc(var(--size__m) * -1)
     rgba(0, 0, 0, 0.25);
-  @each $key, $value in $type__families {
-    --type__family--#{$key}: #{$value};
-  }
+  --type__family--primary: inherit;
+  --type__family--secondary: inherit;
+  --type__family--tertiary: inherit;
   @each $key, $value in $type__lineheights {
     --type__lineheight--#{$key}: #{$value};
   }
@@ -42,7 +42,7 @@
 }
 
 // Pulled this from https://eladsc.com
-*:where(:not(strong, b, em, i, iframe, canvas, img, svg, video):not(svg *)) {
+:where(:not(strong, b, em, i, iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
   display: revert;
 }
@@ -166,16 +166,13 @@ button {
   }
 }
 
-a {
+p a {
+  border-bottom: calc(var(--size__xs) / 2) solid var(--color__highlight--semi);
   transition: color 0.375s ease-in;
   &:focus,
   &:hover {
     color: var(--color__highlight);
   }
-}
-
-p a {
-  border-bottom: calc(var(--size__xs) / 2) solid var(--color__highlight--semi);
   &:focus-visible {
     background-color: var(--color__highlight--ghost);
   }
