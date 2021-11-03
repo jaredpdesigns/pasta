@@ -26,9 +26,9 @@
     rgba(0, 0, 0, 0.25);
   --shadow__all: 0 0 var(--size__l) calc(var(--size__m) * -1)
     rgba(0, 0, 0, 0.25);
-  --type__family--primary: inherit;
-  --type__family--secondary: inherit;
-  --type__family--tertiary: inherit;
+  --type__family--primary: sans-serif;
+  --type__family--secondary: serif;
+  --type__family--tertiary: monospace;
   @each $key, $value in $type__lineheights {
     --type__lineheight--#{$key}: #{$value};
   }
@@ -83,12 +83,12 @@ h5 {
 
 h1 {
   font-size: var(--type__size--xxl);
-  line-height: var(--type__lineheight--xxxl);
+  line-height: var(--type__lineheight--xxl);
 }
 
 h2 {
   font-size: var(--type__size--xl);
-  line-height: var(--type__lineheight--xxl);
+  line-height: var(--type__lineheight--xl);
 }
 
 h3 {
@@ -98,13 +98,13 @@ h3 {
 
 h4 {
   font-size: var(--type__size--m);
-  line-height: var(--type__lineheight--xl);
+  line-height: var(--type__lineheight--l);
 }
 
 h5,
 th {
   font-size: var(--type__size--xs);
-  line-height: var(--type__lineheight--l);
+  line-height: var(--type__lineheight--m);
   letter-spacing: var(--size__xxs);
   text-transform: uppercase;
 }
@@ -114,7 +114,7 @@ li,
 dl,
 td {
   font-size: var(--type__size--m);
-  line-height: var(--type__lineheight--xl);
+  line-height: var(--type__lineheight--l);
 }
 
 ol,

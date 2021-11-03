@@ -46,10 +46,10 @@ $type__lineheights: (
   s: clamp(1rem, var(--type__size--target), 1.25rem),
   m: clamp(1.25rem, var(--type__size--target), 1.5rem),
   l: clamp(1.5rem, var(--type__size--target), 2rem),
-  xl: clamp(2rem, var(--type__size--target), 2.5rem),
-  xxl: clamp(2.5rem, var(--type__size--target), 2.75rem),
-  xxxl: clamp(2.75rem, var(--type__size--target), 3rem),
-  xxxxl: clamp(3.25rem, var(--type__size--target), 3.5rem),
+  xl: clamp(1.75rem, var(--type__size--target), 2rem),
+  xxl: clamp(2.25rem, var(--type__size--target), 2.5rem),
+  xxxl: clamp(2.5rem, var(--type__size--target), 3rem),
+  xxxxl: clamp(3rem, var(--type__size--target), 3.25rem),
 );
 
 $type__weights: (
