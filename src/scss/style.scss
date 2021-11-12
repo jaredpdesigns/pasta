@@ -32,6 +32,13 @@
 h1,
 h2,
 h3,
+h4 {
+  letter-spacing: var(--size__xxs);
+}
+
+h1,
+h2,
+h3,
 h4,
 h5,
 .button__primary,
@@ -111,6 +118,13 @@ pre {
     }
     --columnWidth: var(--width__xs);
     dl {
+      @media (max-width: 29rem) {
+        dd + dt {
+          border-top: var(--size__xxs) solid var(--color__base--light);
+          margin-top: var(--size__m);
+          padding-top: var(--size__s);
+        }
+      }
       @media (min-width: 29rem) {
         display: grid;
         grid-template-columns: auto 1fr;
