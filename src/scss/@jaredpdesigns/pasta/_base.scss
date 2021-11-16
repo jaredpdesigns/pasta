@@ -1,31 +1,36 @@
 @import "variables";
 
 :root {
-  --color__hue--base: 218, 24%, 24%;
-  --color__hue--highlight: 158, 32%, 38%;
-  --color__hue--contrast: 218, 100%, 100%;
-  --color__hue--contrast--extra: 218, 48%, 12%;
+  --color__hue--base: 218deg 24% 24%;
+  --color__hue--highlight: 158deg 32% 38%;
+  --color__hue--contrast: 218deg 100% 100%;
+  --color__hue--contrast--extra: 218deg 48% 12%;
   --color__base: hsl(var(--color__hue--base));
-  --color__base--ish: hsla(var(--color__hue--base), 0.75);
-  --color__base--mid: hsla(var(--color__hue--base), 0.625);
-  --color__base--semi: hsla(var(--color__hue--base), 0.25);
-  --color__base--light: hsla(var(--color__hue--base), 0.125);
-  --color__base--ghost: hsla(var(--color__hue--base), 0.0625);
+  --color__base--ish: hsl(var(--color__hue--base) / 0.75);
+  --color__base--mid: hsl(var(--color__hue--base) / 0.625);
+  --color__base--semi: hsl(var(--color__hue--base) / 0.25);
+  --color__base--light: hsl(var(--color__hue--base) / 0.125);
+  --color__base--ghost: hsl(var(--color__hue--base) / 0.0625);
   --color__highlight: hsl(var(--color__hue--highlight));
-  --color__highlight--ish: hsla(var(--color__hue--highlight), 0.75);
-  --color__highlight--mid: hsla(var(--color__hue--highlight), 0.625);
-  --color__highlight--semi: hsla(var(--color__hue--highlight), 0.25);
-  --color__highlight--light: hsla(var(--color__hue--highlight), 0.125);
-  --color__highlight--ghost: hsla(var(--color__hue--highlight), 0.0625);
+  --color__highlight--ish: hsl(var(--color__hue--highlight) / 0.75);
+  --color__highlight--mid: hsl(var(--color__hue--highlight) / 0.625);
+  --color__highlight--semi: hsl(var(--color__hue--highlight) / 0.25);
+  --color__highlight--light: hsl(var(--color__hue--highlight) / 0.125);
+  --color__highlight--ghost: hsl(var(--color__hue--highlight) / 0.0625);
   --color__contrast: hsl(var(--color__hue--contrast));
   --color__contrast--extra: hsl(var(--color__hue--contrast--extra));
   @each $key, $value in $sizes {
     --size__#{$key}: #{$value};
   }
-  --shadow: 0 var(--size__m) var(--size__l) calc(var(--size__m) * -1)
-    rgba(0, 0, 0, 0.25);
-  --shadow__all: 0 0 var(--size__l) calc(var(--size__m) * -1)
-    rgba(0, 0, 0, 0.25);
+  --shadow__color: var(--color__hue--base);
+  --shadow__value: 0.375;
+  --shadow: 0 var(--size__xxs) var(--size__xs) calc(var(--size__xxs) * -1)
+      hsl(var(--shadow__color) / calc(var(--shadow__value) / 2)),
+    0 var(--size__m) var(--size__l) calc(var(--size__m) * -1)
+      hsl(var(--shadow__color) / var(--shadow__value));
+  --shadow__all: 0 0 var(--size__xxs)
+      hsl(var(--shadow__color) / calc(var(--shadow__value) / 2)),
+    0 0 var(--size__l) hsl(var(--shadow__color) / var(--shadow__value));
   --type__family--primary: sans-serif;
   --type__family--secondary: serif;
   --type__family--tertiary: monospace;

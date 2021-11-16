@@ -73,36 +73,36 @@ $widths: (
 
 // Mixins
 @mixin colorBase($hue, $saturation, $lightness) {
-  --color__hue--base: #{$hue}, #{$saturation}, #{$lightness};
-  --color__base: hsl(var(--color__hue--highlight));
-  --color__base--ish: hsla(var(--color__hue--highlight), 0.75);
-  --color__base--mid: hsla(var(--color__hue--highlight), 0.625);
-  --color__base--semi: hsla(var(--color__hue--highlight), 0.25);
-  --color__base--light: hsla(var(--color__hue--highlight), 0.125);
-  --color__base--ghost: hsla(var(--color__hue--highlight), 0.0625);
+  --color__hue--base: #{$hue}deg #{$saturation} #{$lightness};
+  --color__base: hsl(var(--color__hue--base));
+  --color__base--ish: hsl(var(--color__hue--base) / 0.75);
+  --color__base--mid: hsl(var(--color__hue--base) / 0.625);
+  --color__base--semi: hsl(var(--color__hue--base) / 0.25);
+  --color__base--light: hsl(var(--color__hue--base) / 0.125);
+  --color__base--ghost: hsl(var(--color__hue--base) / 0.0625);
 }
 
 @mixin colorHighlight($hue, $saturation, $lightness) {
-  --color__hue--highlight: #{$hue}, #{$saturation}, #{$lightness};
+  --color__hue--highlight: #{$hue} #{$saturation} #{$lightness};
   --color__highlight: hsl(var(--color__hue--highlight));
-  --color__highlight--ish: hsla(var(--color__hue--highlight), 0.75);
-  --color__highlight--mid: hsla(var(--color__hue--highlight), 0.625);
-  --color__highlight--semi: hsla(var(--color__hue--highlight), 0.25);
-  --color__highlight--light: hsla(var(--color__hue--highlight), 0.125);
-  --color__highlight--ghost: hsla(var(--color__hue--highlight), 0.0625);
+  --color__highlight--ish: hsl(var(--color__hue--highlight) / 0.75);
+  --color__highlight--mid: hsl(var(--color__hue--highlight) / 0.625);
+  --color__highlight--semi: hsl(var(--color__hue--highlight) / 0.25);
+  --color__highlight--light: hsl(var(--color__hue--highlight) / 0.125);
+  --color__highlight--ghost: hsl(var(--color__hue--highlight) / 0.0625);
 }
 
 @mixin buildColor($name, $hue, $saturation, $lightness) {
   $colorsCustom: (
     #{$name}: hsl(var(--color__hue--#{$name})),
-    #{$name}--ish: hsla(var(--color__hue--#{$name}), 0.75),
-    #{$name}--mid: hsla(var(--color__hue--#{$name}), 0.625),
-    #{$name}--semi: hsla(var(--color__hue--#{$name}), 0.25),
-    #{$name}--light: hsla(var(--color__hue--#{$name}), 0.125),
-    #{$name}--ghost: hsla(var(--color__hue--#{$name}), 0.0625)
+    #{$name}--ish: hsl(var(--color__hue--#{$name}) / 0.75),
+    #{$name}--mid: hsl(var(--color__hue--#{$name}) / 0.625),
+    #{$name}--semi: hsl(var(--color__hue--#{$name}) / 0.25),
+    #{$name}--light: hsl(var(--color__hue--#{$name}) / 0.125),
+    #{$name}--ghost: hsl(var(--color__hue--#{$name}) / 0.0625)
   );
   :root {
-    --color__hue--#{$name}: #{$hue}, #{$saturation}, #{$lightness};
+    --color__hue--#{$name}: #{$hue} #{$saturation} #{$lightness};
     @each $key, $value in $colorsCustom {
       --color__#{$key}: #{$value};
     }

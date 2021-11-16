@@ -18,8 +18,8 @@ To override any of the colors in your own project simply replace the custom prop
 
 ```css
 :root {
-  --color__hue--base: 0, 0%, 0%;
-  --color__hue--highlight: 0, 90%, 64%;
+  --color__hue--base: 0deg 0% 0%;
+  --color__hue--highlight: 0deg 90% 64%;
 }
 ```
 
@@ -55,7 +55,7 @@ If you’d like to map over one color in a specific instance—for example a box
 If you’d like to include new colors in your project that are built on top of `base` and `highlight` you can use use the following mixin:
 
 ```scss
-@include buildColor(success, 158, 64%, 50%);
+@include buildColor(success, 158deg, 64%, 50%);
 ```
 
 They are now universally available in the same ways `base` and `highlight` are including `.color__bg--success`.

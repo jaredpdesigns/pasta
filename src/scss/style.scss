@@ -1,18 +1,20 @@
 @import "@jaredpdesigns/pasta";
 
 /* Site specific stuff */
-@include buildColor(success, 158, 64%, 50%);
-@include buildColor(warn, 32, 90%, 64%);
-@include buildColor(error, 0, 90%, 50%);
+@include buildColor(success, 158deg, 64%, 50%);
+@include buildColor(warn, 32deg, 90%, 64%);
+@include buildColor(error, 0deg, 90%, 50%);
 
 :root {
   --type__family--primary: "Satoshi", sans-serif;
   --type__family--secondary: "Cabinet Grotesk", sans-serif;
   --type__family--tertiary: "Source Code Pro", monospace;
   &[data-theme="dark"] {
-    --color__hue--base: 218, 100%, 100%;
-    --color__hue--contrast: 218, 32%, 8%;
-    --color__hue--contrast--extra: 218, 32%, 4%;
+    --color__hue--base: 218deg 100% 100%;
+    --color__hue--contrast: 218deg 32% 12%;
+    --color__hue--contrast--extra: 218deg 32% 8%;
+    --shadow__color: 0deg 0% 0%;
+    --shadow__value: 0.75;
   }
 }
 
