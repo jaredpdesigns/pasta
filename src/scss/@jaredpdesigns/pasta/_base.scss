@@ -172,7 +172,10 @@ button {
 }
 
 p a {
-  border-bottom: calc(var(--size__xs) / 2) solid var(--color__highlight--semi);
+  text-decoration-color: var(--color__highlight--semi);
+  text-decoration-thickness: calc(var(--size__xs) / 2);
+  text-decoration-line: underline;
+  text-underline-offset: calc(var(--size__xs) / 2);
   transition: color 0.375s ease-in;
   &:focus,
   &:hover {
