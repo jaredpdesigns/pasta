@@ -41,8 +41,8 @@ npm add @jaredpdesigns/pasta
 
 ```css
 :root {
-  --color__hue--base: 0, 0%, 0%;
-  --color__hue--highlight: 0, 90%, 64%;
+  --color__hue--base: 0deg 0% 0%;
+  --color__hue--highlight: 0deg 90% 64%;
   --type__family--primary: "Satoshi", sans-serif;
   --type__family--secondary: "Cabinet Grotesk", sans-serif;
 }
