@@ -2,6 +2,12 @@
 
 ## Type check
 
+`xxs/xs`
+
+###### H6 is this size
+
+<p class="type__size--xxs-xs">The quick brown fox jumps over the lazy dog. But has anyone asked why? What motivates the fox—and what makes the dog so lazy—or is the dog simply exhausted?</p>
+
 `xs/s`
 
 ##### H5 is this size

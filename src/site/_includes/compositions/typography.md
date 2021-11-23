@@ -6,7 +6,7 @@ Most stuff in our projects are text, so it’s critical we have legible type. Pa
 
 A variety of type sizes and lineheights are also accessible via the following class structure: `.type__size--m-l` whereas the size of the type variable is followed by a lineheight variable.
 
-The scale for both includes `xs, s, m, l, xl, xxl, xxxl, xxxxl`—mix and match for maximum flavor.
+The scale for both includes `xxs, xs, s, m, l, xl, xxl, xxxl, xxxxl`—mix and match for maximum flavor.
 
 `h1`
 
@@ -27,6 +27,10 @@ The scale for both includes `xs, s, m, l, xl, xxl, xxxl, xxxxl`—mix and match 
 `h5`
 
 ##### Headline 5
+
+`h6`
+
+###### Headline 6
 
 `p`
 

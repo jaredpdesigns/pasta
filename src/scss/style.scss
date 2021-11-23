@@ -43,6 +43,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 .button__primary,
 .button__secondary,
 .button__tertiary {
@@ -54,6 +55,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 table th,
 .control__input legend,
 .control__select legend,
@@ -71,6 +73,7 @@ table th,
 .button__tertiary,
 p a {
   font-weight: 600;
+  transition: all 0.375s ease-in;
 }
 
 body {

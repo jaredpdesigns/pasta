@@ -82,8 +82,19 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-weight: bold;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -110,6 +121,13 @@ h5,
 th {
   font-size: var(--type__size--xs);
   line-height: var(--type__lineheight--s);
+  letter-spacing: var(--size__xxs);
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: var(--type__size--xxs);
+  line-height: var(--type__lineheight--xs);
   letter-spacing: var(--size__xxs);
   text-transform: uppercase;
 }
@@ -175,8 +193,7 @@ p a {
   text-decoration-color: var(--color__highlight--semi);
   text-decoration-thickness: calc(var(--size__xs) / 2);
   text-decoration-line: underline;
-  text-underline-offset: calc(var(--size__xs) / 2);
-  transition: color 0.375s ease-in;
+  text-underline-offset: var(--size__xs);
   &:focus,
   &:hover {
     color: var(--color__highlight);
@@ -309,4 +326,11 @@ table {
       }
     }
   }
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
