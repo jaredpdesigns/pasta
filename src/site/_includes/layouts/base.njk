@@ -3,7 +3,7 @@
   <head>
     <title>{{ title }}</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="keywords" content="pasta, css, html, responsive, minimal, jared pendergraft">
     <meta name="author" content="Jared Pendergraft">
     <meta name="description" content="{{ description }}">
@@ -25,12 +25,12 @@
     <script async defer src="{{ '/js/scripts.js' | url }}"></script>
   </head>
   <body>
-    <header class="color__bg--highlight flow__grid flow__align--v-center padding__bottom--l padding__top--l position__relative">
+    <header class="color__bg--highlight flow__grid flow__align--v-center notch padding__bottom--m padding__top--m width__full">
       <figure class="flow__inline flow__align--v-center flow__gap--m">
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="72"
-            height="72"
+            width="56"
+            height="56"
             viewBox="0 0 72 72"
           >
           <path
@@ -48,7 +48,7 @@
         {% Icon "theme" %}
       </button>
     </header>
-    <main class="{{ class }}">
+    <main class="{{ class }} notch">
       <article class="flow__grid oomph__v--l">
         {{ content | safe }}
       </article>
