@@ -11,7 +11,12 @@ npm add @jaredpdesigns/pasta
 **Import the `scss` files into your main SCSS file**
 
 ```scss
+// Import from node_modules
 @import "@jaredpdesigns/pasta";
+
+// Or optionally load from unpkg
+@import "https://unpkg.com/@jaredpdesigns/pasta";
+
 ```
 
 **Or pick and choose which elements you want to style**
@@ -30,7 +35,7 @@ npm add @jaredpdesigns/pasta
 **Optionally, include the pre-composited standalone `css` file in your projects for a subset of features**
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta@latest/pasta.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta"/>
 ```
 
 **Add your own flavors**

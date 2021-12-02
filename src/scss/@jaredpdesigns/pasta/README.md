@@ -34,7 +34,7 @@ npm add @jaredpdesigns/pasta
 **Optionally, include the pre-composited standalone `css` file in your projects for a subset of features**
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta@latest/pasta.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta"/>
 ```
 
 **Add your own flavors**

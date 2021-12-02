@@ -14,5 +14,8 @@
     "node-sass": "^6.0.1",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.1"
-  }
+  },
+  "unpkg": "pasta.css",
+  "style": "pasta.css",
+  "main": "pasta.css"
 }
