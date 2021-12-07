@@ -40,7 +40,7 @@
   @each $key, $value in $type__sizes {
     --type__size--#{$key}: #{$value};
   }
-  --type__size--target: 2vw;
+  --type__size--target: 2vw + 1rem;
   @each $key, $value in $widths {
     --width__#{$key}: #{$value};
   }
