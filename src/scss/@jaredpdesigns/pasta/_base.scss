@@ -334,3 +334,7 @@ textarea,
 select {
   font: inherit;
 }
+
+summary {
+  list-style: revert;
+}
