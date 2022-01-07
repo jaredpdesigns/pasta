@@ -19,6 +19,10 @@
   --color__highlight--ghost: hsl(var(--color__hue--highlight) / 0.0625);
   --color__contrast: hsl(var(--color__hue--contrast));
   --color__contrast--extra: hsl(var(--color__hue--contrast--extra));
+  --outline__offset: 0;
+  --outline__size: var(--size__xs);
+  --outline__style: solid;
+  --outline__color: var(--color__highlight--semi);
   @each $key, $value in $sizes {
     --size__#{$key}: #{$value};
   }
@@ -50,6 +54,17 @@
 :where(:not(strong, b, em, i, iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
   display: revert;
+}
+
+// Focus management
+:is(a, button, input, select, textarea, summary) {
+  &:focus-visible {
+    outline: var(--outline__size) var(--outline__style) var(--outline__color);
+    outline-offset: var(--outline__offset, var(--outline__size));
+  }
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 *,
@@ -184,9 +199,6 @@ hr {
 a,
 button {
   cursor: pointer;
-  &:focus {
-    outline: none;
-  }
 }
 
 p a {
@@ -194,6 +206,8 @@ p a {
   text-decoration-thickness: calc(var(--size__xs) / 2);
   text-decoration-line: underline;
   text-underline-offset: var(--size__xs);
+  transition: all 0.375s ease-in;
+  transition-property: background-color, color;
   &:focus,
   &:hover {
     color: var(--color__highlight);

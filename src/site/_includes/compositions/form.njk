@@ -1,6 +1,6 @@
 <hr/>
 <h2>Form Elements</h2>
-<form class="oomph__v--l">
+<form class="oomph__v--l" onsubmit="event.preventDefault()">
   <fieldset class="control__input">
     <label for="input1">Input</label>
     <input id="input1" name="input1" type="text" placeholder="Enter name…"/>
@@ -14,7 +14,7 @@
     </select>
   </fieldset>
   <fieldset class="control__radio">
-  <legend>Radio</legend>
+    <legend>Radio</legend>
     <label for="coffee"><input type="radio" id="coffee" name="drink" value="Coffee" checked>
       <span>Coffee</span></label>
     <label for="tea"><input type="radio" id="tea" name="drink" value="Tea">
@@ -28,7 +28,7 @@
       <span>Checked</span></label>
   </fieldset>
   <fieldset class="control__toggle">
-  <legend>Toggle</legend>
+    <legend>Toggle</legend>
     <label for="toggle1"><input type="checkbox" id="toggle1" name="toggle1" checked>
       <span>Checked</span></label>
   </fieldset>

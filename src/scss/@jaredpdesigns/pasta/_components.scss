@@ -1,35 +1,32 @@
 :root {
-  --controlSize: clamp(
+  --control__size: clamp(
     var(--size__xl),
     var(--type__size--target),
     var(--size__xxl)
   );
-  --controlFontSize: var(--type__size--m);
-  --controlLineheight: var(--type__lineheight--l);
-  --controlPadding: var(--size__s) var(--size__m);
+  --control__font-size: var(--type__size--m);
+  --control__line-height: var(--type__lineheight--l);
+  --control__padding: var(--size__s) var(--size__m);
 }
 
 .button {
   &__primary,
   &__secondary,
   &__tertiary {
-    --color__focus: var(--color__highlight--semi);
     align-items: center;
     border-radius: var(--size__s);
     display: inline-flex;
-    font-size: var(--controlFontSize);
+    font-size: var(--control__font-size);
     justify-content: center;
-    line-height: var(--controlLineheight);
-    min-height: var(--controlSize);
+    line-height: var(--control__line-height);
+    min-height: var(--control__size);
     transition: all 0.375s ease-in;
-    &:focus-visible {
-      box-shadow: 0 0 0 var(--size__xs) var(--color__focus);
-    }
+    transition-property: background-color, border-color, color;
   }
   &__primary,
   &__secondary {
     border: var(--size__xxs) solid;
-    padding: var(--controlPadding);
+    padding: var(--control__padding);
   }
   &__primary {
     background-color: var(--color__highlight);
@@ -86,20 +83,15 @@
       border: var(--size__xxs) solid var(--color__base--semi);
       border-radius: var(--size__s);
       color: var(--color__base);
-      font-size: var(--controlFontSize);
-      line-height: var(--controlLineheight);
-      min-height: var(--controlSize);
-      padding: var(--controlPadding);
+      font-size: var(--control__font-size);
+      line-height: var(--control__line-height);
+      min-height: var(--control__size);
+      padding: var(--control__padding);
       transition: all 0.375s ease-in;
+      transition-property: background-color, border-color, color;
       width: 100%;
       &::placeholder {
         color: var(--color__base--mid);
-      }
-      &:focus {
-        outline: none;
-      }
-      &:focus-visible {
-        box-shadow: 0 0 0 var(--size__xs) var(--color__highlight--semi);
       }
       &:hover {
         background-color: var(--color__highlight--ghost);
@@ -150,11 +142,10 @@
     input[type="checkbox"],
     input[type="radio"] {
       opacity: 0;
-      &:focus {
-        outline: none;
-      }
       &:focus-visible + span:before {
-        box-shadow: 0 0 0 var(--size__xs) var(--color__highlight--semi);
+        outline: var(--outline__size) var(--outline__style)
+          var(--outline__color);
+        outline-offset: var(--outline__offset, var(--outline__size));
       }
       + span:before {
         --size: calc(var(--size__m) + var(--size__s));
@@ -170,6 +161,7 @@
         justify-content: center;
         margin-right: var(--size__s);
         transition: all 0.375s ease-in;
+        transition-property: background-color, border-color, color;
         width: var(--size);
       }
       &:hover + span:before {
@@ -218,14 +210,15 @@
           var(--color__contrast);
       }
       &:checked:focus-visible + span:before {
-        box-shadow: 0 0 0 var(--size__xs) var(--color__highlight--semi),
-          inset 0 0 0 calc(var(--size__xxs) * 2) var(--color__contrast);
+        outline: var(--outline__size) var(--outline__style)
+          var(--outline__color);
+        outline-offset: var(--outline__offset, var(--outline__size));
       }
     }
     span {
       color: var(--color__base);
-      font-size: var(--controlFontSize);
-      line-height: var(--controlLineheight);
+      font-size: var(--control__font-size);
+      line-height: var(--control__line-height);
     }
   }
   &__toggle {

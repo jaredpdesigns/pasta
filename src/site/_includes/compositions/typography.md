@@ -116,6 +116,13 @@ pre {
 
 {% endNote%}
 
+`details`
+
+<details class="border__all color__border--base--light radius__s width__full">
+  <summary class="padding__bottom--s padding__left--m padding__right--m padding__top--s radius__s type__size--m-l">I am really good at summarizing things</summary>
+  <p class="border__top color__bg--base--ghost color__border--base--light padding__bottom--s padding__left--m padding__right--m padding__top--s"><em>Except for secrets, those are hidden, safe!</em></p>
+</details>
+
 `dl`
 
 <dl>
