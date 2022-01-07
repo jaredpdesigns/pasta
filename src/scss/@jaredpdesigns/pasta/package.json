@@ -10,10 +10,10 @@
   "author": "Jared Pendergraft <jaredpdesigns@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.2",
     "node-sass": "^6.0.1",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.1"
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0"
   },
   "unpkg": "pasta.css",
   "style": "pasta.css",
