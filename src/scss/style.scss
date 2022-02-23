@@ -84,8 +84,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    figure {
+    a {
+      --outline__color: hsla(0, 100%, 100%, 0.25);
       grid-column: 2;
+      justify-self: start;
     }
     button {
       --outline__color: hsla(0, 100%, 100%, 0.25);
@@ -109,46 +111,44 @@ pre {
   @include colorHighlight(0, 90%, 50%);
 }
 
-.home {
-  article {
-    grid-template-columns: 1fr min(75ch, calc(100% - var(--size__l) * 2)) 1fr;
+article {
+  grid-template-columns: 1fr min(75ch, calc(100% - var(--size__l) * 2)) 1fr;
+  > * {
+    grid-column: 2;
+  }
+  padding-bottom: var(--size__xxxl);
+  .preamble {
+    grid-column: 1/-1;
+    grid-template-columns: inherit;
     > * {
       grid-column: 2;
     }
-    padding-bottom: var(--size__xxxl);
-    .preamble {
-      grid-column: 1/-1;
-      grid-template-columns: inherit;
-      > * {
-        grid-column: 2;
+  }
+  hr {
+    margin-top: var(--size__xxxl) !important;
+    + * {
+      margin-top: var(--size__m) !important;
+    }
+  }
+  --columnWidth: var(--width__xs);
+  dl {
+    @media (max-width: 29rem) {
+      dd + dt {
+        border-top: var(--size__xxs) solid var(--color__base--light);
+        margin-top: var(--size__m);
+        padding-top: var(--size__s);
       }
     }
-    hr {
-      margin-top: var(--size__xxxl) !important;
-      + * {
-        margin-top: var(--size__m) !important;
+    @media (min-width: 29rem) {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      dt,
+      dd {
+        border-top: var(--size__xxs) solid var(--color__base--light);
+        padding: var(--size__s);
       }
-    }
-    --columnWidth: var(--width__xs);
-    dl {
-      @media (max-width: 29rem) {
-        dd + dt {
-          border-top: var(--size__xxs) solid var(--color__base--light);
-          margin-top: var(--size__m);
-          padding-top: var(--size__s);
-        }
-      }
-      @media (min-width: 29rem) {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        dt,
-        dd {
-          border-top: var(--size__xxs) solid var(--color__base--light);
-          padding: var(--size__s);
-        }
-        dd {
-          padding-left: var(--size__l);
-        }
+      dd {
+        padding-left: var(--size__l);
       }
     }
   }
