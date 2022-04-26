@@ -158,9 +158,6 @@ td {
 ol,
 ul {
   padding-left: var(--type__size--m);
-  @media (min-width: 29rem) {
-    padding-left: 0;
-  }
   ol,
   ul {
     margin-top: var(--size__m);

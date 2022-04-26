@@ -1,3 +1,4 @@
+const { minify } = require("terser");
 const htmlmin = require("html-minifier");
 const sass = require("sass");
 const fs = require("fs-extra");
@@ -22,6 +23,16 @@ module.exports = (eleventyConfig) => {
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async (code, callback) => {
+    try {
+      const minified = await minify(code);
+      callback(null, minified.code);
+    } catch (err) {
+      console.error("Terser error: ", err);
+      callback(null, code);
+    }
+  });
 
   // Build stuff
   eleventyConfig.addPassthroughCopy({

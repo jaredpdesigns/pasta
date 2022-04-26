@@ -86,12 +86,16 @@ body {
     z-index: 100;
     a {
       --outline__color: hsla(0, 100%, 100%, 0.25);
+    }
+    nav {
       grid-column: 2;
-      justify-self: start;
+      section {
+        column-gap: var(--size__l);
+      }
     }
     button {
       --outline__color: hsla(0, 100%, 100%, 0.25);
-      right: max(var(--size__m), env(safe-area-inset-right));
+      order: 1;
       &:focus,
       &:hover {
         color: white !important;
@@ -164,10 +168,6 @@ article {
     + * {
       margin-top: 0 !important;
     }
-  }
-  ol,
-  ul {
-    padding-left: var(--type__size--m);
   }
 }
 

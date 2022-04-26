@@ -1,0 +1,16 @@
+<form class="oomph__v--m">
+  <fieldset class="control__input">
+    <label for="variants">Variants</label>
+    <select id="variants" onchange="updateButtonVariant(this)">
+      <option selected>primary</option>
+      <option>secondary</option>
+      <option>tertiary</option>
+    </select>
+  </fieldset>
+  <fieldset class="control__toggle">
+    <label for="micro">
+      <input type="checkbox" id="micro" name="micro" onchange="updateButtonSize(this)">
+      <span>Micro</span>
+    </label>
+  </fieldset>
+</form>

@@ -6,7 +6,8 @@
   );
   --control__font-size: var(--type__size--m);
   --control__line-height: var(--type__lineheight--l);
-  --control__padding: var(--size__s) var(--size__m);
+  --control__padding--block: var(--size__s);
+  --control__padding--inline: var(--size__m);
 }
 
 .button {
@@ -26,7 +27,12 @@
   &__primary,
   &__secondary {
     border: var(--size__xxs) solid;
-    padding: var(--control__padding);
+    padding-block: var(--control__padding--block);
+    padding-inline: var(--control__padding--inline);
+    &.button__micro {
+      padding-block: calc(var(--control__padding--block) / 2);
+      padding-inline: calc(var(--control__padding--inline) / 2);
+    }
   }
   &__primary {
     background-color: var(--color__highlight);
@@ -86,7 +92,8 @@
       font-size: var(--control__font-size);
       line-height: var(--control__line-height);
       min-height: var(--control__size);
-      padding: var(--control__padding);
+      padding-block: var(--control__padding--block);
+      padding-inline: var(--control__padding--inline);
       transition: all 0.375s ease-in;
       transition-property: background-color, border-color, color;
       width: 100%;
