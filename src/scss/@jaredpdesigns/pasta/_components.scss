@@ -1,13 +1,14 @@
 :root {
+  --control__font-size: var(--type__size--m);
+  --control__line-height: var(--type__lineheight--l);
+  --control__padding--block: var(--size__s);
+  --control__padding--inline: var(--size__m);
+  --control__radius: var(--size__s);
   --control__size: clamp(
     var(--size__xl),
     var(--type__size--target),
     var(--size__xxl)
   );
-  --control__font-size: var(--type__size--m);
-  --control__line-height: var(--type__lineheight--l);
-  --control__padding--block: var(--size__s);
-  --control__padding--inline: var(--size__m);
 }
 
 .button {
@@ -15,7 +16,7 @@
   &__secondary,
   &__tertiary {
     align-items: center;
-    border-radius: var(--size__s);
+    border-radius: var(--control__radius);
     display: inline-flex;
     font-size: var(--control__font-size);
     justify-content: center;
@@ -87,7 +88,7 @@
     select {
       background-color: var(--color__contrast);
       border: var(--size__xxs) solid var(--color__base--semi);
-      border-radius: var(--size__s);
+      border-radius: var(--control__radius);
       color: var(--color__base);
       font-size: var(--control__font-size);
       line-height: var(--control__line-height);
@@ -197,7 +198,7 @@
     }
     input[type="checkbox"] {
       + span:before {
-        border-radius: var(--size__xs);
+        border-radius: calc(var(--control__radius) / 2);
         font-size: var(--type__size--xs);
         font-weight: bold;
       }

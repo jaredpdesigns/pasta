@@ -221,25 +221,67 @@
 }
 
 @each $directionKey, $value in $directions {
-  .margin__#{$directionKey}--auto {
-    margin-#{$directionKey}: auto !important;
-  }
-  .margin__#{$directionKey}--none {
-    margin-#{$directionKey}: 0 !important;
-  }
-  @each $sizeKey, $value in $sizes {
-    .margin__#{$directionKey}--#{$sizeKey} {
-      margin-#{$directionKey}: var(--size__#{$sizeKey});
+  @if $directionKey == "bottom" {
+    /* Some other comment */
+    .margin__#{$directionKey}--auto {
+      margin-block-end: auto !important;
+    }
+    .margin__#{$directionKey}--none {
+      margin-block-end: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .margin__#{$directionKey}--#{$sizeKey} {
+        margin-block-end: var(--size__#{$sizeKey});
+      }
+    }
+  } @else if $directionKey == "left" {
+    /* Some other comment */
+    .margin__#{$directionKey}--auto {
+      margin-inline-start: auto !important;
+    }
+    .margin__#{$directionKey}--none {
+      margin-inline-start: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .margin__#{$directionKey}--#{$sizeKey} {
+        margin-inline-start: var(--size__#{$sizeKey});
+      }
+    }
+  } @else if $directionKey == "right" {
+    /* Some other comment */
+    .margin__#{$directionKey}--auto {
+      margin-inline-end: auto !important;
+    }
+    .margin__#{$directionKey}--none {
+      margin-inline-end: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .margin__#{$directionKey}--#{$sizeKey} {
+        margin-inline-end: var(--size__#{$sizeKey});
+      }
+    }
+  } @else if $directionKey == "top" {
+    /* Some other comment */
+    .margin__#{$directionKey}--auto {
+      margin-block-start: auto !important;
+    }
+    .margin__#{$directionKey}--none {
+      margin-block-start: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .margin__#{$directionKey}--#{$sizeKey} {
+        margin-block-start: var(--size__#{$sizeKey});
+      }
     }
   }
 }
 
 @each $sizeKey, $value in $sizes {
   .oomph__h--#{$sizeKey} > * + *:not([class*="margin"]) {
-    margin-left: var(--size__#{$sizeKey});
+    margin-inline-start: var(--size__#{$sizeKey});
   }
   .oomph__v--#{$sizeKey} > * + *:not([class*="margin"]) {
-    margin-top: var(--size__#{$sizeKey});
+    margin-block-start: var(--size__#{$sizeKey});
   }
 }
 
@@ -298,28 +340,86 @@
   }
 }
 @each $directionKey, $value in $directions {
-  .padding__#{$directionKey}--auto {
-    padding-#{$directionKey}: auto !important;
-  }
-  .padding__#{$directionKey}--none {
-    padding-#{$directionKey}: 0 !important;
-  }
-  @each $sizeKey, $value in $sizes {
-    .padding__#{$directionKey}--#{$sizeKey} {
-      padding-#{$directionKey}: var(--size__#{$sizeKey});
+  @if $directionKey == "bottom" {
+    /* Some other comment */
+    .padding__#{$directionKey}--auto {
+      padding-block-end: auto !important;
+    }
+    .padding__#{$directionKey}--none {
+      padding-block-end: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .padding__#{$directionKey}--#{$sizeKey} {
+        padding-block-end: var(--size__#{$sizeKey});
+      }
+    }
+  } @else if $directionKey == "left" {
+    /* Some other comment */
+    .padding__#{$directionKey}--auto {
+      padding-inline-start: auto !important;
+    }
+    .padding__#{$directionKey}--none {
+      padding-inline-start: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .padding__#{$directionKey}--#{$sizeKey} {
+        padding-inline-start: var(--size__#{$sizeKey});
+      }
+    }
+  } @else if $directionKey == "right" {
+    /* Some other comment */
+    .padding__#{$directionKey}--auto {
+      padding-inline-end: auto !important;
+    }
+    .padding__#{$directionKey}--none {
+      padding-inline-end: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .padding__#{$directionKey}--#{$sizeKey} {
+        padding-inline-end: var(--size__#{$sizeKey});
+      }
+    }
+  } @else if $directionKey == "top" {
+    /* Some other comment */
+    .padding__#{$directionKey}--auto {
+      padding-block-start: auto !important;
+    }
+    .padding__#{$directionKey}--none {
+      padding-block-start: 0 !important;
+    }
+    @each $sizeKey, $value in $sizes {
+      .padding__#{$directionKey}--#{$sizeKey} {
+        padding-block-start: var(--size__#{$sizeKey});
+      }
     }
   }
 }
 
 .position {
+  --bottom: unset;
+  --left: unset;
+  --right: unset;
+  --top: unset;
   &__absolute {
+    bottom: var(--bottom);
+    left: var(--left);
+    right: var(--right);
     position: absolute;
+    top: var(--top);
   }
   &__fixed {
+    bottom: var(--bottom);
+    left: var(--left);
+    right: var(--right);
     position: fixed;
+    top: var(--top);
   }
   &__relative {
+    bottom: var(--bottom);
+    left: var(--left);
+    right: var(--right);
     position: relative;
+    top: var(--top);
   }
 }
 

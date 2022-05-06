@@ -214,7 +214,7 @@ p a {
   }
 }
 
-blockquote {
+blockquote:not([class]) {
   --color__bg: var(--color__highlight--light);
   --color__border: var(--color__highlight--semi);
   background-color: var(--color__bg);
@@ -309,7 +309,10 @@ dl {
   }
 }
 
-table {
+table:not([class]) {
+  --evenRow: var(--color__contrast);
+  --oddRow: var(--color__base--light);
+  --padding: var(--size__s);
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
   th {
@@ -317,7 +320,7 @@ table {
   }
   th,
   td {
-    padding: var(--size__s);
+    padding: var(--padding);
   }
   tbody {
     tr td {
@@ -328,12 +331,12 @@ table {
     }
     tr:nth-of-type(odd) {
       td {
-        background-color: var(--color__base--ghost);
+        background-color: var(--oddRow);
       }
     }
     tr:nth-of-type(even) {
       td {
-        background-color: var(--color__contrast);
+        background-color: var(--evenRow);
       }
     }
   }
@@ -346,6 +349,31 @@ select {
   font: inherit;
 }
 
-summary {
-  list-style: revert;
+details:not([class]) {
+  --radius: var(--size__s);
+  border: var(--size__xxs) solid var(--color__base--light);
+  border-radius: var(--radius);
+  summary {
+    border-radius: var(--radius);
+    font-size: var(--type__size--m);
+    line-height: var(--type__lineheight--l);
+    list-style: revert;
+    padding-block: var(--size__s);
+    padding-inline: var(--size__m);
+    &::marker {
+      color: var(--color__base--mid);
+    }
+    + * {
+      background-color: var(--color__base--ghost);
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      border-top: var(--size__xxs) solid var(--color__base--light);
+      padding-block: var(--size__s);
+      padding-inline: var(--size__m);
+    }
+  }
+  &[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }

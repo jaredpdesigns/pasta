@@ -66,10 +66,10 @@ Let us investigate foxes and their habits to dive a little deeper, shall we? Fox
 
 {% Note %}
 
-You can override the background and border color of this element by changing the `color__bg` and `color__border` custom property.
+If you don’t supply a class to a `blockquote`, but instead use it in something like Markdown, you’ll see it styled like above. You can override the background and border color of this element by changing the color__bg` and `color__border` custom property.
 
 ```css
-blockquote {
+blockquote:not([class]) {
   --color__bg: var(--color__contrast);
   --color__border: var(--color__base--light);
 }
@@ -118,10 +118,16 @@ pre {
 
 `details`
 
-<details class="border__all color__border--base--light radius__s width__full">
-  <summary class="padding__bottom--s padding__left--m padding__right--m padding__top--s radius__s type__size--m-l">I am really good at summarizing things</summary>
-  <p class="border__top color__bg--base--ghost color__border--base--light padding__bottom--s padding__left--m padding__right--m padding__top--s"><em>Except for secrets, those are hidden, safe!</em></p>
+<details>
+  <summary>I am really good at summarizing things</summary>
+  <p><em>Except for secrets, those are hidden, safe!</em></p>
 </details>
+
+{% Note %}
+
+If you don’t apply a class, you get a lightly styled `details`. If you’d like to use details differently in your UI, Pasta won’t be opinionated about it.
+
+{% endNote%}
 
 `dl`
 
@@ -138,3 +144,17 @@ pre {
 | -------------- | -------------- | -------------- |
 | Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
 | Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
+
+{% Note %}
+
+Un-classed `tables` also get some love. You can even adjust the overall `padding`, and colors of striped rows using the following variables:
+
+```css
+table:not([class]) {
+  --evenRow: var(--color__contrast);
+  --oddRow: var(--color__base--light);
+  --padding: var(--size__s);
+}
+```
+
+{% endNote%}
