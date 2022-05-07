@@ -1,4 +1,4 @@
-window.onload = () => {
+setTimeout(() => {
   document.getElementById("fontForm").addEventListener("submit", (event) => {
     event.preventDefault();
     const url = document.getElementById("url").value;
@@ -25,4 +25,4 @@ window.onload = () => {
       tertiaryFont ? `--type__family--tertiary: ${tertiaryFont};` : ""
     }`;
   });
-}
+}, 1000);
