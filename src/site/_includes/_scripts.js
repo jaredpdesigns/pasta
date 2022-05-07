@@ -10,7 +10,6 @@ function getTheme() {
     "data-theme",
     sessionStorage.getItem("theme")
   );
-  console.log(`Get theme: ${sessionStorage.getItem("theme")}`);
 }
 
 function setTheme() {
@@ -23,12 +22,9 @@ function setTheme() {
     "data-theme",
     sessionStorage.getItem("theme")
   );
-  console.log(`Set theme: ${sessionStorage.getItem("theme")}`);
 }
 
-function firstTime() {
+window.onload = () => {
   getTheme();
   document.documentElement.classList.add("loaded");
-}
-
-window.onload = firstTime();
+};
