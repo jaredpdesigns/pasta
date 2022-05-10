@@ -155,13 +155,24 @@ td {
   line-height: var(--type__lineheight--l);
 }
 
-ol,
-ul {
+ol:not([class]),
+ol.styled,
+ul:not([class]),
+ul.styled {
   padding-left: var(--type__size--m);
   ol,
   ul {
     margin-top: var(--size__m);
     padding-left: var(--type__size--m);
+  }
+  li {
+    list-style-position: outside;
+    &::marker {
+      color: var(--color__highlight);
+    }
+    + * {
+      margin-top: var(--size__m);
+    }
   }
 }
 
@@ -176,17 +187,8 @@ ol {
   }
 }
 
-li {
-  list-style-position: outside;
-  &::marker {
-    color: var(--color__highlight);
-  }
-  + * {
-    margin-top: var(--size__m);
-  }
-}
-
-hr {
+hr:not([class]),
+hr.styled {
   background-color: var(--color__highlight--semi);
   border-radius: calc(var(--size__xs) / 2);
   height: var(--size__xs);
@@ -214,7 +216,8 @@ p a {
   }
 }
 
-blockquote:not([class]) {
+blockquote:not([class]),
+blockquote.styled {
   --color__bg: var(--color__highlight--light);
   --color__border: var(--color__highlight--semi);
   background-color: var(--color__bg);
@@ -309,7 +312,8 @@ dl {
   }
 }
 
-table:not([class]) {
+table:not([class]),
+table.styled {
   --evenRow: var(--color__contrast);
   --oddRow: var(--color__base--light);
   --padding: var(--size__s);
@@ -349,7 +353,8 @@ select {
   font: inherit;
 }
 
-details:not([class]) {
+details:not([class]),
+details.styled {
   --radius: var(--size__s);
   border: var(--size__xxs) solid var(--color__base--light);
   border-radius: var(--radius);
