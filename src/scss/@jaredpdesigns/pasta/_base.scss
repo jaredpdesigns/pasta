@@ -48,10 +48,12 @@
   @each $key, $value in $widths {
     --width__#{$key}: #{$value};
   }
+  accent-color: var(--color__highlight);
 }
 
 // Pulled this from https://eladsc.com
-:where(:not(strong, b, em, i, iframe, canvas, img, svg, video):not(svg *)) {
+:where(:not(strong, b, em, i, iframe, canvas, img, svg, video, button, input, progress, select, textarea, summary):not(svg
+      *)) {
   all: unset;
   display: revert;
 }
