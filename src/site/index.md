@@ -3,6 +3,7 @@ title: Pasta—Simply Delicious
 description: Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy
 layout: layouts/base.njk
 class: home
+jsExtra: scripts/setIndeterminate.js
 ---
 
 {% include "compositions/preamble.md" %}

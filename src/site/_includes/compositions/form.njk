@@ -1,13 +1,25 @@
 <hr/>
-<h2>Form Elements</h2>
+<h2 id="form-elements">Form Elements</h2>
 <form class="oomph__v--l" onsubmit="event.preventDefault()">
   <fieldset class="control__input">
     <label for="input1">Input</label>
     <input id="input1" name="input1" type="text" placeholder="Enter name…"/>
   </fieldset>
+  <fieldset class="control__input">
+    <label for="inputDisabled">Input[disabled]</label>
+    <input id="inputDisabled" name="inputDisabled" type="text" placeholder="Enter name…" disabled/>
+  </fieldset>
   <fieldset class="control__select">
     <label for="select1">Select</label>
     <select id="select1" name="select1">
+      <option selected>Really young</option>
+      <option>Just right</option>
+      <option>Really old</option>
+    </select>
+  </fieldset>
+  <fieldset class="control__select">
+    <label for="selectDisabled">Select[disabled]</label>
+    <select id="selectDisabled" name="selectDisabled" disabled>
       <option selected>Really young</option>
       <option>Just right</option>
       <option>Really old</option>
@@ -19,21 +31,36 @@
       <span>Coffee</span></label>
     <label for="tea"><input type="radio" id="tea" name="drink" value="Tea">
       <span>Tea</span></label>
+    <label for="kombucha"><input type="radio" id="kombucha" name="drink" value="Kombucha" disabled>
+      <span>Kombucha</span></label>
   </fieldset>
   <fieldset class="control__checkbox">
     <legend>Checkbox</legend>
-    <label for="selfdestruct1"><input type="checkbox" id="selfdestruct1" name="selfdestruct1">
+    <label for="checkboxUnchecked"><input type="checkbox" id="checkboxUnchecked" name="checkboxUnchecked">
       <span>Unchecked</span></label>
-    <label for="selfdestruct2"><input type="checkbox" id="selfdestruct2" name="selfdestruct2" checked>
+    <label for="checkboxChecked"><input type="checkbox" id="checkboxChecked" name="checkboxChecked" checked>
       <span>Checked</span></label>
+    <label for="checkboxIndeterminate"><input type="checkbox" id="checkboxIndeterminate" name="checkboxIndeterminate">
+      <span>Indeterminate</span></label>
+    <label for="checkboxDisabled"><input type="checkbox" id="checkboxDisabled" name="checkboxDisabled" disabled>
+      <span>Disabled</span></label>
   </fieldset>
   <fieldset class="control__toggle">
     <legend>Toggle</legend>
     <label for="toggle1"><input type="checkbox" id="toggle1" name="toggle1" checked>
-      <span>Checked</span></label>
+      <span>Fully Caffeinated</span></label>
+    <label for="toggle2"><input type="checkbox" id="toggle2" name="toggle2" disabled>
+      <span>Fully Awake</span></label>
   </fieldset>
   <fieldset class="flow__flex flow__align--h-start flow__align--v-center flow__gap--s">
     <button  class="button__secondary" type="reset">Reset</button>
     <button class="button__primary" type="submit">Submit Form</button>
   </fieldset>
 </form>
+<script>
+  setTimeout(() => {
+    document
+      .getElementById('checkboxIndeterminate')
+      .indeterminate = true;
+  }, 100);
+</script>

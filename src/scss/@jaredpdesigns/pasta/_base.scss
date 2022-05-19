@@ -207,8 +207,12 @@ p a {
   text-decoration-thickness: calc(var(--size__xs) / 2);
   text-decoration-line: underline;
   text-underline-offset: var(--size__xs);
-  transition: all 0.375s ease-in;
-  transition-property: background-color, color;
+  &:focus,
+  &:hover,
+  &:focus-visible {
+    transition: all 0.375s ease-in;
+    transition-property: background-color, color;
+  }
   &:focus,
   &:hover {
     color: var(--color__highlight);

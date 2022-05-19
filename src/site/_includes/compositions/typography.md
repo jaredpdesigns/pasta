@@ -66,7 +66,7 @@ Let us investigate foxes and their habits to dive a little deeper, shall we? Fox
 
 {% Note %}
 
-If you don’t supply a class to a `blockquote`, but instead use it in something like Markdown, you’ll see it styled like above. You can override the background and border color of this element by changing the color__bg` and `color__border` custom property.
+If you don’t supply a class to a `blockquote`, but instead use it in something like Markdown, you’ll see it styled like above. You can override the background and border color of this element by changing the `color__bg` and `color__border` custom property.
 
 ```css
 blockquote:not([class]) {

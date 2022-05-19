@@ -2,9 +2,8 @@ const { minify } = require("terser");
 const htmlmin = require("html-minifier");
 const sass = require("sass");
 const fs = require("fs-extra");
-const markdown = require("markdown-it")({
-  html: true,
-});
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Components
@@ -33,6 +32,17 @@ module.exports = (eleventyConfig) => {
       callback(null, code);
     }
   });
+
+  // Markdown support
+  let markdownLibrary = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  }).use(markdownItAnchor, {
+    renderHref: false,
+    tabIndex: false,
+  });
+  eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Build stuff
   eleventyConfig.addPassthroughCopy({

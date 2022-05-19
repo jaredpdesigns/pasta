@@ -1,5 +1,5 @@
 {% for color in colors %}
-<h3>{{ color.name }}</h3>
+<h3 id="{{ color.name }}">{{ color.name }}</h3>
 {% if color.notes %}
 <p>{{ color.notes }}</p>
 {% endif%}

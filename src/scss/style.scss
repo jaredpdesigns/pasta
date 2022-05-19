@@ -77,8 +77,6 @@ table th,
 .button__tertiary,
 p a {
   font-weight: 600;
-  transition: 0.375s ease-in;
-  transition-property: background-color, color;
 }
 
 body {
@@ -180,4 +178,8 @@ article {
     padding-inline-start: env(safe-area-inset-left);
     padding-inline-end: env(safe-area-inset-right);
   }
+}
+
+*[id] {
+  scroll-margin: calc(var(--size__xxxl) * 2.5);
 }

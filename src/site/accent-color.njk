@@ -3,13 +3,16 @@ title: Accent Color Test
 description: A test of `accent-color` support
 layout: layouts/component.njk
 class: accentColor
-jsExtra: scripts/accentColor.js
+jsExtra: scripts/setIndeterminate.js
 ---
 <header class="oomph__v--m">
   <h1>Accent Color Test</h1>
   <p>A test page for <code>accent-color</code> support</p>
   <hr/>
 </header>
+{% Note %}
+<p>To better support native CSS properties like <code>accent-color</code>, these form elements are not styled at all. Compare that to our <em>styled</em> elements on the <a href="/#form-elements">overview</a> page.</p>
+{% endNote%}
 <section class="oomph__v--m">
   <p>
     <code>Input</code>

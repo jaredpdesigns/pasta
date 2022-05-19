@@ -18,14 +18,22 @@
     all: unset;
     align-items: center;
     border-radius: var(--control__radius);
+    cursor: pointer;
     display: inline-flex;
     font-size: var(--control__font-size);
     gap: var(--size__s);
     justify-content: center;
     line-height: var(--control__line-height);
     min-height: var(--control__size);
-    transition: all 0.375s ease-in;
-    transition-property: background-color, border-color, color;
+    &:focus,
+    &:hover,
+    &:focus-visible {
+      transition: all 0.375s ease-in;
+      transition-property: background-color, border-color, color;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+    }
   }
   &__primary,
   &__secondary {
@@ -41,27 +49,36 @@
     background-color: var(--color__highlight);
     border-color: var(--color__highlight);
     color: var(--color__contrast);
-    &:focus,
-    &:hover {
+    &:focus:not([disabled]),
+    &:hover:not([disabled]){
       background-color: var(--color__highlight--ish);
       color: var(--color__contrast);
+    }
+    &[disabled] {
+      background-color: var(--color__highlight--mid);
     }
   }
   &__secondary {
     background-color: var(--color__contrast);
     border-color: var(--color__base--light);
     color: var(--color__base--ish);
-    &:focus,
-    &:hover {
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
       border-color: var(--color__base--semi);
       color: var(--color__base);
     }
+    &[disabled] {
+      background-color: var(--color__base--ghost);
+    }
   }
   &__tertiary {
-    &:focus,
-    &:hover {
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
       color: var(--color__base);
       opacity: 0.75;
+    }
+    &[disabled] {
+      opacity: 0.5;
     }
   }
 }
@@ -98,8 +115,6 @@
       min-height: var(--control__size);
       padding-block: var(--control__padding--block);
       padding-inline: var(--control__padding--inline);
-      transition: all 0.375s ease-in;
-      transition-property: background-color, border-color, color;
       width: 100%;
       &::placeholder {
         color: var(--color__base--mid);
@@ -107,6 +122,8 @@
       &:hover {
         background-color: var(--color__highlight--ghost);
         border-color: var(--color__highlight);
+        transition: all 0.375s ease-in;
+        transition-property: background-color, border-color, color;
       }
       &[disabled] {
         background-color: var(--color__base--ghost);
@@ -175,12 +192,12 @@
         height: var(--size);
         justify-content: center;
         margin-right: var(--size__s);
-        transition: all 0.375s ease-in;
-        transition-property: background-color, border-color, color;
         width: var(--size);
       }
       &:hover + span:before {
         border-color: var(--color__base--mid);
+        transition: all 0.375s ease-in;
+        transition-property: background, border-color, color;
       }
       &:checked + span:before {
         background-color: var(--color__highlight);
@@ -209,12 +226,6 @@
         font-size: var(--type__size--xs);
         font-weight: bold;
       }
-      &:checked + span:before {
-        @include svgBG(
-          "M22.5041679,5.33621823 C23.4232253,3.95763217 25.2858333,3.58511056 26.6644194,4.50416794 C28.0430055,5.42322532 28.4155271,7.28583334 27.4964697,8.66441941 L15.4964697,26.6644194 C14.3090036,28.4456186 11.6916341,28.4456186 10.5041679,26.6644194 L4.50416794,17.6644194 C3.58511056,16.2858333 3.95763217,14.4232253 5.33621823,13.5041679 C6.7148043,12.5851106 8.57741233,12.9576322 9.4964697,14.3362182 L13.0003188,19.5919919 L22.5041679,5.33621823 Z",
-          white
-        );
-      }
     }
     input[type="radio"] {
       + span:before {
@@ -234,25 +245,62 @@
       color: var(--color__base);
       font-size: var(--control__font-size);
       line-height: var(--control__line-height);
+      position: relative;
+    }
+  }
+  &__checkbox {
+    input[type="checkbox"]:checked + span:before {
+      @include svgBG(
+        "M22.5041679,5.33621823 C23.4232253,3.95763217 25.2858333,3.58511056 26.6644194,4.50416794 C28.0430055,5.42322532 28.4155271,7.28583334 27.4964697,8.66441941 L15.4964697,26.6644194 C14.3090036,28.4456186 11.6916341,28.4456186 10.5041679,26.6644194 L4.50416794,17.6644194 C3.58511056,16.2858333 3.95763217,14.4232253 5.33621823,13.5041679 C6.7148043,12.5851106 8.57741233,12.9576322 9.4964697,14.3362182 L13.0003188,19.5919919 L22.5041679,5.33621823 Z",
+        white
+      );
+    }
+    input[type="checkbox"]:indeterminate + span:after {
+      --size: calc(var(--size__m) + var(--size__s));
+      background-color: var(--color__base--semi);
+      border-radius: calc(var(--size__xs)/2);
+      height: var(--size__xs);
+      content: "";
+      display: block;
+      left: var(--size__xs);
+      position: absolute;
+      width: calc(var(--size) - var(--size__s));
     }
   }
   &__toggle {
     input[type="checkbox"] {
-      + span:before {
-        background-position-x: left;
-        border-radius: calc(var(--size) / 2);
-        width: var(--size__xl);
+      + span {
+        &:before {
+          border-radius: calc(var(--size) / 2);
+          width: var(--size__xl);
+        }
+        &:after {
+          background-color: var(--color__base--semi);
+          border-radius: 50%;
+          content: "";
+          display: block;
+          height: var(--size__m);
+          left: calc(var(--size__xs));
+          position: absolute;
+          width: var(--size__m);
+        }
       }
-      + span:before,
-      &[disabled] + span:before {
-        background-color: var(--color__base--light);
+      &[disabled] {
+        + span:before {
+          background-color: var(--color__base--ghost);
+        }
+        + span:after {
+          background-color: var(--color__base--light);
+        }
       }
-      + span:before,
-      &:checked + span:before {
-        background-image: url("data:image/svg+xml,%3Csvg height='22' width='22' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle fill='white' cx='16' cy='16' r='16'/%3E%3C/svg%3E");
+      &:checked + span:after {
+        background-color: var(--color__contrast);
+        transform: scale(1.375)
+          translateX(calc(100% - (var(--size__xs) + var(--size__xxs))));
       }
-      &:checked + span:before {
-        background-position-x: right;
+      &:hover + span:after {
+        transition: all 0.375s ease-in;
+        transition-property: background-color, transform;
       }
     }
   }
