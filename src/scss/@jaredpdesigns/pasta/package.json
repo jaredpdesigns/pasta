@@ -1,6 +1,6 @@
 {
   "name": "@jaredpdesigns/pasta",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!",
   "scripts": {
     "scss": "sass index.scss pasta.css --style=compressed --no-source-map",
