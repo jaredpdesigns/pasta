@@ -11,11 +11,15 @@
   );
 }
 
+:where(*[class^="button__"], *[class^="control__"] input, *[class^="control__"] select) {
+  all: unset;
+  display: revert;
+}
+
 .button {
   &__primary,
   &__secondary,
   &__tertiary {
-    all: unset;
     align-items: center;
     border-radius: var(--control__radius);
     cursor: pointer;
@@ -50,7 +54,7 @@
     border-color: var(--color__highlight);
     color: var(--color__contrast);
     &:focus:not([disabled]),
-    &:hover:not([disabled]){
+    &:hover:not([disabled]) {
       background-color: var(--color__highlight--ish);
       color: var(--color__contrast);
     }
@@ -147,6 +151,7 @@
       );
       background-position: calc(100% - var(--size__m)) center;
       background-repeat: no-repeat;
+      line-height: var(--control__size);
       text-indent: 0.01px;
       text-overflow: "";
       &::-ms-expand {
@@ -172,7 +177,6 @@
     }
     input[type="checkbox"],
     input[type="radio"] {
-      all: unset;
       opacity: 0;
       &:focus-visible + span:before {
         outline: var(--outline__size) var(--outline__style)
@@ -258,7 +262,7 @@
     input[type="checkbox"]:indeterminate + span:after {
       --size: calc(var(--size__m) + var(--size__s));
       background-color: var(--color__base--semi);
-      border-radius: calc(var(--size__xs)/2);
+      border-radius: calc(var(--size__xs) / 2);
       height: var(--size__xs);
       content: "";
       display: block;
