@@ -11,9 +11,15 @@
   );
 }
 
-:where(*[class^="button__"], *[class^="control__"] input, *[class^="control__"] select) {
+:where(*[class^="button__"], *[class^="control__"] input, *[class^="control__"]
+    select) {
   all: unset;
+  box-sizing: border-box;
   display: revert;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
 }
 
 .button {
@@ -28,7 +34,6 @@
     gap: var(--size__s);
     justify-content: center;
     line-height: var(--control__line-height);
-    min-height: var(--control__size);
     &:focus,
     &:hover,
     &:focus-visible {

@@ -51,6 +51,11 @@
   accent-color: var(--color__highlight);
 }
 
+::selection {
+  background-color: var(--color__highlight);
+  color: var(--color__contrast);
+}
+
 // Pulled this from https://eladsc.com
 :where(:not(strong, b, em, i, iframe, canvas, img, svg, video, button, input, progress, select, textarea, summary):not(svg
       *)) {
@@ -60,6 +65,7 @@
 
 // Focus management
 :is(a, button, input, select, textarea, summary) {
+  caret-color: var(--color__highlight);
   &:focus-visible {
     outline: var(--outline__size) var(--outline__style) var(--outline__color);
     outline-offset: var(--outline__offset, var(--outline__size));
@@ -179,6 +185,9 @@ ul.styled {
 }
 
 ol {
+  li {
+    list-style: decimal;
+  }
   ol {
     li {
       list-style-type: lower-alpha;
