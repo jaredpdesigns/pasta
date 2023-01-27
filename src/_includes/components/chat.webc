@@ -1,0 +1,354 @@
+<section class="chatContainer border__all color__border--base--light radius__m">
+  <form
+    class="chatForm flow__flex flow__align--block-center flow__gap--m padding__inline--m padding__block-end--m"
+    onsubmit="onSubmit(event)"
+  >
+    <section class="control__input flow__flex--grow">
+      <input class="control" aria-label="input" id="input" name="input" />
+    </section>
+    <button class="button__primary" type="submit">Send</button>
+  </form>
+  <section class="chatHistory padding__m" id="output"></section>
+  <nav
+    class="chatNav color__bg--base--ghost padding__s radius__end-start--m radius__end-end--m type__align--center visually__hidden"
+  >
+    <button class="button__secondary" onclick="resetChat()">
+      Delete Chat History
+    </button>
+  </nav>
+</section>
+<style>
+  body:has(.chatContainer) {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    block-size: 100vh;
+  }
+  body:has(.chatContainer) main {
+    overflow: hidden;
+  }
+  body:has(.chatContainer) article {
+    block-size: 100%;
+    overflow: hidden;
+    display: flex;
+  }
+  .chatContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    inline-size: 100%;
+  }
+  .chatHistory {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    gap: var(--size__s);
+  }
+  .chatHistory::-webkit-scrollbar {
+    inline-size: 0 !important;
+    display: none;
+  }
+  .chatForm {
+    order: 2;
+  }
+  .chatNav {
+    order: 3;
+  }
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .container {
+    --offset: 0.5rem;
+    animation: slideIn 0.5s cubic-bezier(0.5, -0.1, 0.1, 1.5);
+    animation-fill-mode: forwards;
+    align-self: flex-end;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    opacity: 0;
+    position: relative;
+    transform: translateX(var(--offset));
+  }
+
+  .container.response {
+    --offset: calc(var(--size__s) * -1);
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+
+  .bubble {
+    --bg: var(--color__highlight--semi);
+    background-color: var(--bg);
+    border-radius: calc(var(--type__lineheight--l--fluid) / 2);
+    padding: var(--size__s) var(--size__m);
+  }
+
+  .response .bubble {
+    --bg: var(--color__base--light);
+  }
+
+  .response img {
+    background-color: var(--color__base--ghost);
+    border-radius: var(--size__m);
+  }
+
+  time {
+    background-color: var(--color__contrast--extra);
+    border-radius: calc(var(--type__lineheight--s) / 2);
+    bottom: 0;
+    display: block;
+    color: white;
+    font-size: var(--type__size--xs);
+    line-height: var(--type__lineheight--s);
+    opacity: 0;
+    padding: var(--size__xs) var(--size__s);
+    position: absolute;
+    white-space: nowrap;
+    transform: translateY(50%);
+  }
+
+  .container:hover {
+    z-index: 10;
+  }
+
+  .container:hover time {
+    opacity: 1;
+  }
+</style>
+<script>
+  // Functions
+  function buildBubble(text, type = "input", time) {
+    const output = document.getElementById("output");
+
+    // Create container
+    let container = document.createElement("figure");
+    container.classList.add("container");
+    container.classList.add(type);
+
+    // Create bubble
+    let bubble = document.createElement("p");
+    bubble.textContent = text;
+    bubble.classList.add("bubble");
+    text === "…" && bubble.setAttribute("id", "pending");
+    container.append(bubble);
+
+    // Create timestamp
+    let timestamp = document.createElement("time");
+    const displayTime = getRelativeTime(
+      time ? new Date(time) : new Date(),
+      new Date()
+    );
+    if (displayTime) {
+      timestamp.textContent = displayTime;
+      container.append(timestamp);
+    }
+
+    output.append(container);
+  }
+
+  function buildImage(img, prompt, time) {
+    const output = document.getElementById("output");
+
+    // Create container
+    let container = document.createElement("figure");
+    container.classList.add("container");
+    container.classList.add("response");
+
+    // Create image
+    let image = document.createElement("img");
+    image.setAttribute("alt", prompt);
+    image.setAttribute("height", 256);
+    image.setAttribute("loading", "lazy");
+    image.setAttribute("src", img);
+    image.setAttribute("style", "aspect-ratio: 1");
+    image.setAttribute("width", 256);
+    container.append(image);
+
+    // Create timestamp
+    let timestamp = document.createElement("time");
+    const displayTime = getRelativeTime(
+      time ? new Date(time) : new Date(),
+      new Date()
+    );
+    if (displayTime) {
+      timestamp.textContent = displayTime;
+      container.append(timestamp);
+    }
+    output.append(container);
+  }
+
+  function getRelativeTime(d1, d2) {
+    const rtf = new Intl.RelativeTimeFormat("en-us", {
+      style: "narrow",
+      numeric: "always",
+    });
+    const units = {
+      year: 24 * 60 * 60 * 1000 * 365,
+      month: (24 * 60 * 60 * 1000 * 365) / 12,
+      day: 24 * 60 * 60 * 1000,
+      hour: 60 * 60 * 1000,
+      minute: 60 * 1000,
+      second: 1000,
+    };
+    const elapsed = d1 - d2;
+    for (const u in units) {
+      if (Math.abs(elapsed) > units[u] || u === "second") {
+        const comparison = Math.round(elapsed / units[u]);
+        const checkForNow =
+          rtf.formatToParts(comparison, u).find((i) => i.type === "integer")
+            .value === "0";
+        if (checkForNow) {
+          return null;
+        }
+        return rtf.format(comparison, u);
+      }
+    }
+  }
+
+  function fetchImage(prompt) {
+    const pending = document.getElementById("pending");
+    fetch("https://api.openai.com/v1/images/generations", {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer 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",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt: prompt,
+        n: 1,
+        size: "256x256",
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const imgURL = data.data[0].url;
+        if (imgURL) {
+          buildImage(data.data[0].url, prompt, new Date());
+          pending.remove();
+          scrollOutput();
+          saveToLocalStorage(prompt, "response", new Date(), imgURL);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        pending.textContent = "🙁 API is down";
+        pending.classList.add("error");
+        pending.removeAttribute("id");
+      });
+  }
+
+  function fetchText(prompt) {
+    const pending = document.getElementById("pending");
+    fetch("https://api.openai.com/v1/completions", {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer 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",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "text-davinci-003",
+        prompt: prompt,
+        temperature: 0.9,
+        max_tokens: 240,
+        frequency_penalty: 1,
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const value = data.choices ? data.choices[0].text : "";
+        if (value) {
+          const cleanedValue = value.replace(
+            /^([^a-z0-9]|\s+|\r?\n|\r)/gim,
+            ""
+          );
+          pending.textContent = cleanedValue;
+          pending.removeAttribute("id");
+          scrollOutput();
+          saveToLocalStorage(cleanedValue, "response");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        pending.textContent = "🙁 API is down";
+        pending.classList.add("error");
+        pending.removeAttribute("id");
+      });
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    const formElem = document.querySelector("form");
+    const formData = new FormData(formElem);
+
+    for (const [key, value] of formData) {
+      if (value !== "") {
+        buildBubble(value);
+        saveToLocalStorage(value);
+        buildBubble("…", "response");
+        value.toLowerCase().includes("picture of")
+          ? fetchImage(value)
+          : fetchText(value);
+      }
+    }
+    formElem.reset();
+    scrollOutput();
+  }
+
+  function resetChat() {
+    localStorage.clear();
+    window.location.reload();
+  }
+
+  function saveToLocalStorage(text, type = "input", time = new Date(), img) {
+    const existing = localStorage.getItem("chatHistory");
+    existing
+      ? localStorage.setItem(
+          "chatHistory",
+          JSON.stringify(
+            [
+              JSON.parse(existing),
+              { value: text, type: type, time: time, img: img },
+            ].flat()
+          )
+        )
+      : localStorage.setItem(
+          "chatHistory",
+          JSON.stringify([{ value: text, type: type, time: time, img: img }])
+        );
+  }
+
+  function scrollOutput() {
+    const output = document.getElementById("output");
+    output.scroll(0, output.scrollHeight - 16);
+  }
+
+  // Event listeners
+  window.addEventListener("load", () => {
+    const existing = localStorage.getItem("chatHistory");
+    const nav = document.querySelector(".chatNav");
+    if (existing) {
+      JSON.parse(existing).forEach((i) =>
+        i.img
+          ? buildImage(i.img, i.value, i.time)
+          : buildBubble(i.value, i.type, i.time)
+      );
+      nav.classList.remove("visually__hidden");
+    }
+    scrollOutput();
+  });
+
+  window.addEventListener("resize", scrollOutput);
+</script>

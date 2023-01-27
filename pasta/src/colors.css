@@ -1,0 +1,117 @@
+@layer props {
+  :root {
+    @media screen and (prefers-color-scheme: light) {
+      --color__hue--base: 218deg 24% 24%;
+      --color__hue--highlight: 158deg 32% 38%;
+      --color__hue--contrast: 218deg 24% 100%;
+      --color__hue--contrast--extra: 218deg 48% 12%;
+      color-scheme: light;
+    }
+    @media screen and (prefers-color-scheme: dark) {
+      --color__hue--base: 218deg 24% 90%;
+      --color__hue--highlight: 158deg 32% 38%;
+      --color__hue--contrast: 218deg 32% 12%;
+      --color__hue--contrast--extra: 218deg 32% 8%;
+      color-scheme: dark;
+    }
+    &[data-theme="light"] {
+      --color__hue--base: 218deg 24% 24%;
+      --color__hue--highlight: 158deg 32% 38%;
+      --color__hue--contrast: 218deg 24% 100%;
+      --color__hue--contrast--extra: 218deg 48% 12%;
+      color-scheme: light;
+    }
+    &[data-theme="dark"] {
+      --color__hue--base: 218deg 24% 90%;
+      --color__hue--highlight: 158deg 32% 38%;
+      --color__hue--contrast: 218deg 32% 12%;
+      --color__hue--contrast--extra: 218deg 32% 8%;
+      color-scheme: dark;
+    }
+    @each $colorKey, $colorVal in (base, highlight),
+      (218deg 24% 24%, 158deg 32% 38%)
+    {
+      --color__$(colorKey): hsl(var(--color__hue--$(colorKey)));
+      @each $stepKey, $stepVal in (ish, mid, semi, light, ghost),
+        (0.75, 0.625, 0.25, 0.125, 0.0625)
+      {
+        --color__$(colorKey)--$(stepKey): hsl(
+          var(--color__hue--$(colorKey)) / $(stepVal)
+        );
+      }
+    }
+    --color__contrast: hsl(var(--color__hue--contrast));
+    --color__contrast--extra: hsl(var(--color__hue--contrast--extra));
+  }
+}
+
+@layer helpers {
+  @each $colorKey
+    in (
+      base,
+      base--ish,
+      base--mid,
+      base--semi,
+      base--light,
+      base--ghost,
+      highlight,
+      highlight--ish,
+      highlight--mid,
+      highlight--semi,
+      highlight--light,
+      highlight--ghost,
+      contrast,
+      contrast--extra
+    )
+  {
+    .color__bg--$(colorKey) {
+      background-color: var(--color__$(colorKey));
+    }
+  }
+
+  @each $colorKey
+    in (
+      base,
+      base--ish,
+      base--mid,
+      base--semi,
+      base--light,
+      base--ghost,
+      highlight,
+      highlight--ish,
+      highlight--mid,
+      highlight--semi,
+      highlight--light,
+      highlight--ghost,
+      contrast,
+      contrast--extra
+    )
+  {
+    .color__border--$(colorKey) {
+      border-color: var(--color__$(colorKey));
+    }
+  }
+
+  @each $colorKey
+    in (
+      base,
+      base--ish,
+      base--mid,
+      base--semi,
+      base--light,
+      base--ghost,
+      highlight,
+      highlight--ish,
+      highlight--mid,
+      highlight--semi,
+      highlight--light,
+      highlight--ghost,
+      contrast,
+      contrast--extra
+    )
+  {
+    .color__type--$(colorKey) {
+      color: var(--color__$(colorKey));
+    }
+  }
+}

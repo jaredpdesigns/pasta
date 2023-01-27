@@ -1,0 +1,18 @@
+<script webc:type="render" webc:is="template">
+  function() {
+    const options = [{ name: 'Equal', props: ['']}, { name: 'Directional, Addition', props: ['block--', 'block-end--','block-start--','inline--', 'inline-end--', 'inline-start--']}];
+    const negationDirections = ['block', 'block-end','block-start','inline', 'inline-end', 'inline-start'];
+    return `<section class="flow__grid flow__gap--l">
+      ${options.map(option =>
+          `<h4>${option.name}</h4>
+          ${option.props.map(prop => `
+            <h5>${prop.replace('--','')}</h5>
+            <ul class="flow__grid flow__gap--l flow__grid--columns-auto" style="list-style: none">${this.sizes.map(size => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__grid flow__align--inline-start flow__align--block-start padding__m radius__s"><span class="color__bg--highlight padding__${prop}${size} radius__s" style="display: inline-block; min-inline-size: 0;"><div class="border__all color__bg--contrast color__border--base--light radius__s" style="block-size: var(--size__l); inline-size: var(--size__l);"></div></span></figure><p><code>.padding__${prop}${size}</code></p></li>`).join('')}</ul>`).join('')}`
+        ).join('')}
+        <h4>Directional, Negation</h4>
+        <p>If you need to remove <code>padding</code> from only one direction at a time, you can use the following classes:</p>
+        <ul class="flow__grid flow__gap--l flow__grid--columns-auto" style="list-style: none">
+      ${negationDirections.map(direction => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__grid flow__align--inline-start flow__align--block-center padding__m radius__s"><span class="color__bg--highlight padding__m padding__${direction}--none radius__s" style="display: inline-block; min-inline-size: 0;"><div class="border__all color__bg--contrast color__border--base--light radius__s" style="block-size: var(--size__l); inline-size: var(--size__l);"></div></span></figure><p><code>.padding__${direction}--none</code></p></li>`).join('')}</ul>
+    </section>`;
+  }
+</script>

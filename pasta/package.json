@@ -1,0 +1,65 @@
+{
+  "name": "@jaredpdesigns/pasta",
+  "author": "Jared Pendergraft <jaredpdesigns@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!",
+  "scripts": {
+    "build": "postcss src/*.css -u postcss-import -u postcss-nested -u postcss-each -u autoprefixer -u postcss-minify --no-map -d ./"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.17",
+    "postcss-cli": "^10.0.0",
+    "postcss-each": "^1.1.0",
+    "postcss-import": "^15.0.0",
+    "postcss-minify": "^1.1.0",
+    "postcss-nested": "^6.0.0"
+  },
+  "style": "pasta.css",
+  "main": "pasta.css",
+  "unpkg": "pasta.css",
+  "exports": {
+    "./style": "./pasta.css",
+    "./backdrop": "./backdrop.css",
+    "./code": "./code.css",
+    "./colors": "./colors.css",
+    "./controls": "./controls.css",
+    "./focus": "./focus.css",
+    "./reset": "./reset.css",
+    "./shadows": "./shadows.css",
+    "./spacing": "./spacing.css",
+    "./table": "./table.css",
+    "./type": "./type.css",
+    "./utilities": "./utilities.css",
+    "./widths": "./widths.css"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "files": [
+    "backdrop.css",
+    "code.css",
+    "colors.css",
+    "controls.css",
+    "focus.css",
+    "pasta.css",
+    "README.md",
+    "reset.css",
+    "shadows.css",
+    "spacing.css",
+    "table.css",
+    "type.css",
+    "utilities.css",
+    "widths.css"
+  ],
+  "keywords": [
+    "css",
+    "postcss",
+    "pasta",
+    "jaredpdesigns",
+    "jared pendergraft"
+  ],
+  "repository": "github:jaredpdesigns/pasta"
+}

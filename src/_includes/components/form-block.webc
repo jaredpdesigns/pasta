@@ -1,0 +1,120 @@
+<form class="flow__grid flow__gap--l" onsubmit="event.preventDefault()">
+  <fieldset class="control__input">
+    <label for="input1">Input</label>
+    <section class="flow__grid flow__gap--l flow__grid--columns-auto">
+      <input id="input1" name="input1" type="text" placeholder="Enter name…" />
+      <input
+        id="inputDisabled"
+        name="inputDisabled"
+        type="text"
+        placeholder="Enter name…"
+        disabled
+      />
+    </section>
+  </fieldset>
+  <fieldset class="control__select">
+    <label for="select1">Select</label>
+    <section class="flow__grid flow__gap--l flow__grid--columns-auto">
+      <span>
+        <select id="select1" name="select1">
+          <option selected>Really young</option>
+          <option>Just right</option>
+          <option>Really old</option>
+        </select>
+      </span>
+      <span>
+        <select id="selectDisabled" name="selectDisabled" disabled>
+          <option selected>Really young</option>
+          <option>Just right</option>
+          <option>Really old</option>
+        </select>
+      </span>
+    </section>
+  </fieldset>
+  <fieldset class="control__radio">
+    <legend>Radio</legend>
+    <section>
+      <label for="coffee"
+        ><input type="radio" id="coffee" name="drink" value="Coffee" checked />
+        <span>Coffee</span></label
+      >
+      <label for="tea"
+        ><input type="radio" id="tea" name="drink" value="Tea" />
+        <span>Tea</span></label
+      >
+      <label for="kombucha"
+        ><input
+          type="radio"
+          id="kombucha"
+          name="drink"
+          value="Kombucha"
+          disabled
+        />
+        <span>Kombucha</span></label
+      >
+    </section>
+  </fieldset>
+  <fieldset class="control__checkbox">
+    <legend>Checkbox</legend>
+    <section>
+      <label for="checkboxUnchecked"
+        ><input
+          type="checkbox"
+          id="checkboxUnchecked"
+          name="checkboxUnchecked"
+        />
+        <span>Unchecked</span></label
+      >
+      <label for="checkboxChecked"
+        ><input
+          type="checkbox"
+          id="checkboxChecked"
+          name="checkboxChecked"
+          checked
+        />
+        <span>Checked</span></label
+      >
+      <label for="checkboxIndeterminate"
+        ><input
+          type="checkbox"
+          id="checkboxIndeterminate"
+          name="checkboxIndeterminate"
+        />
+        <span>Indeterminate</span></label
+      >
+      <label for="checkboxDisabled"
+        ><input
+          type="checkbox"
+          id="checkboxDisabled"
+          name="checkboxDisabled"
+          disabled
+        />
+        <span>Disabled</span></label
+      >
+    </section>
+  </fieldset>
+  <fieldset class="control__toggle">
+    <legend>Toggle</legend>
+    <section>
+      <label for="toggle1"
+        ><input type="checkbox" id="toggle1" name="toggle1" checked />
+        <span>Fully Caffeinated</span></label
+      >
+      <label for="toggle2"
+        ><input type="checkbox" id="toggle2" name="toggle2" disabled />
+        <span>Fully Awake</span></label
+      >
+    </section>
+  </fieldset>
+  <fieldset
+    class="flow__flex flow__align--h-start flow__align--v-center flow__gap--s"
+  >
+    <button class="button__secondary" type="reset">Reset</button>
+    <button class="button__primary" type="submit">Submit Form</button>
+  </fieldset>
+</form>
+<script>
+  setTimeout(() => {
+    document.getElementById("checkboxIndeterminate").indeterminate = true;
+  }, 100);
+</script>

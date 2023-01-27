@@ -1,0 +1,270 @@
+@layer props {
+  :root {
+    @each $typeFamilyKey, $typeFamilyVal in (primary, secondary, tertiary),
+      (sans-serif, serif, monospace)
+    {
+      --type__family--$(typeFamilyKey): $(typeFamilyVal);
+    }
+    @each $typeLineheightKey, $typeLineheightVal,
+      $typeLineheightValFluid in (xs, s, m, l, xl, xxl, xxxl, xxxxl),
+      (1rem, 1.5rem, 1.75rem, 2rem, 1.75rem, 2.25rem, 2.5rem, 3rem),
+      (
+        clamp(1rem, 2vw + 1rem, 1.5rem),
+        clamp(1.5rem, 2vw + 1rem, 1.75rem),
+        clamp(1.75rem, 2vw + 1rem, 2rem),
+        clamp(2rem, 2vw + 1rem, 2.25rem),
+        clamp(1.75rem, 2vw + 1rem, 2rem),
+        clamp(2.25rem, 2vw + 1rem, 2.5rem),
+        clamp(2.5rem, 2vw + 1rem, 3rem),
+        clamp(3rem, 2vw + 1rem, 3.25rem)
+      )
+    {
+      --type__lineheight--$(typeLineheightKey): $(typeLineheightVal);
+      --type__lineheight--$(typeLineheightKey)--fluid: $(
+        typeLineheightValFluid
+      );
+    }
+    @each $typeSizeKey, $typeSizeVal,
+      $typeSizeValFluid in (xxs, xs, s, m, l, xl, xxl, xxxl, xxxxl),
+      (0.75rem, 0.875rem, 1rem, 1.125rem, 1.25rem, 1.5rem, 2rem, 2.5rem, 3rem),
+      (
+        clamp(0.75rem, 2vw + 1rem, 0.875rem),
+        clamp(0.875rem, 2vw + 1rem, 1rem),
+        clamp(1rem, 2vw + 1rem, 1.125rem),
+        clamp(1.125rem, 2vw + 1rem, 1.25rem),
+        clamp(1.25rem, 2vw + 1rem, 1.375rem),
+        clamp(1.5rem, 2vw + 1rem, 2rem),
+        clamp(2rem, 2vw + 1rem, 2.5rem),
+        clamp(2.5rem, 2vw + 1rem, 3rem),
+        clamp(3rem, 2vw + 1rem, 3.5rem)
+      )
+    {
+      --type__size--$(typeSizeKey): $(typeSizeVal);
+      --type__size--$(typeSizeKey)--fluid: $(typeSizeValFluid);
+    }
+  }
+}
+
+@layer config {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  h1 {
+    font-size: var(--type__size--xxl--fluid);
+    line-height: var(--type__lineheight--xxl--fluid);
+  }
+
+  h2 {
+    font-size: var(--type__size--xl--fluid);
+    line-height: var(--type__lineheight--xl--fluid);
+  }
+
+  h3 {
+    font-size: var(--type__size--l--fluid);
+    line-height: var(--type__lineheight--xl--fluid);
+  }
+
+  h4 {
+    font-size: var(--type__size--m--fluid);
+    line-height: var(--type__lineheight--l--fluid);
+  }
+
+  h5,
+  th {
+    font-size: var(--type__size--xs--fluid);
+    line-height: var(--type__lineheight--s--fluid);
+    letter-spacing: var(--size__xxs);
+    text-transform: uppercase;
+  }
+
+  h6 {
+    font-size: var(--type__size--xxs--fluid);
+    line-height: var(--type__lineheight--xs--fluid);
+    letter-spacing: var(--size__xxs);
+    text-transform: uppercase;
+  }
+
+  p,
+  li,
+  dl,
+  td {
+    font-size: var(--type__size--m--fluid);
+    line-height: var(--type__lineheight--l--fluid);
+  }
+
+  ol:not([class]),
+  ol.styled,
+  ul:not([class]),
+  ul.styled {
+    padding-left: var(--type__size--m--fluid);
+    ol,
+    ul {
+      margin-top: var(--size__m);
+      padding-left: var(--type__size--m--fluid);
+    }
+    li {
+      list-style-position: outside;
+      &::marker {
+        color: var(--color__highlight);
+      }
+      + * {
+        margin-top: var(--size__m);
+      }
+    }
+  }
+
+  ol {
+    li {
+      list-style: decimal;
+    }
+    ol {
+      li {
+        list-style-type: lower-alpha;
+        li {
+          list-style-type: lower-roman;
+        }
+      }
+    }
+  }
+
+  hr:not([class]),
+  hr.styled {
+    background-color: var(--color__highlight--semi);
+    border: none;
+    border-radius: calc(var(--size__xs) / 2);
+    height: var(--size__xs);
+    width: var(--size__xxxl);
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  * > a {
+    color: inherit;
+    text-decoration-color: var(--color__highlight--semi);
+    text-decoration-thickness: calc(var(--size__xs) / 2);
+    text-decoration-line: underline;
+    text-underline-offset: var(--size__xs);
+    &:focus,
+    &:hover,
+    &:focus-visible {
+      transition: all 0.375s ease-in;
+      transition-property: background-color, color;
+    }
+    &:focus,
+    &:hover {
+      color: var(--color__highlight);
+    }
+    &:focus-visible {
+      background-color: var(--color__highlight--ghost);
+    }
+  }
+
+  blockquote:not([class]),
+  blockquote.styled {
+    --color__bg: var(--color__highlight--light);
+    --color__border: var(--color__highlight--semi);
+    background-color: var(--color__bg);
+    border: var(--size__xxs) solid var(--color__border);
+    box-shadow: inset var(--size__xs) 0 0 0 var(--color__border);
+    padding: var(--size__m);
+    > * + * {
+      margin-top: var(--size__m);
+    }
+  }
+
+  dl {
+    dt {
+      font-weight: bold;
+    }
+  }
+}
+
+@layer helpers {
+  @each $typeFamily in (primary, secondary, tertiary) {
+    .type__family--$(typeFamily) {
+      font-family: var(--type__family--$(typeFamily));
+    }
+  }
+
+  @each $typeAlign in (center, left, right) {
+    .type__align--$(typeAlign) {
+      text-align: $(typeAlign);
+    }
+  }
+
+  .type__clamp {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @each $typeSize in (xxs, xs, s, m, l, xl, xxl, xxxl, xxxxl) {
+    @each $typeLineheight in (xs, s, m, l, xl, xxl, xxxl, xxxxl) {
+      .type__size--$(typeSize)-$(typeLineheight) {
+        font-size: var(--type__size--$(typeSize));
+        line-height: var(--type__lineheight--$(typeLineheight));
+      }
+    }
+  }
+
+  @each $typeSize, $typeSizeValue in (xxs, xs, s, m, l, xl, xxl, xxxl, xxxxl),
+    (
+      xxs--fluid,
+      xs--fluid,
+      s--fluid,
+      m--fluid,
+      l--fluid,
+      xl--fluid,
+      xxl--fluid,
+      xxxl--fluid,
+      xxxxl--fluid
+    )
+  {
+    @each $typeLineheight,
+      $typeLineheightValue in (xs, s, m, l, xl, xxl, xxxl, xxxxl),
+      (
+        xs--fluid,
+        s--fluid,
+        m--fluid,
+        l--fluid,
+        xl--fluid,
+        xxl--fluid,
+        xxxl--fluid,
+        xxxxl--fluid
+      )
+    {
+      .type__size--$(typeSize)-$(typeLineheight)--fluid {
+        font-size: var(--type__size--$(typeSizeValue));
+        line-height: var(--type__lineheight--$(typeLineheightValue));
+      }
+    }
+  }
+
+  @each $typeWeightKey, $typeWeightVal in (light, normal, semibold, bold),
+    (300, normal, 600, bold)
+  {
+    .type__weight--$(typeWeightKey) {
+      font-weight: $(typeWeightVal);
+    }
+  }
+}

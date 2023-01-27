@@ -1,0 +1,10 @@
+<section
+  class="border__all color__border--base--light flow__flex flow__align--block-center flow__align--inline-center flow__gap--m padding__m radius__s"
+  style="block-size: calc(var(--size__xxxl) * 2)"
+>
+  <p>Flow child 1</p>
+  <p class="flow__self--start flow__order" style="--order: 3">
+    Flow child 2 [but I’m at the top/end]
+  </p>
+  <p>Flow child 3</p>
+</section>

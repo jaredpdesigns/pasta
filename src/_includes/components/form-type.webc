@@ -1,0 +1,80 @@
+<form class="flow__grid flow__gap--l" onsubmit="event.preventDefault()">
+  <fieldset class="control__input">
+    <label for="url">External Stylesheet</label>
+    <input
+      type="url"
+      name="url"
+      id="url"
+      placeholder="ex. https://fonts.googleapis.com/…"
+      pattern="https://.*"
+    />
+  </fieldset>
+  <fieldset class="control__input">
+    <label for="primary">Primary</label>
+    <input
+      type="text"
+      name="primary"
+      id="primary"
+      placeholder="ex. sans-serif"
+    />
+  </fieldset>
+  <fieldset class="control__input">
+    <label for="secondary">Secondary</label>
+    <input
+      type="text"
+      name="secondary"
+      id="secondary"
+      placeholder="ex. serif"
+    />
+  </fieldset>
+  <fieldset class="control__input">
+    <label for="tertiary">Tertiary</label>
+    <input
+      type="text"
+      name="tertiary"
+      id="tertiary"
+      placeholder="ex. monospace"
+    />
+  </fieldset>
+  <section
+    class="flow__flex flow__align--h-start flow__align--v-center flow__gap--s"
+  >
+    <button class="button__secondary" type="reset" onclick="resetFonts()">
+      Reset
+    </button>
+    <button class="button__primary" type="submit" onclick="updateFonts()">
+      Save
+    </button>
+  </section>
+</form>
+<script>
+  function resetFonts() {
+    document.documentElement.removeAttribute("style");
+  }
+
+  function updateFonts() {
+    const url = document.getElementById("url").value;
+    const urlRoot = url.replace("https://", "").split("/")[0];
+    const existingLink = document.querySelectorAll(`link[href*="${urlRoot}"]`);
+    if (existingLink.length) {
+      existingLink.forEach((e) => e.parentNode.removeChild(e));
+      const link = document.createElement("link");
+      link.href = url;
+      link.rel = "stylesheet";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    } else {
+      const link = document.createElement("link");
+      link.href = url;
+      link.rel = "stylesheet";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    }
+    const primaryFont = document.getElementById("primary").value;
+    const secondaryFont = document.getElementById("secondary").value;
+    const tertiaryFont = document.getElementById("tertiary").value;
+    document.documentElement.style = `${
+      primaryFont ? `--type__family--primary: ${primaryFont};` : ""
+    }${secondaryFont ? `--type__family--secondary: ${secondaryFont};` : ""}${
+      tertiaryFont ? `--type__family--tertiary: ${tertiaryFont};` : ""
+    }`;
+  }
+</script>

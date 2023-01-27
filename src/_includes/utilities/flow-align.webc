@@ -1,0 +1,10 @@
+<script webc:type="render" webc:is="template">
+    function() {
+      const flowTypes = ['flex', 'grid', 'inline'];
+      const flow = [
+        { name: 'inline', props: ['around', 'between', 'center', 'end', 'start', 'stretch']},
+        { name: 'block', props: ['center', 'end', 'start', 'stretch']}
+      ];
+  return `<section class="flow__grid flow__gap--l">${flowTypes.map(type => `<h4>${type}</h4>${flow.map(flow => `<ul class="flow__grid flow__gap--l flow__grid--columns-auto" style="list-style: none">${flow.props.map(prop => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__${type} flow__align--${flow.name}-${prop} ${flow.name === 'inline' ? 'flow__align--v-center':'flow__align--h-center'} radius__s" style="${type === 'grid' ? `grid-auto-flow: column;`:''} ${flow.name === 'block' ? `height: calc(var(--size__l) * 3);`:''} ${type === 'inline' ? `width: calc(var(--size__l) * 3);`:''}"><span class="color__bg--highlight padding__m radius__s"></span>${prop === 'around' || prop === 'between' ? `<span class="color__bg--highlight padding__m radius__s"></span>`:''}</figure><p><code>.flow__${type}.flow__align--${flow.name}-${prop}</code></p></li>`).join('')}</ul>`).join('')}`).join('')}</section>`;
+    }
+</script>

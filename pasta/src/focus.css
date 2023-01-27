@@ -1,0 +1,21 @@
+@layer props {
+  :root {
+    --outline__offset: 0;
+    --outline__size: var(--size__xs);
+    --outline__style: solid;
+    --outline__color: var(--color__highlight--semi);
+  }
+}
+
+@layer config {
+  :is(a, button, input, select, textarea, summary) {
+    caret-color: var(--color__highlight);
+    &:focus-visible {
+      outline: var(--outline__size) var(--outline__style) var(--outline__color);
+      outline-offset: var(--outline__offset, var(--outline__size));
+    }
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+}

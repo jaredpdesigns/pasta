@@ -1,0 +1,12 @@
+<p :class="`type__size--${size}--fluid radius__xs`" contenteditable>
+  The quick brown fox jumps over the lazy dog. But has anyone asked why? What
+  motivates the fox—and what makes the dog so lazy—or is the dog simply
+  exhausted?
+</p>
+
+<style>
+  p[contenteditable]:focus-visible {
+    outline: var(--outline__size) var(--outline__style) var(--outline__color);
+    outline-offset: var(--outline__offset, var(--outline__size));
+  }
+</style>

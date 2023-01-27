@@ -1,0 +1,24 @@
+@layer props {
+  :root {
+    @each $widthKey, $widthVal in (xxs, xs, s, m, ml, l, xl, xxl, xxxl),
+      (10rem, 15rem, 20rem, 30rem, 40rem, 60rem, 80rem, 105rem, 152rem)
+    {
+      --width__$(widthKey): $(widthVal);
+    }
+  }
+}
+
+@layer helpers {
+  @each $width in (xxs, xs, s, m, ml, l, xl, xxl, xxxl) {
+    .width__$(width) {
+      margin-inline: auto;
+      max-inline-size: var(--width__$(width));
+      inline-size: 100%;
+    }
+  }
+
+  .width__full {
+    max-inline-size: 100%;
+    inline-size: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+<script webc:type="render" webc:is="template">
+  function() {
+    const flowTypes = ['flex', 'grid'];
+    const flowDirections = ['column', 'row'];
+    return `<section class="flow__grid flow__gap--l">
+      ${flowTypes.map(type =>
+        flowDirections.map(direction =>
+          `<h4>${type} ${direction}</h4><div class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__${type} flow__align--inline-center flow__align--block-center flow__direction--${direction} flow__gap--s padding__m radius__s"><span class="color__bg--highlight padding__m radius__s"></span><span class="color__bg--highlight padding__m radius__s"></span></figure><p><code>.flow__${type}.flow__direction--${direction}</code></p></div>`
+        ).join('')
+      ).join('')}
+    </section>`;
+  }
+</script>

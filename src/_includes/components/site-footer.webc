@@ -1,0 +1,11 @@
+<footer class="border__block-start color__border--base--light">
+  <section
+    class="margin__inline--auto padding__block--m padding__inline--l type__align--center"
+  >
+    <script webc:type="render" webc:is="template">
+      function() {
+        return `<p>&copy; ${new Date().getFullYear()} <a href="https://jaredpendergraft.com">Jared Pendergraft</a></p>`;
+      }
+    </script>
+  </section>
+</footer>

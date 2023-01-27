@@ -1,0 +1,18 @@
+<script webc:type="render" webc:is="template">
+  function() {
+    const options = [{ name: 'Equal', props: ['']}, { name: 'Directional, Addition', props: ['block--', 'block-end--','block-start--','inline--', 'inline-end--', 'inline-start--']}];
+    const negationDirections = ['block', 'block-end','block-start','inline', 'inline-end', 'inline-start'];
+    return `<section class="flow__grid flow__gap--l">
+      ${options.map(option =>
+          `<h4>${option.name}</h4>
+          ${option.props.map(prop => `
+            <h5>${prop.replace('--','')}</h5>
+            <ul class="flow__grid flow__gap--l flow__grid--columns-auto" style="list-style: none">${this.sizes.map(size => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__grid flow__align--inline-start flow__align--block-center padding__m radius__s"><span class="color__bg--highlight margin__${prop}${size} padding__m radius__s"></span></figure><p><code>.margin__${prop}${size}</code></p></li>`).join('')}</ul>`).join('')}`
+        ).join('')}
+        <h4>Directional, Negation</h4>
+        <p>If you need to remove <code>margin</code> from only one direction at a time, you can use the following classes:</p>
+        <ul class="flow__grid flow__gap--l flow__grid--columns-auto" style="list-style: none">
+      ${negationDirections.map(direction => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__grid flow__align--inline-start flow__align--block-center padding__m radius__s"><span class="color__bg--highlight margin__m margin__${direction}--none padding__m radius__s"></span></figure><p><code>.margin__${direction}--none</code></p></li>`).join('')}</ul>
+    </section>`;
+  }
+</script>

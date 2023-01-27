@@ -1,0 +1,36 @@
+<custom-dialog title="Page Contents" webc:nokeep>
+  <ul>
+    <li><a href="#borders">Borders</a></li>
+    <li>
+      <a href="#colors">Colors</a>
+      <ul>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#border">Border</a></li>
+        <li><a href="#color">Color</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#flow">Flow</a>
+      <ul>
+        <li><a href="#alignment">Alignment</a></li>
+        <li><a href="#direction">Direction</a></li>
+        <li><a href="#flex-helpers">Flex Helpers</a></li>
+        <li><a href="#gap">Gap</a></li>
+        <li><a href="#grid-helpers">Grid Helpers</a></li>
+        <li><a href="#children">Children</a></li>
+      </ul>
+    </li>
+    <li><a href="#margin">Margin</a></li>
+    <li><a href="#padding">Padding</a></li>
+    <li><a href="#radius">Radius</a></li>
+    <li>
+      <a href="#type">Type</a>
+      <ul>
+        <li><a href="#type-alignment">Alignment</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#size">Size</a></li>
+        <li><a href="#weight">Weight</a></li>
+      </ul>
+    </li>
+  </ul>
+</custom-dialog>

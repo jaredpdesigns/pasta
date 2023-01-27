@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="keywords"
+      content="pasta, css, html, responsive, minimal, jared pendergraft"
+    />
+    <meta name="author" content="Jared Pendergraft" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="/style.css" webc:raw />
+    <style webc:keep @html="getCSS(page.url)"></style>
+    <script webc:keep @html="getJS(page.url)"></script>
+    <title @html="title"></title>
+  </head>
+  <body @html="content"></body>
+</html>

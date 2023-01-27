@@ -1,0 +1,10 @@
+<script webc:type="render" webc:is="template">
+  function() {
+    const gaps = [{ name: 'Equal', value: '--'}, { name: 'Column', value: '--column-'}, { name: 'Row', value: '--row-'}];
+    return `<section class="flow__grid flow__gap--l">
+      ${gaps.map(gap =>
+          `<h4>${gap.name}</h4><ul class="flow__grid flow__gap--l flow__grid--columns-auto" style="list-style: none">${this.sizes.map(size => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__grid flow__align--inline-center flow__align--block-center flow__direction--${gap.name !== 'Column' ? 'row':'column'} flow__gap${gap.value}${size} padding__m radius__s"><span class="color__bg--highlight padding__m radius__s"></span><span class="color__bg--highlight padding__m radius__s"></span></figure><p><code>.flow__gap${gap.value}${size}</code></p></li>`).join('')}</ul>`
+        ).join('')}
+    </section>`;
+  }
+</script>

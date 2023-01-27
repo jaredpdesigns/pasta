@@ -1,0 +1,34 @@
+<dialog
+  class="border__all color__bg--contrast color__border--base--light radius__s"
+>
+  <header
+    class="border__bottom color__bg--contrast color__border--base--light flow__flex flow__align--h-between flow__align--v-center padding__m"
+  >
+    <h3 class="color__type--base--ish" @text="title"></h3>
+    <button class="button__tertiary radius__all" onclick="toggleDialog()">
+      <icon name="cancel" webc:nokeep></icon>
+    </button>
+  </header>
+  <nav class="padding__l">
+    <slot></slot>
+  </nav>
+</dialog>
+<style>
+  dialog {
+    inline-size: calc(100% - var(--size__l));
+    margin: auto;
+    max-block-size: calc(100% - var(--size__l));
+    max-inline-size: var(--width__m);
+    position: fixed;
+  }
+
+  dialog > header {
+    inset-block-start: 0;
+    position: sticky;
+  }
+
+  dialog > header > button {
+    block-size: var(--size__l);
+    inline-size: var(--size__l);
+  }
+</style>

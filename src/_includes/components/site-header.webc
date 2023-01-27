@@ -1,0 +1,90 @@
+<header class="color__bg--highlight">
+  <section
+    class="flow__flex flow__align--v-center flow__align--h-between flow__gap--m flow__flex--wrap margin__inline--auto padding__block--m padding__inline--l"
+  >
+    <a href="/" title="Return to Overview">
+      <figure
+        class="flow__inline flow__align-v-center flow__align--h-start flow__gap--m"
+      >
+        <logo size="56" class="flow__flex--shrink-no"></logo>
+        <figcaption>
+          <p class="type__size--xl-l"><strong>Pasta</strong></p>
+          <p class="type__size--m-s">Simply Delicious</p>
+        </figcaption>
+      </figure>
+    </a>
+    <nav class="flow__inline flow__align--v-center flow__gap--column-l flow__gap--row-s flow__flex--wrap">
+      <a
+        href="/"
+        class="type__size--m-l"
+        :aria-current="page.url === '/' && 'page'"
+        >Overview</a
+      >
+      <a
+        href="/utilities/"
+        :aria-current="page.url === '/utilities/' && 'page'"
+        class="type__size--m-l"
+        >Utilities</a
+      >
+      <a
+        href="/type/"
+        :aria-current="page.url === '/type/' && 'page'"
+        class="type__size--m-l"
+        >Type</a
+      >
+      <button onclick="toggleDialog()" class="button__tertiary" webc:if="page.url !== '/chat/'">
+        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="page.url !== '/type/'">
+          <icon name="list-bullet" webc:nokeep></icon>Contents
+        </span>
+        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="page.url === '/type/'">
+          <icon name="gear" webc:nokeep></icon>Configure
+        </template>
+      </button>
+      <button onclick="toggleTheme()" class="button__tertiary">
+        <icon name="theme" webc:nokeep></icon>Theme
+      </button>
+    </nav>
+  </section>
+</header>
+<script>
+  function toggleTheme() {
+    if (sessionStorage.getItem("theme") === null) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        sessionStorage.setItem("theme", "dark");
+      } else {
+        sessionStorage.setItem("theme", "light");
+      }
+      document.documentElement.setAttribute(
+        "data-theme",
+        sessionStorage.getItem("theme")
+      );
+    }
+    if (document.documentElement.getAttribute("data-theme") === "dark") {
+      sessionStorage.setItem("theme", "light");
+    } else {
+      sessionStorage.setItem("theme", "dark");
+    }
+    document.documentElement.setAttribute(
+      "data-theme",
+      sessionStorage.getItem("theme")
+    );
+  }
+  function toggleDialog() {
+    const dialog = document.querySelector("dialog");
+    const dialogIsOpen = dialog.hasAttribute("open");
+
+    if (dialogIsOpen) {
+      dialog.close();
+    } else {
+      dialog.showModal();
+    }
+
+    // Listen for a link click to close the dialog
+    const links = dialog.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        dialog.close();
+      });
+    });
+  }
+</script>

@@ -1,0 +1,23 @@
+---
+layout: root.webc
+---
+
+<site-header webc:nokeep></site-header>
+<main :class="page.fileSlug">
+  <dialog-main webc:if="page.url === '/'"></dialog-main>
+  <dialog-utilities webc:if="page.url === '/utilities/'"></dialog-utilities>
+  <dialog-type webc:if="page.url === '/type/'"></dialog-type>
+  <template @html="content" webc:nokeep></template>
+</main>
+<site-footer webc:nokeep></site-footer>
+<script>
+  function getTheme() {
+    if (sessionStorage.getItem("theme") !== null) {
+      document.documentElement.setAttribute(
+        "data-theme",
+        sessionStorage.getItem("theme")
+      );
+    }
+  }
+  getTheme();
+</script>

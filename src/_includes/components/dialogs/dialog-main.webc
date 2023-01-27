@@ -1,0 +1,20 @@
+<custom-dialog title="Page Contents" webc:nokeep>
+  <ul>
+    <li><a href="#get-started">Get Started</a></li>
+    <li>
+      <a href="#colors">Colors</a>
+      <ul>
+        <li><a href="#palette">Palette</a></li>
+        <li><a href="#custom-colors">Custom Colors</a></li>
+      </ul>
+    </li>
+    <li><a href="#typography">Typography</a></li>
+    <li>
+      <a href="#extras">Extras</a>
+      <ul>
+        <li><a href="#common-elements">Common Elements</a></li>
+        <li><a href="#form-elements">Form Elements</a></li>
+      </ul>
+    </li>
+  </ul>
+</custom-dialog>

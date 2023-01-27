@@ -1,0 +1,518 @@
+@layer helpers {
+  .border {
+    --border__width: var(--size__xxs);
+    &__all {
+      border-style: solid;
+      border-width: var(--border__width);
+    }
+    @each $name
+      in (
+        block-end,
+        block-start,
+        block,
+        bottom,
+        inline-end,
+        inline-start,
+        inline,
+        left,
+        right,
+        top
+      )
+    {
+      &__$(name) {
+        border-$(name)-style: solid;
+        border-$(name)-width: var(--border__width);
+      }
+    }
+    @each $abbr, $name in (b, l, r, t), (bottom, left, right, top) {
+      &__$(abbr) {
+        border-$(name)-style: solid;
+        border-$(name)-width: var(--border__width);
+      }
+    }
+  }
+
+  .flow {
+    &__flex {
+      display: flex;
+      &--grow {
+        flex-grow: 1;
+        &-no {
+          flex-grow: 0;
+        }
+      }
+      &--shrink {
+        flex-shrink: 1;
+        &-no {
+          flex-shrink: 0;
+        }
+      }
+      &--wrap {
+        flex-wrap: wrap;
+        &-no {
+          flex-wrap: nowrap;
+        }
+      }
+    }
+    &__grid {
+      display: grid;
+      &--columns {
+        &-auto {
+          grid-template-columns: repeat(
+            var(--fitType, auto-fit),
+            minmax(var(--columnWidth, var(--width__xs)), 1fr)
+          );
+          .width__full {
+            grid-column: 1/-1;
+          }
+        }
+        &-fixed {
+          grid-template-columns: repeat(var(--columnCount), 1fr);
+          .width__full {
+            grid-column: 1/-1;
+          }
+        }
+      }
+    }
+    &__inline {
+      display: inline-flex;
+    }
+    &__align {
+      &--h,
+      &--inline {
+        &-around {
+          justify-content: space-around;
+        }
+        &-between {
+          justify-content: space-between;
+        }
+        &-center {
+          justify-content: center;
+        }
+        &-end {
+          justify-content: flex-end;
+          &.flow--grid {
+            justify-content: end;
+          }
+        }
+        &-start {
+          justify-content: flex-start;
+          &.flow--grid {
+            justify-content: start;
+          }
+        }
+        &-stretch {
+          justify-content: stretch;
+        }
+      }
+      &--v,
+      &--block {
+        &-center {
+          align-items: center;
+        }
+        &-end {
+          align-items: flex-end;
+          &.flow--grid {
+            align-items: end;
+          }
+        }
+        &-start {
+          align-items: flex-start;
+          &.flow--grid {
+            align-items: start;
+          }
+        }
+        &-stretch {
+          align-items: stretch;
+        }
+      }
+    }
+    &__direction {
+      &--column {
+        flex-direction: column;
+        &.flow__grid {
+          grid-auto-flow: column;
+        }
+      }
+      &--row {
+        flex-direction: row;
+        &.flow__grid {
+          grid-auto-flow: row;
+        }
+      }
+    }
+    &__gap {
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &--$(size) {
+          gap: var(--size__$(size));
+        }
+      }
+      &--column {
+        @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+          &-$(size) {
+            column-gap: var(--size__$(size));
+          }
+        }
+      }
+      &--row {
+        @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+          &-$(size) {
+            row-gap: var(--size__$(size));
+          }
+        }
+      }
+    }
+    &__order {
+      order: var(--order, auto);
+    }
+    &__self {
+      &--center {
+        align-self: center;
+      }
+      &--end {
+        align-self: flex-end;
+        .flow--grid > & {
+          align-self: end;
+        }
+      }
+      &--start {
+        align-self: flex-start;
+        .flow--grid > & {
+          align-self: start;
+        }
+      }
+      &--stretch {
+        align-self: stretch;
+      }
+    }
+    &__size {
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &--h-$(size),
+        &--block-$(size) {
+          block-size: var(--size__$(size));
+        }
+      }
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &--w-$(size),
+        &--inline-$(size) {
+          inline-size: var(--size__$(size));
+        }
+      }
+    }
+  }
+
+  @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+    .oomph__h--$(size) > * + *:not([class*="margin"]) {
+      margin-inline-start: var(--size__$(size));
+    }
+    .oomph__v--$(size) > * + *:not([class*="margin"]) {
+      margin-block-start: var(--size__$(size));
+    }
+  }
+
+  .overflow {
+    &__auto {
+      overflow: auto;
+    }
+    &__hidden {
+      overflow: hidden;
+    }
+    &__visible {
+      overflow: visible;
+    }
+    &__x {
+      &--auto {
+        overflow-x: auto;
+      }
+      &--hidden {
+        overflow-x: hidden;
+      }
+      &--visible {
+        overflow-x: visible;
+      }
+    }
+    &__y {
+      &--auto {
+        overflow-y: auto;
+      }
+      &--hidden {
+        overflow-y: hidden;
+      }
+      &--visible {
+        overflow-y: visible;
+      }
+    }
+  }
+
+  .margin {
+    &__auto {
+      margin: auto;
+    }
+    @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+      &__$(size) {
+        margin: var(--size__$(size));
+      }
+    }
+    @each $name
+      in (
+        block-end,
+        block-start,
+        block,
+        bottom,
+        inline-end,
+        inline-start,
+        inline,
+        left,
+        right,
+        top
+      )
+    {
+      &__$(name)--auto {
+        margin-$(name): auto;
+      }
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &__$(name)--$(size) {
+          margin-$(name): var(--size__$(size));
+        }
+      }
+    }
+    @each $abbr, $name in (b, l, r, t), (bottom, left, right, top) {
+      &__$(abbr)--auto {
+        margin-$(name): auto;
+      }
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &__$(abbr)--$(size) {
+          margin-$(name): var(--size__$(size));
+        }
+      }
+    }
+  }
+
+  .padding {
+    @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+      &__$(size) {
+        padding: var(--size__$(size));
+      }
+    }
+    @each $name
+      in (
+        block-end,
+        block-start,
+        block,
+        bottom,
+        inline-end,
+        inline-start,
+        inline,
+        left,
+        right,
+        top
+      )
+    {
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &__$(name)--$(size) {
+          padding-$(name): var(--size__$(size));
+        }
+      }
+    }
+    @each $abbr, $name in (b, l, r, t), (bottom, left, right, top) {
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &__$(abbr)--$(size) {
+          padding-$(name): var(--size__$(size));
+        }
+      }
+    }
+  }
+
+  .position {
+    &__absolute,
+    &__fixed,
+    &__relative {
+      --inset: unset;
+      --block-end: unset;
+      --block-start: unset;
+      --inline-end: unset;
+      --inline-start: unset;
+    }
+    &__absolute {
+      inset: var(--inset);
+      inset-block-end: var(--block-end);
+      inset-block-start: var(--block-start);
+      inset-inline-end: var(--inline-end);
+      inset-inline-start: var(--inline-start);
+      position: absolute;
+    }
+    &__fixed {
+      inset: var(--inset);
+      inset-block-end: var(--block-end);
+      inset-block-start: var(--block-start);
+      inset-inline-end: var(--inline-end);
+      inset-inline-start: var(--inline-start);
+      position: fixed;
+    }
+    &__relative {
+      inset: var(--inset);
+      inset-block-end: var(--block-end);
+      inset-block-start: var(--block-start);
+      inset-inline-end: var(--inline-end);
+      inset-inline-start: var(--inline-start);
+      position: relative;
+    }
+  }
+
+  .radius {
+    &__all {
+      border-radius: 50%;
+    }
+    @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+      &__$(size) {
+        border-radius: var(--size__$(size));
+      }
+    }
+    @each $direction
+      in (
+        bottom-left,
+        bottom-right,
+        end-end,
+        end-start,
+        start-end,
+        start-start,
+        top-left,
+        top-right
+      )
+    {
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &__$(direction)--$(size) {
+          border-$(direction)-radius: var(--size__$(size));
+        }
+      }
+    }
+    @each $name, $direction in (bl, br, tl, tr),
+      (bottom-left, bottom-right, top-left, top-right)
+    {
+      @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+        &__$(name)--$(size) {
+          border-$(direction)-radius: var(--size__$(size));
+        }
+      }
+    }
+  }
+}
+
+@layer overrides {
+  .border {
+    @each $name
+      in (
+        block,
+        bottom,
+        block-end,
+        top,
+        block-start,
+        inline,
+        left,
+        inline-end,
+        right,
+        inline-start
+      )
+    {
+      &__$(name)--none {
+        border-$(name): none;
+      }
+    }
+    &__none {
+      border: none;
+    }
+  }
+
+  .margin {
+    &__none {
+      margin: 0;
+    }
+    @each $name
+      in (
+        block,
+        bottom,
+        block-end,
+        top,
+        block-start,
+        inline,
+        left,
+        inline-end,
+        right,
+        inline-start
+      )
+    {
+      &__$(name)--none {
+        margin-$(name): 0;
+      }
+    }
+  }
+
+  .padding {
+    &__none {
+      padding: 0;
+    }
+    @each $name
+      in (
+        block,
+        bottom,
+        block-end,
+        top,
+        block-start,
+        inline,
+        left,
+        inline-end,
+        right,
+        inline-start
+      )
+    {
+      &__$(name)--none {
+        padding-$(name): 0;
+      }
+    }
+  }
+
+  .overflow {
+    &__none {
+      overflow: none;
+    }
+    &__x {
+      &--none {
+        overflow-x: none;
+      }
+    }
+    &__y {
+      &--none {
+        overflow-y: none;
+      }
+    }
+  }
+
+  .radius {
+    &__none {
+      border-radius: 0;
+    }
+    @each $direction
+      in (
+        bottom-left,
+        bottom-right,
+        end-end,
+        end-start,
+        start-end,
+        start-start,
+        top-left,
+        top-right
+      )
+    {
+      &__$(direction)--none {
+        border-$(direction)-radius: 0;
+      }
+    }
+    @each $name, $direction in (bl, br, tl, tr),
+      (bottom-left, bottom-right, top-left, top-right)
+    {
+      &__$(name)--none {
+        border-$(direction)-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<script webc:type="render" webc:is="template">
+  function() {
+    const options = ['light', 'normal', 'semibold', 'bold'];
+    return `<section class="flow__grid flow__gap--l"><ul class="flow__grid flow__gap--l" style="list-style: none">${options.map(option => `<li class="flow__grid flow__gap--m"><figure class="border__all color__border--base--light flow__grid flow__align--inline-start flow__align--block-start padding__m radius__s"><p class="type__weight--${option}">The quick brown fox jumps over the lazy dog. But has anyone asked why? What motivates the fox—and what makes the dog so lazy—or is the dog simply exhausted?</p></figure><p><code>.type__weight--${option}</code></p></li>`).join('')}</ul></section>`;
+  }
+</script>
