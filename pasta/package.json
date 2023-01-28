@@ -2,7 +2,6 @@
   "name": "@jaredpdesigns/pasta",
   "author": "Jared Pendergraft <jaredpdesigns@gmail.com>",
   "license": "ISC",
-  "private": true,
   "version": "2.0.0",
   "description": "Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!",
   "scripts": {
