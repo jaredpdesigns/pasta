@@ -1,4 +1,6 @@
 ---
+title: "Pasta • Simply Delicious"
+description: "Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy"
 layout: page.webc
 ---
 

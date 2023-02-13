@@ -1,8 +1,8 @@
 <header class="color__bg--highlight">
   <section
-    class="flow__flex flow__align--v-center flow__align--h-between flow__gap--m flow__flex--wrap margin__inline--auto padding__block--m padding__inline--l"
+    class="flow__flex flow__align--v-center flow__align--h-between flow__flex--wrap flow__gap--m margin__inline--auto padding__block--m"
   >
-    <a href="/" title="Return to Overview">
+    <a href="/" title="Return to Overview" class="margin__inline--l">
       <figure
         class="flow__inline flow__align-v-center flow__align--h-start flow__gap--m"
       >
@@ -13,7 +13,7 @@
         </figcaption>
       </figure>
     </a>
-    <nav class="flow__inline flow__align--v-center flow__gap--column-l flow__gap--row-s flow__flex--wrap">
+    <nav class="flow__inline flow__align--v-center flow__gap--column-l flow__gap--row-s padding__block--xs padding__inline--l">
       <a
         href="/"
         class="type__size--m-l"

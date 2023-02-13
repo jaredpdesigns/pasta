@@ -1,4 +1,6 @@
 ---
+title: "Pasta • Utility Classes"
+description: "A set of utility classes to help you style your code easily"
 layout: page.webc
 ---
 
@@ -134,7 +136,7 @@ grid-template-columns: repeat(
 
 Uses the default properties:
 
-<section class="border__all color__border--base--light flow__grid flow__grid--columns-auto flow__gap--m padding__m radius__s">
+<section class="border__all color__border--base--light flow__grid flow__grid--columns-auto flow__gap--m overflow__hidden padding__m radius__s">
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 1</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 2</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 3</p>
@@ -144,7 +146,7 @@ Uses the default properties:
 
 Adjusts the `--columnWidth` property:
 
-<section class="border__all color__border--base--light flow__grid flow__grid--columns-auto flow__gap--m padding__m radius__s" style="--columnWidth: 10rem">
+<section class="border__all color__border--base--light flow__grid flow__grid--columns-auto flow__gap--m overflow__hidden padding__m radius__s" style="--columnWidth: 10rem">
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 1</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 2</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 3</p>
@@ -166,7 +168,7 @@ grid-template-columns: repeat(var(--columnCount), 1fr);
 
 `--columnCount` set to 8, creating 8 total columns within the `grid` parent:
 
-<section class="border__all color__border--base--light flow__grid flow__grid--columns-fixed flow__gap--m padding__m radius__s" style="--columnCount: 8">
+<section class="border__all color__border--base--light flow__grid flow__grid--columns-fixed flow__gap--m overflow__x--auto padding__m radius__s" style="--columnCount: 8">
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 1</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 2</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 3</p>
@@ -204,7 +206,7 @@ An example, which offets the `order` and alignment of a child:
 </section>
 ```
 
-<section class="border__all color__border--base--light flow__grid flow__align--block-center flow__align--inline-center flow__direction--column flow__gap--l padding__m radius__s" style="block-size: calc(var(--size__xxxl) * 2)">
+<section class="border__all color__border--base--light flow__grid flow__align--block-center flow__align--inline-center flow__direction--column flow__gap--l overflow__hidden padding__m radius__s" style="block-size: calc(var(--size__xxxl) * 2)">
   <p
     class="color__bg--base--ghost padding__s radius__xs type__align--center"
   >
@@ -313,11 +315,11 @@ You can adjust the `font-weight` property using the following classes:
 
 **Note:** if using external web fonts, make sure to include the appropriate weights based on the below scale:
 
-| Class | Weight |
-| - | - |
-| light | 300 |
-| normal | 400 |
-| semibold | 600 |
-| bold | 700 |
+| Class    | Weight |
+| -------- | ------ |
+| light    | 300    |
+| normal   | 400    |
+| semibold | 600    |
+| bold     | 700    |
 
 </info>

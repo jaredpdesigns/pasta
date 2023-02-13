@@ -1,4 +1,6 @@
 ---
+title: "Pasta • Chat With Me"
+description: "A simple interface to interact with OpenAI chatbots"
 layout: page.webc
 ---
 

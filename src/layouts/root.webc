@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title @html="title"></title>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Jared Pendergraft" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" :content="description" />
     <meta
       name="keywords"
       content="pasta, css, html, responsive, minimal, jared pendergraft"
     />
-    <meta name="author" content="Jared Pendergraft" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="hsl(158, 32%, 38%)" />
+    <meta name="twitter:card" content="photo" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta property="og:description" :content="description" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1200" />
+    <meta
+      property="og:image"
+      content="https://pasta.jaredpendergraft.com/img/social.jpg"
+    />
+    <meta property="og:site_name" content="Pasta • Simply Delicious" />
+    <meta property="og:title" :content="title" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      :content="`https://pasta.jaredpendergraft.com${ page.url }`"
+    />
+    <link
+      rel="canonical"
+      :href="`https://pasta.jaredpendergraft.com${ page.url }`"
+    />
+    <link rel="icon" href="favicon.ico" alternate />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/style.css" webc:raw />
     <style webc:keep @html="getCSS(page.url)"></style>
     <script webc:keep @html="getJS(page.url)"></script>
-    <title @html="title"></title>
   </head>
   <body @html="content"></body>
 </html>

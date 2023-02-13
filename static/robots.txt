@@ -1,3 +1,2 @@
 Sitemap: https://pasta.jaredpendergraft.com/sitemap.xml
 User-agent: *
-Disallow: /

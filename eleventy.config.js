@@ -1,9 +1,10 @@
-const pluginWebC = require("@11ty/eleventy-plugin-webc");
-const postcss = require("postcss");
+const fs = require("fs-extra");
 const htmlmin = require("html-minifier");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginWebC = require("@11ty/eleventy-plugin-webc");
+const postcss = require("postcss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   // Plugins
@@ -42,6 +43,21 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setLibrary("md", markdownLibrary);
+
+  // 404 handling
+  eleventyConfig.setBrowserSyncConfig({
+    callbacks: {
+      ready: (err, bs) => {
+        bs.addMiddleware("*", (req, res) => {
+          const content_404 = fs.readFileSync("_site/404.html");
+          console.log(content_404);
+          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
+          res.write(content_404);
+          res.end();
+        });
+      },
+    },
+  });
 
   // HTML minification
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {

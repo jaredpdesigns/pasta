@@ -17,6 +17,8 @@
       > section {
         inline-size: 100%;
         max-inline-size: var(--maxWidth);
+        padding-inline-start: env(safe-area-inset-left);
+        padding-inline-end: env(safe-area-inset-right);
       }
     }
 
@@ -26,6 +28,17 @@
       position: sticky;
       top: 0;
       z-index: 1;
+
+      nav {
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          inline-size: 0 !important;
+          display: none;
+        }
+      }
 
       a {
         border-radius: var(--size__xs);
