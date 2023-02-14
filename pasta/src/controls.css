@@ -158,7 +158,7 @@
     &__toggle legend,
     &__input label,
     &__select label {
-      color: var(--color__base--mid);
+      color: var(--color__base--ish);
       display: block;
       font-size: var(--type__size--xs);
       font-weight: 600;

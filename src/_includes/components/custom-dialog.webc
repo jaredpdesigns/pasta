@@ -7,7 +7,7 @@
     <header
       class="border__bottom color__bg--contrast color__border--base--light flow__flex flow__align--h-between flow__align--v-center padding__m"
     >
-      <h3 class="color__type--base--ish" @text="title"></h3>
+      <h3 class="color__type--base--ish" @text="dialogtitle"></h3>
       <button class="button__tertiary radius__all" onclick="toggleDialog()">
         <icon name="cancel" webc:nokeep></icon>
       </button>
@@ -31,12 +31,12 @@
     position: fixed;
   }
 
-  dialog > header {
+  dialog > section > header {
     inset-block-start: 0;
     position: sticky;
   }
 
-  dialog > header > button {
+  dialog > section > header > button {
     block-size: var(--size__l);
     inline-size: var(--size__l);
   }

@@ -1,4 +1,4 @@
-<custom-dialog title="Page Contents" webc:nokeep>
+<custom-dialog dialogtitle="Page Contents" webc:nokeep>
   <ul>
     <li><a href="#borders">Borders</a></li>
     <li>
