@@ -87,6 +87,7 @@
     links.forEach((link) => {
       link.addEventListener("click", () => {
         dialog.close();
+        body.removeAttribute('style');
       });
     });
   }
