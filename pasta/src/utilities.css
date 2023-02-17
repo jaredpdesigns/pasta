@@ -1,9 +1,8 @@
 @layer helpers {
   .border {
-    --border__width: var(--size__xxs);
     &__all {
       border-style: solid;
-      border-width: var(--border__width);
+      border-width: var(--border__size, var(--size__xxs));
     }
     @each $name
       in (
@@ -21,18 +20,21 @@
     {
       &__$(name) {
         border-$(name)-style: solid;
-        border-$(name)-width: var(--border__width);
+        border-$(name)-width: var(--border__size, var(--size__xxs));
       }
     }
     @each $abbr, $name in (b, l, r, t), (bottom, left, right, top) {
       &__$(abbr) {
         border-$(name)-style: solid;
-        border-$(name)-width: var(--border__width);
+        border-$(name)-width: var(--border__size, var(--size__xxs));
       }
     }
   }
 
   .flow {
+    &__block {
+      display: block;
+    }
     &__flex {
       display: flex;
       &--grow {
@@ -59,15 +61,15 @@
       &--columns {
         &-auto {
           grid-template-columns: repeat(
-            var(--fitType, auto-fit),
-            minmax(var(--columnWidth, var(--width__xs)), 1fr)
+            var(--fit__type, auto-fit),
+            minmax(var(--column__width, var(--width__xs)), 1fr)
           );
           .width__full {
             grid-column: 1/-1;
           }
         }
         &-fixed {
-          grid-template-columns: repeat(var(--columnCount), 1fr);
+          grid-template-columns: repeat(var(--column__count), 1fr);
           .width__full {
             grid-column: 1/-1;
           }
@@ -202,9 +204,11 @@
   }
 
   @each $size in (xxs, xs, s, m, l, xl, xxl, xxxl) {
+    .oomph__inline--$(size) > * + *:not([class*="margin"]),
     .oomph__h--$(size) > * + *:not([class*="margin"]) {
       margin-inline-start: var(--size__$(size));
     }
+    .oomph__block--$(size) > * + *:not([class*="margin"]),
     .oomph__v--$(size) > * + *:not([class*="margin"]) {
       margin-block-start: var(--size__$(size));
     }

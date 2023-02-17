@@ -28,7 +28,7 @@ There are three primary class groups associated with color, `bg` , `border` and 
 
 <style>
   .demo ul {
-    --fitType: auto-fill;
+    --fit__type: auto-fill;
     list-style: none;
   }
   .demo li {
@@ -123,16 +123,16 @@ In order to declare a `grid` container as having a series of repeatable columns,
 
 <info webc:nokeep>
 
-With `.flow__grid--columns-auto` you have access to `--fitType` and `--columnWidth`, which changes the default behavior of:
+With `.flow__grid--columns-auto` you have access to `--fit__type` and `--column__width`, which changes the default behavior of:
 
 ```css
 grid-template-columns: repeat(
-  var(--fitType, auto-fit),
-  minmax(var(--columnWidth, var(--width__xs)), 1fr)
+  var(--fit__type, auto-fit),
+  minmax(var(--column__width, var(--width__xs)), 1fr)
 );
 ```
 
-`--fitType` defaults to `auto-fit` and `--columnWidth` defaults to our global `width` custom property `var(--width__xs)`.
+`--fit__type` defaults to `auto-fit` and `--column__width` defaults to our global `width` custom property `var(--width__xs)`.
 
 Uses the default properties:
 
@@ -144,9 +144,9 @@ Uses the default properties:
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 5</p>
 </section>
 
-Adjusts the `--columnWidth` property:
+Adjusts the `--column__width` property:
 
-<section class="border__all color__border--base--light flow__grid flow__grid--columns-auto flow__gap--m overflow__hidden padding__m radius__s" style="--columnWidth: 10rem">
+<section class="border__all color__border--base--light flow__grid flow__grid--columns-auto flow__gap--m overflow__hidden padding__m radius__s" style="--column__width: 10rem">
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 1</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 2</p>
   <p class="color__bg--base--ghost padding__s radius__xs type__align--center">Flow child 3</p>

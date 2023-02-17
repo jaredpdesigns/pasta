@@ -5,8 +5,8 @@
 </script>
 <style>
   .colors ul {
-    --columnWidth: 10rem;
-    --fitType: auto-fill;
+    --column__width: 10rem;
+    --fit__type: auto-fill;
     list-style: none;
   }
   .colors li {

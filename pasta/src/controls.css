@@ -78,7 +78,7 @@
     &__tertiary {
       --color__bg: var(--color__highlight);
       --color__border: var(--color__highlight);
-      --color__type: var(--color__contrast);
+      --color__type: var(--color__contrast--fixed);
       align-items: center;
       background-color: var(--color__bg);
       border-color: var(--color__border);
@@ -128,7 +128,7 @@
       }
     }
     &__secondary {
-      --color__bg: var(--color__contrast);
+      --color__bg: var(--color__contrast--adaptive);
       --color__border: var(--color__base--light);
 
       &:focus:not([disabled]),
@@ -174,7 +174,7 @@
       input,
       select {
         appearance: none;
-        background-color: var(--color__contrast);
+        background-color: var(--color__contrast--adaptive);
         border: var(--size__xxs) solid var(--color__base--semi);
         border-radius: var(--control__radius);
         color: var(--color__base);
@@ -262,7 +262,7 @@
         + span:before {
           --size: calc(var(--size__m) + var(--size__s));
           align-items: center;
-          background-color: var(--color__contrast);
+          background-color: var(--color__contrast--adaptive);
           background-position: center;
           background-repeat: no-repeat;
           border: var(--size__xxs) solid var(--color__base--semi);

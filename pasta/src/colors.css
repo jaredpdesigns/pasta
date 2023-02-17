@@ -5,6 +5,15 @@
       --color__hue--highlight: 158deg 32% 38%;
       --color__hue--contrast: 218deg 24% 100%;
       --color__hue--contrast--extra: 218deg 48% 12%;
+      --color__contrast--adaptive: hsl(var(--color__hue--contrast));
+      color-scheme: light;
+    }
+    &[data-theme="light"] {
+      --color__hue--base: 218deg 24% 24%;
+      --color__hue--highlight: 158deg 32% 38%;
+      --color__hue--contrast: 218deg 24% 100%;
+      --color__hue--contrast--extra: 218deg 48% 12%;
+      --color__contrast--adaptive: hsl(var(--color__hue--contrast));
       color-scheme: light;
     }
     @media screen and (prefers-color-scheme: dark) {
@@ -12,20 +21,15 @@
       --color__hue--highlight: 158deg 32% 38%;
       --color__hue--contrast: 218deg 32% 12%;
       --color__hue--contrast--extra: 218deg 32% 8%;
+      --color__contrast--adaptive: hsl(var(--color__hue--contrast--extra));
       color-scheme: dark;
-    }
-    &[data-theme="light"] {
-      --color__hue--base: 218deg 24% 24%;
-      --color__hue--highlight: 158deg 32% 38%;
-      --color__hue--contrast: 218deg 24% 100%;
-      --color__hue--contrast--extra: 218deg 48% 12%;
-      color-scheme: light;
     }
     &[data-theme="dark"] {
       --color__hue--base: 218deg 24% 90%;
       --color__hue--highlight: 158deg 32% 38%;
       --color__hue--contrast: 218deg 32% 12%;
       --color__hue--contrast--extra: 218deg 32% 8%;
+      --color__contrast--adaptive: hsl(var(--color__hue--contrast--extra));
       color-scheme: dark;
     }
     @each $colorKey, $colorVal in (base, highlight),
@@ -42,6 +46,7 @@
     }
     --color__contrast: hsl(var(--color__hue--contrast));
     --color__contrast--extra: hsl(var(--color__hue--contrast--extra));
+    --color__contrast--fixed: hsl(0deg 0% 100%);
   }
 }
 
