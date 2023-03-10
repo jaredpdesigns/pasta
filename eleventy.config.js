@@ -14,6 +14,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  // Filters
+  eleventyConfig.addFilter("uppercase", (string) => {
+    return string.toUpperCase();
+  });
+
   // Make CSS mo-betta
   eleventyConfig.addTemplateFormats("css");
 

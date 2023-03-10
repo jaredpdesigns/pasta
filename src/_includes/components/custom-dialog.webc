@@ -40,4 +40,8 @@
     block-size: var(--size__l);
     inline-size: var(--size__l);
   }
+
+  dialog li a {
+    text-decoration: none;
+  }
 </style>

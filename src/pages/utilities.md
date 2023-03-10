@@ -271,6 +271,14 @@ Directional options include `bl, bottom-left, bottom-right, br, end-end, end-sta
 
 ---
 
+## Shadows
+
+To provide consistent `box-shadows` to elements, you can use the simple class of `shadow`, `shadow__all` or `shadow__none`:
+
+<shadows webc:nokeep></shadows>
+
+---
+
 ## Type
 
 Typography is huge part of any web project, use the following classes to manipulate different aspects of type. To test out different typefaces in your project you can use the [Type](/type/) tool.

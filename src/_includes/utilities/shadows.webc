@@ -1,0 +1,26 @@
+<section class="flow__grid flow__grid--columns-auto flow__gap--l">
+  <figure class="flow__grid flow__gap--m">
+    <span
+      class="border__all color__bg--contrast--adaptive color__border--base--light flow__block flow__size--block-xxxl flow__size--inline-xxxl radius__s shadow"
+    ></span>
+    <figcaption>
+      <p><code>.shadow</code></p>
+    </figcaption>
+  </figure>
+  <figure class="flow__grid flow__gap--m">
+    <span
+      class="border__all color__bg--contrast--adaptive color__border--base--light flow__block flow__size--block-xxxl flow__size--inline-xxxl radius__s shadow__all"
+    ></span>
+    <figcaption>
+      <p><code>.shadow__all</code></p>
+    </figcaption>
+  </figure>
+  <figure class="flow__grid flow__gap--m">
+    <span
+      class="border__all color__bg--contrast--adaptive color__border--base--light flow__block flow__size--block-xxxl flow__size--inline-xxxl radius__s shadow__none"
+    ></span>
+    <figcaption>
+      <p><code>.shadow__none</code></p>
+    </figcaption>
+  </figure>
+</section>

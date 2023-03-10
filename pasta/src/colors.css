@@ -66,7 +66,9 @@
       highlight--light,
       highlight--ghost,
       contrast,
-      contrast--extra
+      contrast--adaptive,
+      contrast--extra,
+      contrast--fixed
     )
   {
     .color__bg--$(colorKey) {
@@ -89,7 +91,9 @@
       highlight--light,
       highlight--ghost,
       contrast,
-      contrast--extra
+      contrast--adaptive,
+      contrast--extra,
+      contrast--fixed
     )
   {
     .color__border--$(colorKey) {
@@ -112,7 +116,9 @@
       highlight--light,
       highlight--ghost,
       contrast,
-      contrast--extra
+      contrast--adaptive,
+      contrast--extra,
+      contrast--fixed
     )
   {
     .color__type--$(colorKey) {
