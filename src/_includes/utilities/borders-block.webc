@@ -1,7 +1,7 @@
 <script webc:type="render" webc:is="template">
-    function() {
-      const directions = ["block","block-end","block-start","inline","inline-end","inline-start"];
-  return `<section class="demo flow__grid flow__gap--l">
+  function() {
+    const directions = ["block", "block-end", "block-start", "inline", "inline-end", "inline-start"];
+    return `<section class="demo flow__grid flow__gap--l">
     <h3>Addition</h3>
     <ul class="flow__grid flow__gap--l flow__grid--columns-auto">
       <li class="flow__flex flow__align--v-center flow__gap--m"><span class="border__all color__border--highlight"></span><p><code>.border__all</code></p></li>
@@ -13,5 +13,5 @@
       ${directions.map(direction => `<li class="flow__flex flow__align--v-center flow__gap--m"><span class="border__all color__border--highlight border__${direction}--none color__border--highlight"></span><p><code>.border__${direction}--none</code></p></li>`).join('')}
     </ul>
     </section>`;
-    }
+  }
 </script>

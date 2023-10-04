@@ -1,23 +1,25 @@
 <blockquote
-  class="info border__all color__border--base--light flow__align--v-start flow__grid flow__gap--s padding__m radius__s"
->
+  class="info border__all color__border--base--light flow__align--v-start flow__grid flow__gap--s padding__m radius__s">
   <span
-    class="color__bg--contrast color__type--highlight flow__inline flow__align--h-center flow__align--v-center radius__all"
-  >
+    class="color__bg--contrast color__type--highlight flow__inline flow__align--h-center flow__align--v-center radius__all">
     <icon name="star"></icon>
   </span>
-  <section class="flow__grid flow__gap--m"><slot></slot></section>
+  <section class="flow__grid flow__gap--m">
+    <slot></slot>
+  </section>
 </blockquote>
 <style>
   .info {
     grid-template-columns: auto 1fr;
   }
-  .info > span {
+
+  .info>span {
     block-size: var(--type__lineheight--l);
     inline-size: var(--type__lineheight--l);
     margin-inline-start: calc(var(--type__lineheight--l) * -1);
   }
-  .info > section > * {
+
+  .info>section>* {
     min-width: 0;
   }
 </style>

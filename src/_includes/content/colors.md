@@ -18,7 +18,7 @@ For more details, review the [utilities documentation](/utilities#colors).
 
 ### Palette
 
-<colors-block webc:nokeep></colors-block>
+<colors-block webc:nokeep :colors="colors"></colors-block>
 
 <info webc:nokeep>
 

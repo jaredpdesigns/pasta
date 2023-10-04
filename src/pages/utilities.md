@@ -43,15 +43,15 @@ There are three primary class groups associated with color, `bg` , `border` and 
 
 ### Background
 
-<colors-bg webc:nokeep></colors-bg>
+<colors-bg webc:nokeep :colors="colors"></colors-bg>
 
 ### Border
 
-<colors-border webc:nokeep></colors-border>
+<colors-border webc:nokeep :colors="colors"></colors-border>
 
 ### Color
 
-<colors-type webc:nokeep></colors-type>
+<colors-type webc:nokeep  :colors="colors"></colors-type>
 
 ---
 
@@ -95,7 +95,7 @@ You can have a flex child shrink within it’s container with `.flow__flex--shri
 
 #### Wrap
 
-You can have a flex container wrap it’s children with `.flow__flex--wrap` or prevent wrapping with `.flow__flext--wrap-no`.
+You can have a flex container wrap it’s children with `.flow__flex--wrap` or prevent wrapping with `.flow__flex--wrap-no`.
 
 ### Gap
 
@@ -109,7 +109,7 @@ Like a lot of other classes, we map over our pre-defined size custom properties 
 
 </info>
 
-<flow-gap webc:nokeep></flow-gap>
+<flow-gap webc:nokeep :sizes="sizes"></flow-gap>
 
 ### Grid Helpers
 
@@ -233,7 +233,7 @@ An example, which offets the `order` and alignment of a child:
 
 To work with `margin` in your project, use the following classes:
 
-<margin webc:nokeep></margin>
+<margin webc:nokeep :sizes="sizes"></margin>
 
 <info webc:nokeep>
 
@@ -247,7 +247,7 @@ Directional options include `block-end, block-start, block, bottom, inline-end, 
 
 To work with `padding` in your project, use the following classes:
 
-<padding webc:nokeep></padding>
+<padding webc:nokeep :sizes="sizes"></padding>
 
 <info webc:nokeep>
 
@@ -261,7 +261,7 @@ Directional options include `block-end, block-start, block, bottom, inline-end, 
 
 To work with `border-radius` in your project, use the following classes:
 
-<radius webc:nokeep></radius>
+<radius webc:nokeep :sizes="sizes"></radius>
 
 <info webc:nokeep>
 
@@ -275,7 +275,7 @@ Directional options include `bl, bottom-left, bottom-right, br, end-end, end-sta
 
 To provide consistent `box-shadows` to elements, you can use the simple class of `shadow`, `shadow__all` or `shadow__none`:
 
-<shadows webc:nokeep></shadows>
+<!-- <shadows webc:nokeep></shadows> -->
 
 ---
 

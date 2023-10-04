@@ -1,11 +1,8 @@
 <header class="color__bg--highlight">
   <section
-    class="flow__flex flow__align--v-center flow__align--h-between flow__flex--wrap flow__gap--m margin__inline--auto padding__block--m"
-  >
+    class="flow__flex flow__align--v-center flow__align--h-between flow__flex--wrap flow__gap--m margin__inline--auto padding__block--m">
     <a href="/" title="Return to Overview" class="margin__inline--l">
-      <figure
-        class="flow__inline flow__align-v-center flow__align--h-start flow__gap--m"
-      >
+      <figure class="flow__inline flow__align-v-center flow__align--h-start flow__gap--m">
         <logo size="56" class="flow__flex--shrink-no"></logo>
         <figcaption>
           <p class="type__size--xl-l"><strong>Pasta</strong></p>
@@ -13,32 +10,18 @@
         </figcaption>
       </figure>
     </a>
-    <nav class="flow__inline flow__align--v-center flow__gap--column-l flow__gap--row-s padding__block--xs padding__inline--l">
-      <a
-        href="/"
-        class="type__size--m-l"
-        :aria-current="page.url === '/' && 'page'"
-        >Overview</a
-      >
-      <a
-        href="/utilities/"
-        :aria-current="page.url === '/utilities/' && 'page'"
-        class="type__size--m-l"
-        >Utilities</a
-      >
-      <a
-        href="/type/"
-        :aria-current="page.url === '/type/' && 'page'"
-        class="type__size--m-l"
-        >Type</a
-      >
-      <button onclick="toggleDialog()" class="button__tertiary" webc:if="page.url !== '/chat/'">
-        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="page.url !== '/type/'">
+    <nav
+      class="flow__inline flow__align--v-center flow__gap--column-l flow__gap--row-s padding__block--xs padding__inline--l">
+      <a href="/" class="type__size--m-l" :aria-current="url === '/' && 'page'">Overview</a>
+      <a href="/utilities/" :aria-current="url === '/utilities/' && 'page'" class="type__size--m-l">Utilities</a>
+      <a href="/type/" :aria-current="url === '/type/' && 'page'" class="type__size--m-l">Type</a>
+      <button onclick="toggleDialog()" class="button__tertiary">
+        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="url !== '/type/'">
           <icon name="list-bullet" webc:nokeep></icon>Contents
         </span>
-        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="page.url === '/type/'">
+        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="url === '/type/'">
           <icon name="gear" webc:nokeep></icon>Configure
-        </template>
+          </template>
       </button>
       <button onclick="toggleTheme()" class="button__tertiary">
         <icon name="theme" webc:nokeep></icon>Theme
