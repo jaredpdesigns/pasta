@@ -1,128 +1,169 @@
 @layer props {
   :root {
+    /* Global hues */
+    --color__hue--base: 218deg 24%;
+    --color__hue--highlight: 158deg 32% 38%;
+    --color__contrast--fixed: white;
+
+    /* Set global values for unmodified highlights */
+    --color__set--highlight: hsl(var(--color__hue--highlight));
+    --color__highlight: var(--color__set--highlight);
+    --color__highlight--dark: color-mix(in oklab, var(--color__set--highlight), black 12.5%);
+
     @media screen and (prefers-color-scheme: light) {
-      --color__hue--base: 218deg 24% 24%;
-      --color__hue--highlight: 158deg 32% 38%;
-      --color__hue--contrast: 218deg 24% 100%;
-      --color__hue--contrast--extra: 218deg 48% 12%;
-      --color__contrast--adaptive: hsl(var(--color__hue--contrast));
       color-scheme: light;
+      --color__set--base: hsl(var(--color__hue--base) 24%);
+      --color__set--contrast: white;
+      --color__set--contrast--extra: hsl(var(--color__hue--base) 12%);
+      --color__base: var(--color__set--base);
+      --color__base--ish: color-mix(in oklab, var(--color__set--base) 75%, var(--color__set--contrast));
+      --color__base--mid: color-mix(in oklab, var(--color__set--base) 62.5%, var(--color__set--contrast));
+      --color__base--semi: color-mix(in oklab, var(--color__set--base) 25%, var(--color__set--contrast));
+      --color__base--light: color-mix(in oklab, var(--color__set--base) 12.5%, var(--color__set--contrast));
+      --color__base--ghost: color-mix(in oklab, var(--color__set--base) 6.25%, var(--color__set--contrast));
+      --color__highlight--ish: color-mix(in oklab, var(--color__set--highlight) 75%, var(--color__set--contrast));
+      --color__highlight--mid: color-mix(in oklab, var(--color__set--highlight) 62.5%, var(--color__set--contrast));
+      --color__highlight--semi: color-mix(in oklab, var(--color__set--highlight) 25%, var(--color__set--contrast));
+      --color__highlight--light: color-mix(in oklab, var(--color__set--highlight) 12.5%, var(--color__set--contrast));
+      --color__highlight--ghost: color-mix(in oklab, var(--color__set--highlight) 6.25%, var(--color__set--contrast));
+      --color__contrast: var(--color__set--contrast);
+      --color__contrast--adaptive: var(--color__set--contrast);
+      --color__contrast--extra: var(--color__set--contrast--extra);
     }
+
     &[data-theme="light"] {
-      --color__hue--base: 218deg 24% 24%;
-      --color__hue--highlight: 158deg 32% 38%;
-      --color__hue--contrast: 218deg 24% 100%;
-      --color__hue--contrast--extra: 218deg 48% 12%;
-      --color__contrast--adaptive: hsl(var(--color__hue--contrast));
       color-scheme: light;
+      --color__set--base: hsl(var(--color__hue--base) 24%);
+      --color__set--contrast: white;
+      --color__set--contrast--extra: hsl(var(--color__hue--base) 12%);
+      --color__base: var(--color__set--base);
+      --color__base--ish: color-mix(in oklab, var(--color__set--base) 75%, var(--color__set--contrast));
+      --color__base--mid: color-mix(in oklab, var(--color__set--base) 62.5%, var(--color__set--contrast));
+      --color__base--semi: color-mix(in oklab, var(--color__set--base) 25%, var(--color__set--contrast));
+      --color__base--light: color-mix(in oklab, var(--color__set--base) 12.5%, var(--color__set--contrast));
+      --color__base--ghost: color-mix(in oklab, var(--color__set--base) 6.25%, var(--color__set--contrast));
+      --color__highlight--ish: color-mix(in oklab, var(--color__set--highlight) 75%, var(--color__set--contrast));
+      --color__highlight--mid: color-mix(in oklab, var(--color__set--highlight) 62.5%, var(--color__set--contrast));
+      --color__highlight--semi: color-mix(in oklab, var(--color__set--highlight) 25%, var(--color__set--contrast));
+      --color__highlight--light: color-mix(in oklab, var(--color__set--highlight) 12.5%, var(--color__set--contrast));
+      --color__highlight--ghost: color-mix(in oklab, var(--color__set--highlight) 6.25%, var(--color__set--contrast));
+      --color__contrast: var(--color__set--contrast);
+      --color__contrast--adaptive: var(--color__set--contrast);
+      --color__contrast--extra: var(--color__set--contrast--extra);
     }
+
     @media screen and (prefers-color-scheme: dark) {
-      --color__hue--base: 218deg 24% 90%;
-      --color__hue--highlight: 158deg 32% 38%;
-      --color__hue--contrast: 218deg 32% 12%;
-      --color__hue--contrast--extra: 218deg 32% 8%;
-      --color__contrast--adaptive: hsl(var(--color__hue--contrast--extra));
       color-scheme: dark;
+      --color__set--base: hsl(var(--color__hue--base) 90%);
+      --color__set--contrast: hsl(var(--color__hue--base) 16%);
+      --color__set--contrast--extra: hsl(var(--color__hue--base) 8%);
+      --color__base: var(--color__set--base);
+      --color__base--ish: color-mix(in oklab, var(--color__set--base) 75%, var(--color__set--contrast));
+      --color__base--mid: color-mix(in oklab, var(--color__set--base) 62.5%, var(--color__set--contrast));
+      --color__base--semi: color-mix(in oklab, var(--color__set--base) 25%, var(--color__set--contrast));
+      --color__base--light: color-mix(in oklab, var(--color__set--base) 12.5%, var(--color__set--contrast));
+      --color__base--ghost: color-mix(in oklab, var(--color__set--base) 6.25%, var(--color__set--contrast));
+      --color__highlight--ish: color-mix(in oklab, var(--color__set--highlight) 75%, var(--color__set--contrast));
+      --color__highlight--mid: color-mix(in oklab, var(--color__set--highlight) 62.5%, var(--color__set--contrast));
+      --color__highlight--semi: color-mix(in oklab, var(--color__set--highlight) 25%, var(--color__set--contrast));
+      --color__highlight--light: color-mix(in oklab, var(--color__set--highlight) 12.5%, var(--color__set--contrast));
+      --color__highlight--ghost: color-mix(in oklab, var(--color__set--highlight) 6.25%, var(--color__set--contrast));
+      --color__contrast: var(--color__set--contrast);
+      --color__contrast--adaptive: var(--color__set--contrast--extra);
+      --color__contrast--extra: var(--color__set--contrast--extra);
     }
+
     &[data-theme="dark"] {
-      --color__hue--base: 218deg 24% 90%;
-      --color__hue--highlight: 158deg 32% 38%;
-      --color__hue--contrast: 218deg 32% 12%;
-      --color__hue--contrast--extra: 218deg 32% 8%;
-      --color__contrast--adaptive: hsl(var(--color__hue--contrast--extra));
       color-scheme: dark;
+      --color__set--base: hsl(var(--color__hue--base) 90%);
+      --color__set--contrast: hsl(var(--color__hue--base) 16%);
+      --color__set--contrast--extra: hsl(var(--color__hue--base) 8%);
+      --color__base: var(--color__set--base);
+      --color__base--ish: color-mix(in oklab, var(--color__set--base) 75%, var(--color__set--contrast));
+      --color__base--mid: color-mix(in oklab, var(--color__set--base) 62.5%, var(--color__set--contrast));
+      --color__base--semi: color-mix(in oklab, var(--color__set--base) 25%, var(--color__set--contrast));
+      --color__base--light: color-mix(in oklab, var(--color__set--base) 12.5%, var(--color__set--contrast));
+      --color__base--ghost: color-mix(in oklab, var(--color__set--base) 6.25%, var(--color__set--contrast));
+      --color__highlight--ish: color-mix(in oklab, var(--color__set--highlight) 75%, var(--color__set--contrast));
+      --color__highlight--mid: color-mix(in oklab, var(--color__set--highlight) 62.5%, var(--color__set--contrast));
+      --color__highlight--semi: color-mix(in oklab, var(--color__set--highlight) 25%, var(--color__set--contrast));
+      --color__highlight--light: color-mix(in oklab, var(--color__set--highlight) 12.5%, var(--color__set--contrast));
+      --color__highlight--ghost: color-mix(in oklab, var(--color__set--highlight) 6.25%, var(--color__set--contrast));
+      --color__contrast: var(--color__set--contrast);
+      --color__contrast--adaptive: var(--color__set--contrast--extra);
+      --color__contrast--extra: var(--color__set--contrast--extra);
     }
-    @each $colorKey, $colorVal in (base, highlight),
-      (218deg 24% 24%, 158deg 32% 38%)
-    {
-      --color__$(colorKey): hsl(var(--color__hue--$(colorKey)));
-      @each $stepKey, $stepVal in (ish, mid, semi, light, ghost),
-        (0.75, 0.625, 0.25, 0.125, 0.0625)
-      {
-        --color__$(colorKey)--$(stepKey): hsl(
-          var(--color__hue--$(colorKey)) / $(stepVal)
-        );
-      }
-    }
-    --color__contrast: hsl(var(--color__hue--contrast));
-    --color__contrast--extra: hsl(var(--color__hue--contrast--extra));
-    --color__contrast--fixed: hsl(0deg 0% 100%);
   }
 }
 
 @layer helpers {
-  @each $colorKey
-    in (
-      base,
-      base--ish,
-      base--mid,
-      base--semi,
-      base--light,
-      base--ghost,
-      highlight,
-      highlight--ish,
-      highlight--mid,
-      highlight--semi,
-      highlight--light,
-      highlight--ghost,
-      contrast,
-      contrast--adaptive,
-      contrast--extra,
-      contrast--fixed
-    )
-  {
+
+  @each $colorKey in (base,
+    base--ish,
+    base--mid,
+    base--semi,
+    base--light,
+    base--ghost,
+    highlight,
+    highlight--ish,
+    highlight--mid,
+    highlight--semi,
+    highlight--light,
+    highlight--ghost,
+    contrast,
+    contrast--adaptive,
+    contrast--extra,
+    contrast--fixed) {
     .color__bg--$(colorKey) {
-      background-color: var(--color__$(colorKey));
-    }
+      background-color: var(--color__$(
+          colorKey)
+      );
   }
+}
 
-  @each $colorKey
-    in (
-      base,
-      base--ish,
-      base--mid,
-      base--semi,
-      base--light,
-      base--ghost,
-      highlight,
-      highlight--ish,
-      highlight--mid,
-      highlight--semi,
-      highlight--light,
-      highlight--ghost,
-      contrast,
-      contrast--adaptive,
-      contrast--extra,
-      contrast--fixed
-    )
-  {
-    .color__border--$(colorKey) {
-      border-color: var(--color__$(colorKey));
-    }
-  }
+@each $colorKey in (base,
+  base--ish,
+  base--mid,
+  base--semi,
+  base--light,
+  base--ghost,
+  highlight,
+  highlight--ish,
+  highlight--mid,
+  highlight--semi,
+  highlight--light,
+  highlight--ghost,
+  contrast,
+  contrast--adaptive,
+  contrast--extra,
+  contrast--fixed) {
+  .color__border--$(colorKey) {
+    border-color: var(--color__$(
+        colorKey)
+    );
+}
+}
 
-  @each $colorKey
-    in (
-      base,
-      base--ish,
-      base--mid,
-      base--semi,
-      base--light,
-      base--ghost,
-      highlight,
-      highlight--ish,
-      highlight--mid,
-      highlight--semi,
-      highlight--light,
-      highlight--ghost,
-      contrast,
-      contrast--adaptive,
-      contrast--extra,
-      contrast--fixed
-    )
-  {
-    .color__type--$(colorKey) {
-      color: var(--color__$(colorKey));
-    }
-  }
+@each $colorKey in (base,
+  base--ish,
+  base--mid,
+  base--semi,
+  base--light,
+  base--ghost,
+  highlight,
+  highlight--ish,
+  highlight--mid,
+  highlight--semi,
+  highlight--light,
+  highlight--ghost,
+  contrast,
+  contrast--adaptive,
+  contrast--extra,
+  contrast--fixed) {
+  .color__type--$(colorKey) {
+    color: var(--color__$(
+        colorKey)
+    );
+}
+}
 }

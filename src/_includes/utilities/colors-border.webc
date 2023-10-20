@@ -1,5 +1,5 @@
 <script webc:type="render" webc:is="template">
-    function() {
-  return `<section class="demo flow__grid flow__gap--l">${this.colors.map(color => `<ul class="flow__grid flow__gap--l flow__grid--columns-auto">${color.tints.map(tint => `<li class="flow__flex flow__align--v-center flow__gap--m"><span class="border__all color__border--${tint} radius__s"></span><p><code>.color__border--${tint}</code></p></li>`).join('')}</ul>`).join('')}</section>`;
-    }
+  function() {
+    return `<section class="demo flow__grid flow__gap--l">${this.colors.map(color => `<ul class="flow__grid flow__gap--l flow__grid--columns-auto">${color.tints.map(tint => `<li class="flow__flex flow__align--v-center flow__gap--m"><span class="border__all color__border--${tint} radius__s flow__flex--shrink-no"></span><p><code>.color__border--${tint}</code></p></li>`).join('')}</ul>`).join('')}</section>`;
+  }
 </script>
