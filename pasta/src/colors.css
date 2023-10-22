@@ -55,8 +55,8 @@
     @media screen and (prefers-color-scheme: dark) {
       color-scheme: dark;
       --color__set--base: hsl(var(--color__hue--base) 90%);
-      --color__set--contrast: hsl(var(--color__hue--base) 16%);
-      --color__set--contrast--extra: hsl(var(--color__hue--base) 8%);
+      --color__set--contrast: hsl(var(--color__hue--base) 12%);
+      --color__set--contrast--extra: hsl(var(--color__hue--base) 6%);
       --color__base: var(--color__set--base);
       --color__base--ish: color-mix(in oklab, var(--color__set--base) 75%, var(--color__set--contrast));
       --color__base--mid: color-mix(in oklab, var(--color__set--base) 62.5%, var(--color__set--contrast));
@@ -76,8 +76,8 @@
     &[data-theme="dark"] {
       color-scheme: dark;
       --color__set--base: hsl(var(--color__hue--base) 90%);
-      --color__set--contrast: hsl(var(--color__hue--base) 16%);
-      --color__set--contrast--extra: hsl(var(--color__hue--base) 8%);
+      --color__set--contrast: hsl(var(--color__hue--base) 12%);
+      --color__set--contrast--extra: hsl(var(--color__hue--base) 6%);
       --color__base: var(--color__set--base);
       --color__base--ish: color-mix(in oklab, var(--color__set--base) 75%, var(--color__set--contrast));
       --color__base--mid: color-mix(in oklab, var(--color__set--base) 62.5%, var(--color__set--contrast));
