@@ -197,7 +197,8 @@
     &__select {
 
       input,
-      select {
+      select,
+      textarea {
         appearance: none;
         background-color: var(--color__contrast--adaptive);
         border: var(--size__xxs) solid var(--color__base--semi);
