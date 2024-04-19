@@ -12,9 +12,10 @@
   }
 
   body {
-    > header,
-    > footer {
-      > section {
+
+    >header,
+    >footer {
+      >section {
         inline-size: 100%;
         max-inline-size: var(--maxWidth);
         padding-inline-start: env(safe-area-inset-left);
@@ -22,7 +23,7 @@
       }
     }
 
-    > header {
+    >header {
       --outline__color: hsl(0deg 0% 100%/0.25);
       color: white;
       position: sticky;
@@ -74,20 +75,20 @@
     padding-inline-start: calc(var(--size__l) + env(safe-area-inset-left));
     padding-inline-end: calc(var(--size__l) + env(safe-area-inset-right));
 
-    > * {
+    >* {
       min-inline-size: 0;
       scroll-margin-top: calc(var(--size__xxxl) * 2);
 
-      + hr {
+      +hr {
         margin-top: var(--size__xxl);
       }
     }
 
-    > blockquote:first-child + hr {
+    >blockquote:first-child+hr {
       margin-top: unset;
     }
 
-    > p:empty {
+    >p:empty {
       display: none;
     }
   }
