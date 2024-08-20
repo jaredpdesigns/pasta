@@ -31,7 +31,8 @@
       --color__contrast--extra: var(--color__set--contrast--extra);
     }
 
-    &[data-theme="light"] {
+    &[data-theme="light"],
+    [data-theme="light"] {
       color-scheme: light;
       --color__set--base: hsl(var(--color__hue--base) 24%);
       --color__set--contrast: white;
@@ -73,7 +74,8 @@
       --color__contrast--extra: var(--color__set--contrast--extra);
     }
 
-    &[data-theme="dark"] {
+    &[data-theme="dark"],
+    [data-theme="dark"] {
       color-scheme: dark;
       --color__set--base: hsl(var(--color__hue--base) 90%);
       --color__set--contrast: hsl(var(--color__hue--base) 12%);
