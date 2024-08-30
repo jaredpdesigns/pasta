@@ -3,15 +3,21 @@
     @media screen and (prefers-color-scheme: light) {
       --bg: hsl(218deg 48% 12%/75%);
     }
+
     @media screen and (prefers-color-scheme: dark) {
       --bg: hsl(218deg 32% 8%/75%);
     }
-    &[data-theme="light"] {
+
+    &[data-theme="light"],
+    [data-theme="light"] {
       --bg: hsl(218deg 48% 12%/75%);
     }
-    &[data-theme="dark"] {
+
+    &[data-theme="dark"],
+    [data-theme="dark"] {
       --bg: hsl(218deg 32% 8%/75%);
     }
+
     --blur: 4px;
   }
 }

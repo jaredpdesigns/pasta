@@ -7,7 +7,8 @@
       --shadow__value: var(--shadow__strength);
     }
 
-    &[data-theme="light"] {
+    &[data-theme="light"],
+    [data-theme="light"] {
       --shadow__color: hsl(var(--color__hue--base) 24%);
       --shadow__value: var(--shadow__strength);
     }
@@ -17,7 +18,8 @@
       --shadow__value: calc(var(--shadow__strength) * 2);
     }
 
-    &[data-theme="dark"] {
+    &[data-theme="dark"],
+    [data-theme="dark"] {
       --shadow__color: hsl(var(--color__hue--base) 4%);
       --shadow__value: calc(var(--shadow__strength) * 2);
     }
