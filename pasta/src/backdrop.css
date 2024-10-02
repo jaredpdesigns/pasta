@@ -1,23 +1,8 @@
 @layer props {
   ::backdrop {
-    @media screen and (prefers-color-scheme: light) {
-      --bg: hsl(218deg 48% 12%/75%);
-    }
-
-    @media screen and (prefers-color-scheme: dark) {
-      --bg: hsl(218deg 32% 8%/75%);
-    }
-
-    &[data-theme="light"],
-    [data-theme="light"] {
-      --bg: hsl(218deg 48% 12%/75%);
-    }
-
-    &[data-theme="dark"],
-    [data-theme="dark"] {
-      --bg: hsl(218deg 32% 8%/75%);
-    }
-
+    --bg: color-mix(in oklab,
+        var(--color__contrast--extra),
+        transparent 38%);
     --blur: 4px;
   }
 }
