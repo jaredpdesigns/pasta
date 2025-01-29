@@ -7,6 +7,16 @@ layout: root.webc
   <dialog-main webc:if="page.url === '/'"></dialog-main>
   <dialog-utilities webc:if="page.url === '/utilities/'"></dialog-utilities>
   <dialog-type webc:if="page.url === '/type/'"></dialog-type>
+  <nav>
+    <button onclick="toggleDialog()" class="button__secondary">
+      <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="page.url !== '/type/'">
+        <icon name="list-bullet" webc:nokeep></icon>Page Contents
+      </span>
+      <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="page.url === '/type/'">
+        <icon name="gear" webc:nokeep></icon>Configure Type Settings
+        </template>
+    </button>
+  </nav>
   <template @html="content" webc:nokeep></template>
 </main>
 <site-footer webc:nokeep></site-footer>

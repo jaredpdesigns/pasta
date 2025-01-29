@@ -65,15 +65,23 @@
     }
   }
 
+  main>nav,
   article {
-    display: grid;
-    gap: var(--size__l);
     inline-size: 100%;
     margin-inline: auto;
     max-inline-size: var(--maxWidth);
-    padding-block: var(--size__l);
     padding-inline-start: calc(var(--size__l) + env(safe-area-inset-left));
     padding-inline-end: calc(var(--size__l) + env(safe-area-inset-right));
+  }
+
+  main>nav {
+    padding-block-start: var(--size__l);
+  }
+
+  article {
+    display: grid;
+    gap: var(--size__l);
+    padding-block: var(--size__l);
 
     >* {
       min-inline-size: 0;

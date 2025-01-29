@@ -14,8 +14,8 @@ const arr = [
   {
     title: "Regular Video",
     description:
-      "Really really regular, standard video without anything interesting",
-  },
+      "Really really regular, standard video without anything interesting"
+  }
 ];
 
 const searchTerm = "cool";
@@ -81,8 +81,9 @@ If you’re either bundling the `table` stylesheet or bringing in all of Pasta a
 ```css
 table:not([class]),
 table.styled {
+  --border: var(--color__base--light);
   --evenRow: var(--color__contrast);
-  --oddRow: var(--color__base--light);
+  --oddRow: var(--color__base--ghost);
   --padding: var(--size__s);
 }
 ```

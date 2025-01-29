@@ -52,29 +52,91 @@ If you need to define a new color outside of `base` or `highlight`, but want to 
 
 ```css
 :root {
-  --color__hue--danger: 0deg 90% 64%;
-  --color__danger: hsl(var(--color__hue--danger));
-  --color__danger--ish: hsl(var(--color__hue--danger) / 0.75);
-  --color__danger--mid: hsl(var(--color__hue--danger) / 0.625);
-  --color__danger--semi: hsl(var(--color__hue--danger) / 0.25);
-  --color__danger--light: hsl(var(--color__hue--danger) / 0.125);
-  --color__danger--ghost: hsl(var(--color__hue--danger) / 0.0625);
+  --color__set--danger: hsl(0deg 90% 64%);
+  --color__danger: var(--color__set--danger);
+  --color__danger--ish: color-mix(
+    in oklab,
+    var(--color__set--danger) 75%,
+    var(--color__contrast)
+  );
+  --color__danger--mid: color-mix(
+    in oklab,
+    var(--color__set--danger) 62.5%,
+    var(--color__contrast)
+  );
+  --color__danger--semi: color-mix(
+    in oklab,
+    var(--color__set--danger) 25%,
+    var(--color__contrast)
+  );
+  --color__danger--light: color-mix(
+    in oklab,
+    var(--color__set--danger) 12.5%,
+    var(--color__contrast)
+  );
+  --color__danger--ghost: color-mix(
+    in oklab,
+    var(--color__set--danger) 4%,
+    var(--color__contrast)
+  );
+  --color__danger--dark: color-mix(
+    in oklab,
+    var(--color__set--danger) 64%,
+    black
+  );
 }
 
 .dangerBlockquote {
   --color__bg: var(--color__danger--ghost);
   --color__border: var(--color__danger--light);
+
+  color: var(--color__danger--dark);
 }
 ```
 
-You can always tweak the alpha values of the `hsla` structure to meet your project’s needs.
+You can always tweak the percentage values of the `color-mix` function to meet your project’s needs. In the above example, because the core red hue is a bit bright, I created `var(--color__danger--dark)` by mixing the core color with black instead of white.
 
 </info>
 
 <style>
+  :root {
+    --color__set--danger: hsl(0deg 90% 64%);
+    --color__danger: var(--color__set--danger);
+    --color__danger--ish: color-mix(
+      in oklab,
+      var(--color__set--danger) 75%,
+      var(--color__contrast)
+    );
+    --color__danger--mid: color-mix(
+      in oklab,
+      var(--color__set--danger) 62.5%,
+      var(--color__contrast)
+    );
+    --color__danger--semi: color-mix(
+      in oklab,
+      var(--color__set--danger) 25%,
+      var(--color__contrast)
+    );
+    --color__danger--light: color-mix(
+      in oklab,
+      var(--color__set--danger) 12.5%,
+      var(--color__contrast)
+    );
+    --color__danger--ghost: color-mix(
+      in oklab,
+      var(--color__set--danger) 4%,
+      var(--color__contrast)
+    );
+    --color__danger--dark: color-mix(
+      in oklab,
+      var(--color__set--danger) 64%,
+      black
+    );
+  }
   .customBlockquote {
-    --color__hue--danger: 0deg 90% 64%;
-    --color__bg: hsl(var(--color__hue--danger)/0.0625);
-    --color__border: hsl(var(--color__hue--danger)/0.25);
+    --color__bg: var(--color__danger--light);
+    --color__border: var(--color__danger--semi);
+
+    color: var(--color__danger--dark);
   }
 </style>

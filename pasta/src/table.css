@@ -1,30 +1,38 @@
 @layer config {
+
   table:not([class]),
   table.styled {
+    --border: var(--color__base--light);
     --evenRow: var(--color__contrast);
-    --oddRow: var(--color__base--light);
+    --oddRow: var(--color__base--ghost);
     --padding: var(--size__s);
     border-collapse: collapse;
     font-variant-numeric: tabular-nums;
+
     th {
       text-align: left;
     }
+
     th,
     td {
       padding: var(--padding);
     }
+
     tbody {
       tr td {
-        border-right: var(--size__xxs) solid var(--color__base--light);
+        border-right: var(--size__xxs) solid var(--border);
+
         &:last-child {
           border-right: none;
         }
       }
+
       tr:nth-of-type(odd) {
         td {
           background-color: var(--oddRow);
         }
       }
+
       tr:nth-of-type(even) {
         td {
           background-color: var(--evenRow);

@@ -1,15 +1,19 @@
-const fs = require("fs-extra");
-const htmlmin = require("html-minifier");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const pluginWebC = require("@11ty/eleventy-plugin-webc");
-const postcss = require("postcss");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+import fs from "fs-extra";
+import htmlmin from "html-minifier";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import pluginWebC from "@11ty/eleventy-plugin-webc";
+import postcss from "postcss";
+import postcssImport from "postcss-import";
+import postcssNested from "postcss-nested";
+import postcssEach from "postcss-each";
+import autoprefixer from "autoprefixer";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(pluginWebC, {
-    components: "src/_includes/**/*.webc",
+    components: "src/_includes/**/*.webc"
   });
 
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -26,25 +30,24 @@ module.exports = function (eleventyConfig) {
     outputFileExtension: "css",
     compile: async function (inputContent) {
       const result = await postcss([
-        require("postcss-import"),
-        require("postcss-nested"),
-        require("postcss-each"),
-        require("autoprefixer"),
-        require("postcss-minify"),
-      ]).process(inputContent);
+        postcssImport,
+        postcssNested,
+        postcssEach,
+        autoprefixer
+      ]).process(inputContent, { from: undefined, to: undefined });
 
       return async () => result.css;
-    },
+    }
   });
 
   // Markdown support
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true,
+    linkify: true
   }).use(markdownItAnchor, {
     renderHref: false,
-    tabIndex: false,
+    tabIndex: false
   });
 
   eleventyConfig.setLibrary("md", markdownLibrary);
@@ -60,8 +63,8 @@ module.exports = function (eleventyConfig) {
           res.write(content_404);
           res.end();
         });
-      },
-    },
+      }
+    }
   });
 
   // HTML minification
@@ -70,7 +73,7 @@ module.exports = function (eleventyConfig) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true,
+        collapseWhitespace: true
       });
       return minified;
     }
@@ -79,7 +82,7 @@ module.exports = function (eleventyConfig) {
 
   // Passthrough static stuffs
   eleventyConfig.addPassthroughCopy({
-    static: "/",
+    static: "/"
   });
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
 
@@ -88,7 +91,7 @@ module.exports = function (eleventyConfig) {
       input: "src/pages",
       includes: "../_includes",
       layouts: "../layouts",
-      data: "../data",
-    },
+      data: "../data"
+    }
   };
-};
+}

@@ -15,14 +15,6 @@
       <a href="/" class="type__size--m-l" :aria-current="url === '/' && 'page'">Overview</a>
       <a href="/utilities/" :aria-current="url === '/utilities/' && 'page'" class="type__size--m-l">Utilities</a>
       <a href="/type/" :aria-current="url === '/type/' && 'page'" class="type__size--m-l">Type</a>
-      <button onclick="toggleDialog()" class="button__tertiary">
-        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="url !== '/type/'">
-          <icon name="list-bullet" webc:nokeep></icon>Contents
-        </span>
-        <span class="flow__flex flow__align--block-center flow__gap--s" webc:if="url === '/type/'">
-          <icon name="gear" webc:nokeep></icon>Configure
-          </template>
-      </button>
       <button onclick="toggleTheme()" class="button__tertiary">
         <icon name="theme" webc:nokeep></icon>Theme
       </button>

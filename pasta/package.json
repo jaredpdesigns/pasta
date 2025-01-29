@@ -2,20 +2,20 @@
   "name": "@jaredpdesigns/pasta",
   "author": "Jared Pendergraft <jaredpdesigns@gmail.com>",
   "license": "ISC",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "Pasta provides a great starting place for web projects. It combines light styling for common web elements, yummy!",
   "scripts": {
     "build": "postcss src/*.css -u postcss-import -u postcss-calc -u postcss-nested -u postcss-each -u autoprefixer -u postcss-minify --no-map -d ./"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.17",
-    "postcss-calc": "^10.0.2",
+    "postcss": "^8.5.1",
+    "postcss-calc": "^10.1.0",
     "postcss-cli": "^11.0.0",
     "postcss-each": "^1.1.0",
     "postcss-import": "^16.1.0",
     "postcss-minify": "^1.1.0",
-    "postcss-nested": "^6.0.0"
+    "postcss-nested": "^7.0.2"
   },
   "style": "pasta.css",
   "main": "pasta.css",

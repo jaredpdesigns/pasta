@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "pasta-marketing",
   "private": true,
   "version": "2.0.0",
@@ -11,18 +12,18 @@
     "dev": "npm run clean && eleventy --serve --incremental"
   },
   "dependencies": {
-    "@11ty/eleventy": "2.0.1",
+    "@11ty/eleventy": "3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-plugin-webc": "0.11.2",
     "autoprefixer": "^10.4.20",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "html-minifier": "^4.0.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.0.1",
-    "postcss": "^8.4.41",
+    "markdown-it-anchor": "^9.2.0",
+    "postcss": "^8.5.1",
     "postcss-each": "^1.1.0",
     "postcss-import": "^16.1.0",
     "postcss-minify": "^1.1.0",
-    "postcss-nested": "^6.2.0"
+    "postcss-nested": "^7.0.2"
   }
 }
