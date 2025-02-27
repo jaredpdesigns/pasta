@@ -50,7 +50,9 @@
     .property,
     .boolean,
     .number {
-      color: var(--color__primary, var(--color__eggplant));
+      color: var(--color__primary, color-mix(in lch,
+            hsl(from var(--color__eggplant) h calc(s * 1.5) l) 75%,
+            var(--color__contrast--fixed)));
     }
 
     .selector,
@@ -64,7 +66,9 @@
     .class-name,
     .regex,
     .important {
-      color: var(--color__secondary, var(--color__basil));
+      color: var(--color__secondary, color-mix(in lch,
+            hsl(from var(--color__cobalt) h calc(s * 1.5) l) 75%,
+            var(--color__contrast--fixed)));
     }
 
     .tag,
@@ -72,7 +76,9 @@
     .symbol,
     .deleted,
     .keyword {
-      color: var(--color__tertiary, var(--color__contrast--fixed));
+      color: var(--color__tertiary, color-mix(in lch,
+            hsl(from var(--color__basil) h calc(s * 1.5) l) 75%,
+            var(--color__contrast--fixed)));
     }
 
     .important,
