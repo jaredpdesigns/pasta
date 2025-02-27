@@ -125,7 +125,7 @@
 
       &:focus:not([disabled]),
       &:hover:not([disabled]) {
-        --color__bg: var(--color__highlight--contrast);
+        --color__bg: var(--color__highlight--ish);
       }
 
       &[disabled] {
