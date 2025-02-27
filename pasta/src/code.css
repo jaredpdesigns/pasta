@@ -1,4 +1,5 @@
 @layer config {
+
   code,
   pre {
     --bg: var(--color__contrast--extra);
@@ -9,6 +10,7 @@
     font-family: var(--type__family--tertiary);
     font-size: var(--type__size--s);
     line-height: var(--type__lineheight--m);
+
     * & {
       background-color: var(--bg);
       border-radius: var(--size__xs);
@@ -17,7 +19,8 @@
       padding: var(--size__xs) var(--size__s);
       word-wrap: break-word;
     }
-    pre > & {
+
+    pre>& {
       -webkit-overflow-scrolling: touch;
       background: none;
       display: block;
@@ -32,6 +35,7 @@
     background-color: var(--bg);
     border-radius: var(--size__s);
     color: var(--color);
+
     .comment,
     .prolog,
     .doctype,
@@ -41,11 +45,12 @@
     .function {
       opacity: 0.75;
     }
+
     .parameter,
     .property,
     .boolean,
     .number {
-      color: var(--color__primary);
+      color: var(--color__primary, var(--color__eggplant));
     }
 
     .selector,
@@ -59,19 +64,22 @@
     .class-name,
     .regex,
     .important {
-      color: var(--color__secondary);
+      color: var(--color__secondary, var(--color__basil));
     }
+
     .tag,
     .constant,
     .symbol,
     .deleted,
     .keyword {
-      color: var(--color__tertiary);
+      color: var(--color__tertiary, var(--color__contrast--fixed));
     }
+
     .important,
     .bold {
       font-weight: bold;
     }
+
     .italic {
       font-style: italic;
     }

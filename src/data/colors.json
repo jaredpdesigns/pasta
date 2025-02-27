@@ -18,11 +18,101 @@
       "highlight--mid",
       "highlight--semi",
       "highlight--light",
-      "highlight--ghost"
+      "highlight--ghost",
+      "highlight--contrast"
     ]
   },
   {
     "name": "contrast",
-    "tints": ["contrast", "contrast--extra"]
+    "tints": [
+      "contrast",
+      "contrast--adaptive",
+      "contrast--fixed",
+      "contrast--extra"
+    ]
+  },
+  {
+    "name": "basil",
+    "tints": [
+      "basil",
+      "basil--ish",
+      "basil--mid",
+      "basil--semi",
+      "basil--light",
+      "basil--ghost",
+      "basil--contrast"
+    ]
+  },
+  {
+    "name": "tomato",
+    "tints": [
+      "tomato",
+      "tomato--ish",
+      "tomato--mid",
+      "tomato--semi",
+      "tomato--light",
+      "tomato--ghost",
+      "tomato--contrast"
+    ]
+  },
+  {
+    "name": "eggplant",
+    "tints": [
+      "eggplant",
+      "eggplant--ish",
+      "eggplant--mid",
+      "eggplant--semi",
+      "eggplant--light",
+      "eggplant--ghost",
+      "eggplant--contrast"
+    ]
+  },
+  {
+    "name": "cobalt",
+    "tints": [
+      "cobalt",
+      "cobalt--ish",
+      "cobalt--mid",
+      "cobalt--semi",
+      "cobalt--light",
+      "cobalt--ghost",
+      "cobalt--contrast"
+    ]
+  },
+  {
+    "name": "saffron",
+    "tints": [
+      "saffron",
+      "saffron--ish",
+      "saffron--mid",
+      "saffron--semi",
+      "saffron--light",
+      "saffron--ghost",
+      "saffron--contrast"
+    ]
+  },
+  {
+    "name": "valencia",
+    "tints": [
+      "valencia",
+      "valencia--ish",
+      "valencia--mid",
+      "valencia--semi",
+      "valencia--light",
+      "valencia--ghost",
+      "valencia--contrast"
+    ]
+  },
+  {
+    "name": "rose",
+    "tints": [
+      "rose",
+      "rose--ish",
+      "rose--mid",
+      "rose--semi",
+      "rose--light",
+      "rose--ghost",
+      "rose--contrast"
+    ]
   }
 ]

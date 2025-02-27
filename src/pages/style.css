@@ -100,11 +100,4 @@
       display: none;
     }
   }
-
-  code,
-  pre {
-    --color__primary: hsl(260, 64%, 75%);
-    --color__secondary: hsl(190, 64%, 75%);
-    --color__tertiary: hsl(158, 90%, 75%);
-  }
 }

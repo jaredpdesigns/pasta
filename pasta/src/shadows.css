@@ -3,24 +3,24 @@
     --shadow__strength: 0.375;
 
     @media screen and (prefers-color-scheme: light) {
-      --shadow__color: hsl(var(--color__hue--base) 24%);
+      --shadow__color: var(--color__set--base);
       --shadow__value: var(--shadow__strength);
     }
 
     &[data-theme="light"],
     [data-theme="light"] {
-      --shadow__color: hsl(var(--color__hue--base) 24%);
+      --shadow__color: var(--color__set--base);
       --shadow__value: var(--shadow__strength);
     }
 
     @media screen and (prefers-color-scheme: dark) {
-      --shadow__color: hsl(var(--color__hue--base) 4%);
+      --shadow__color: black;
       --shadow__value: calc(var(--shadow__strength) * 2);
     }
 
     &[data-theme="dark"],
     [data-theme="dark"] {
-      --shadow__color: hsl(var(--color__hue--base) 4%);
+      --shadow__color: black;
       --shadow__value: calc(var(--shadow__strength) * 2);
     }
 

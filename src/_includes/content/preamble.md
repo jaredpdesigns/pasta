@@ -8,7 +8,7 @@ npm add @jaredpdesigns/pasta
 
 Import the `css` files into your main CSS file
 
-```css
+```scss
 // Import from node_modules
 @import "@jaredpdesigns/pasta/pasta.css";
 
@@ -18,7 +18,7 @@ Import the `css` files into your main CSS file
 
 Or pick and choose which elements you want to import
 
-```css
+```scss
 // Global reset
 @import "@jaredpdesigns/pasta/reset.css";
 
@@ -43,15 +43,18 @@ Or pick and choose which elements you want to import
 Don’t want to fuss with compiling? Use our pre-configured build for a quick project set-up
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@jaredpdesigns/pasta" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@jaredpdesigns/pasta"
+/>
 ```
 
 Add your own flavors
 
 ```css
 :root {
-  --color__hue--base: 0deg 0% 0%;
-  --color__hue--highlight: 0deg 90% 64%;
+  --color__set--base: hsl(0deg 0% 0%);
+  --color__set--highlight: hsl(0deg 90% 64%);
   --type__family--primary: "Satoshi", sans-serif;
   --type__family--secondary: "Cabinet Grotesk", sans-serif;
 }
