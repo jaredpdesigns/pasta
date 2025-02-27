@@ -61,22 +61,22 @@ If you need to define a new color outside of `base` or `highlight`, but want to 
   --color__danger--ish: color-mix(
     in oklab,
     var(--color__set--danger) 75%,
-    var(--color__set--contrast)
+    var(--color__contrast)
   );
   --color__danger--mid: color-mix(
     in oklab,
     var(--color__set--danger) 62.5%,
-    var(--color__set--contrast)
+    var(--color__contrast)
   );
   --color__danger--semi: color-mix(
     in oklab,
     var(--color__set--danger) 25%,
-    var(--color__set--contrast)
+    var(--color__contrast)
   );
   --color__danger--light: color-mix(
     in oklab,
     var(--color__set--danger) 12.5%,
-    var(--color__set--contrast)
+    var(--color__contrast)
   );
   --color__danger--ghost: color-mix(
     in oklab,
@@ -86,7 +86,7 @@ If you need to define a new color outside of `base` or `highlight`, but want to 
   --color__danger--contrast: color-mix(
     in oklab,
     var(--color__set--danger),
-    var(--color__set--contrast-mix)
+    var(--color__contrast-mix)
   );
 }
 
